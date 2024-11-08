@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Медиа-ремонт. Сервисный центр</title>
+    <meta name="description" content="Медиа-ремонт. Сервисный центр" />
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./svg/icon.svg" type="image/svg+xml" />
@@ -11,9 +12,120 @@
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-</head>
-<body>
-    <button id="openModal">Заказать звонок</button>
+    <script src="./scripts/script.js"></script>
+  </head>
+  <body class="page">
+    <header class="header elastic">
+      <div class="links_container">
+        <a class="links hidden-link" href="#">Главная</a>
+        <div class="dropdown">
+          <button class="dropdown-toggle">
+            <span class="dropdown-icon">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 5L8 10L14 5"
+                  stroke="#B2B2B2"
+                  stroke-linecap="round"
+                  class="dropdown-icon-path"
+                />
+              </svg>
+            </span>
+            Услуги ремонта
+          </button>
+          <div class="dropdown-menu">
+            <a href="#">iPhones</a>
+            <a href="#">Телефоны</a>
+            <a href="#">Ноутбуки</a>
+            <a href="#">Планшеты</a>
+            <a href="#">Компьютеры</a>
+            <a href="#">Телевизоры</a>
+            <a href="#">Мониторы</a>
+            <a href="#">Аудиосистемы и усилители</a>
+            <a href="#">Sony PlayStation</a>
+            <a href="#">Электросамокаты</a>
+            <a href="#">Сборка компьютеров</a>
+          </div>
+        </div>
+        <a class="links hidden-link" href="#">Отзывы</a>
+        <a class="links hidden-link" href="#">Где нас найти в Орле</a>
+      </div>
+      <a href="#">
+        <img class="header_logo" src="./images/Logo.svg" alt="Логотип" />
+      </a>
+      <div class="order-call_container">
+        <p class="hidden-link">+7 (953) 628-21-43</p>
+        <p class="hidden-link">+7 (4862) 50-82-32</p>
+        <button id="openModal" class="order-call_button">
+          Заказать звонок
+        </button>
+        <div class="link_buttons hidden-link">
+          <a href="#"><img src="./images/Whatsapp.svg" alt="Whatsapp" /></a>
+          <a href="#" href="#"
+            ><img src="./images/Telegram.svg" alt="Telegram"
+          /></a>
+          <a href="#"><img src="./images/Vkontakte.svg" alt="Vkontakte" /></a>
+        </div>
+      </div>
+    </header>
+    <section class="order_call_section elastic">
+      <div class="sub_title">
+        <h2 class="sub_title_item">Сервисный центр в Орле</h2>
+        <h1 class="title_item">МЕДИА-РЕМОНТ</h1>
+      </div>
+      <div class="phone_img">
+        <img
+          src="./images/PhoneImg.svg"
+          alt="Изображение телефона"
+          loading="lazy"
+        />
+        <span class="phone_img_description">
+          Мы заставляем Вашу
+          <span>технику работать</span>
+        </span>
+      </div>
+      <div class="tablet">
+        <img
+          src="./images/TableImg.svg"
+          alt="Изображение ноутбука и телефона на столе"
+          loading="lazy"
+        />
+      </div>
+      <div class="order_button_area">
+        <button class="order_button" onClick="handleShow">
+          Заказать звонок
+          <span class="order_button_arrow">
+            <img
+              src="./images/arrowUp.svg"
+              alt="Стрелочка вверх и вправо"
+              loading="lazy"
+            />
+          </span>
+        </button>
+      </div>
+      <div class="laptop">
+        <img
+          src="./images/LaptopImg.svg"
+          alt="Изображение ноутбука"
+          loading="lazy"
+        />
+        <span class="laptop_description">
+          Мы знаем, что у Вас есть выбор —
+          <span>спасибо, что выбираете нас</span>
+        </span>
+      </div>
+      <div class="many_logo"></div>
+      <!-- <ModalUI show="showModal} handleClose="handleClose} /> -->
+    </section>
+  </body>
+</html>
+
+<!-- <button id="openModal">Заказать звонок</button>
 
     <div id="modal" style="display: none;">
         <form id="callbackForm">
@@ -25,12 +137,9 @@
         </form>
     </div>
 
+    <script src="./scripts/submit.js"></script> -->
 
-
-
-    <script src="./scripts/submit.js"></script>
-
-    <!-- <script>
+<!-- <script>
         document.getElementById('openModal').addEventListener('click', function() {
             document.getElementById('modal').style.display = 'block';
         });
@@ -69,5 +178,3 @@
             });
         });
     </script> -->
-</body>
-</html>
