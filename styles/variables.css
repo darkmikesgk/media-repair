@@ -1,0 +1,12 @@
+:root {
+  --font-main: 'Nunito Sans', system-ui;
+  --font-accent: 'Rimma Sans', monospace;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --color-bg: #111212;
+  --color-accent: #06E0E7;
+  --color-text: #fff;
+  --color-contour: #575757;
+}
+
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */

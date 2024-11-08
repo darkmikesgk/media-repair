@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медиа-ремонт. Сервисный центр</title>
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="icon" href="./images/favicon.ico" sizes="any" />
+    <link rel="icon" href="./svg/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+    <button id="openModal">Заказать звонок</button>
+
+    <div id="modal" style="display: none;">
+        <form id="callbackForm">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="phone">Телефон:</label>
+            <input type="text" id="phone" name="phone" required>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+
+
+
+
+    <script src="./scripts/submit.js"></script>
+
+    <!-- <script>
+        document.getElementById('openModal').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'block';
+        });
+
+        document.getElementById('callbackForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните все поля.');
+                return;
+            }
+
+            //const formData = new FormData(event.target);
+            fetch('http://localhost:3000/send-email', {
+                method: 'POST',
+                //body: formData
+                body: new URLSearchParams({
+                    name: name,
+                    phone: phone
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Заявка отправлена!');
+                } else {
+                    alert('Ошибка при отправке заявки.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ошибка при отправке заявки.');
+            });
+        });
+    </script> -->
+</body>
+</html>
