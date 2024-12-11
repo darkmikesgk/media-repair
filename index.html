@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/slider.js"></script>
   </head>
   <body class="page">
     <header class="header elastic">
@@ -80,9 +81,11 @@
       </div>
       <div class="phone_img">
         <img
-          src="./images/PhoneImg.svg"
+          id="phoneImg"
+          src="./images/PhoneImg.png"
           alt="Изображение телефона"
           loading="lazy"
+          data-state="phone"
         />
         <span class="phone_img_description">
           Мы заставляем Вашу
@@ -91,9 +94,11 @@
       </div>
       <div class="tablet">
         <img
-          src="./images/TableImg.svg"
+          id="tabletImg"
+          src="./images/TableImg.png"
           alt="Изображение ноутбука и телефона на столе"
           loading="lazy"
+          data-state="tablet"
         />
       </div>
       <div class="order_button_area">
@@ -101,6 +106,7 @@
           Заказать звонок
           <span class="order_button_arrow">
             <img
+              class="arrow_in_button"
               src="./images/arrowUp.svg"
               alt="Стрелочка вверх и вправо"
               loading="lazy"
@@ -110,9 +116,11 @@
       </div>
       <div class="laptop">
         <img
-          src="./images/LaptopImg.svg"
+          id="laptopImg"
+          src="./images/LaptopImg.png"
           alt="Изображение ноутбука"
           loading="lazy"
+          data-state="laptop"
         />
         <span class="laptop_description">
           Мы знаем, что у Вас есть выбор —
