@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const phoneImg = document.getElementById('phoneImg');
+export function initSlider(phoneImg) {
   const tabletImgSrc = './images/TableImg.png';
   const laptopImgSrc = './images/LaptopImg.png';
   const originalImgSrc = './images/PhoneImg.png';
@@ -76,4 +75,4 @@ document.addEventListener('DOMContentLoaded', function () {
       phoneImg.setAttribute('data-state', 'phone');
     }
   });
-});
+}

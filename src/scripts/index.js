@@ -1,33 +1,13 @@
-import '../styles/style.scss'
-import { createCards } from "./card.js";
+import '../styles/style.scss';
+import { createCards } from './card.js';
+import { initSlider } from './slider.js';
+import { initDropdown } from './dropdown.js';
 
-document.addEventListener('DOMContentLoaded', function() {
-  const dropdownToggle = document.querySelector('.dropdown-toggle');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  const dropdownIcon = document.querySelector('.dropdown-icon');
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const dropdownIcon = document.querySelector('.dropdown-icon');
+const phoneImg = document.getElementById('phoneImg');
 
-  function toggleDropdown() {
-    dropdownMenu.classList.toggle('show');
-    dropdownIcon.classList.toggle('rotate');
-    dropdownToggle.classList.toggle('active');
-  }
-
-  function closeDropdown() {
-    dropdownMenu.classList.remove('show');
-    dropdownIcon.classList.remove('rotate');
-    dropdownToggle.classList.remove('active');
-  }
-
-  document.addEventListener('click', function(event) {
-    if (event.target.matches('.dropdown-toggle')) {
-      event.stopPropagation();
-      toggleDropdown();
-    } else if (!event.target.closest('.dropdown-menu')) {
-      closeDropdown();
-    }
-  });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  createCards();
-});
+initDropdown(dropdownToggle, dropdownMenu, dropdownIcon);
+initSlider(phoneImg);
+createCards();
