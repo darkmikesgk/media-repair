@@ -1,0 +1,57 @@
+[
+  {
+    "title": "IPhones",
+    "url": "#",
+    "imageUrl": "../images/Card_Iphone.png"
+  },
+  {
+    "title": "Телефоны",
+    "url": "#",
+    "imageUrl": "../images/Card_Phone.png"
+  },
+  {
+    "title": "Ноутбуки",
+    "url": "#",
+    "imageUrl": "../images/Card_Notebook.png"
+  },
+  {
+    "title": "Планшеты",
+    "url": "#",
+    "imageUrl": "../images/Card_Tablet.png"
+  },
+  {
+    "title": "Телевизоры",
+    "url": "#",
+    "imageUrl": "../images/Card_Tv.png"
+  },
+  {
+    "title": "Компьютеры",
+    "url": "#",
+    "imageUrl": "../images/Card_Pc.png"
+  },
+  {
+    "title": "Мониторы",
+    "url": "#",
+    "imageUrl": "../images/Card_Monitor.png"
+  },
+  {
+    "title": "Аудиосистемы и усилители",
+    "url": "#",
+    "imageUrl": "../images/Card_Sound.png"
+  },
+  {
+    "title": "Sony PlayStation",
+    "url": "#",
+    "imageUrl": "../images/Card_Ps5.png"
+  },
+  {
+    "title": "Электросамокаты",
+    "url": "#",
+    "imageUrl": "../images/Card_Scooter.png"
+  },
+  {
+    "title": "Сборка компьютеров по индивидуальному запросу",
+    "url": "#",
+    "imageUrl": "../images/Card_Individ.png"
+  }
+]

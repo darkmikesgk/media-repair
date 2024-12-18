@@ -1,3 +1,6 @@
+import '../styles/style.scss'
+import { createCards } from "./card.js";
+
 document.addEventListener('DOMContentLoaded', function() {
   const dropdownToggle = document.querySelector('.dropdown-toggle');
   const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -23,4 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
       closeDropdown();
     }
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  createCards();
 });

@@ -1,0 +1,25 @@
+@use './variables.scss';
+@use './globals.scss';
+@use './mixins.scss';
+
+.page {
+	display: flex;
+	flex-direction: column;
+	color: var(--color-anchor);
+	font-family: var(--font-main);
+	font-size: clamp(0.875rem, 0.6875rem + 0.2083vw, 0.9375rem);
+	background-color: var(--color-bg);
+	min-inline-size: 18rem;
+	max-inline-size: 120rem;
+	min-block-size: 100dvb;
+	white-space: nowrap;
+
+	@media (768px <= width < 1276px) {
+		font-size: clamp(0.8125rem, 0.7411rem + 0.1488vw, 0.875rem);
+	}
+
+	@media (320px <= width < 768px) {
+		font-size: clamp(1rem, 0.7794rem + 0.9804vw, 1.25rem);
+		min-inline-size: 320px;
+	}
+}

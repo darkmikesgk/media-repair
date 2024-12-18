@@ -1,46 +1,46 @@
 {
-  "name": "project",
+  "name": "Media-Repair",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'Привет!'",
-    "check": "prettier --check ./**/*.{html,css,js}",
-    "format": "prettier --write ./**/*.{html,css,js}",
-    "lint": "stylelint ./src/**/*.css",
-    "lintfix": "stylelint ./src/**/*.css --fix",
-    "checkAll": "npm run check && npm run lint",
-    "fixAll": "npm run format && npm run lintfix",
-    "build": "gulp build",
-    "dev": "gulp",
-    "fixAndBuild": "npm run fixAll && npm run build",
-    "lintfixAndPush": "npm run fixAll && git add . && git commit -m 'подготовили к публикации' && git push"
+    "build": "webpack --mode production",
+    "dev": "webpack serve",
+    "lint:css": "stylelint 'src/**/*.{css,scss}'",
+    "lint:css:fix": "stylelint 'src/**/*.{css,scss}' --fix",
+    "format": "prettier --write 'src/**/*.{js,css,scss,html}'",
+    "format:check": "prettier --check 'src/**/*.{js,css,scss,html}'"
   },
-  "author": "",
+  "author": "Ivan Pidko",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
+    "@webpack-cli/generators": "^3.0.2",
     "autoprefixer": "^10.4.14",
-    "browser-sync": "^2.29.1",
-    "cssnano": "^6.0.1",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-concat-css": "^3.1.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^9.0.1",
-    "html-minifier": "^4.0.0",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "cssnano": "^7.0.6",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.23",
-    "postcss-combine-media-query": "^1.0.1",
+    "postcss-loader": "^7.3.0",
     "prettier": "^2.8.8",
-    "stylelint": "^15.11.0"
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2",
+    "webpack-dev-server": "^4.13.3"
   },
-  "browserslist": [
-    "last 5 versions"
-  ],
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "nodemailer": "^6.9.15"
+    "core-js": "^3.39.0"
   }
 }

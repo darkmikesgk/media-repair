@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Nunito Sans', system-ui;
-  src: url(./fonts-files/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+  src: url('./fonts-files/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf');
   font-optical-sizing: auto;
   font-weight: 100 900; /* Укажите диапазон веса */
   font-style: normal;
@@ -15,7 +15,7 @@
   font-family: 'Rimma Sans';
   src:
     local('RIMMA_SANS-BOLD'),
-    url(./fonts-files/Rimma_Sans/RIMMA_SANS-BOLD.TTF) format('truetype');
+    url('./fonts-files/Rimma_Sans/RIMMA_SANS-BOLD.TTF') format('truetype');
   font-weight: 700;
 }
 
