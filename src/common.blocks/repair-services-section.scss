@@ -58,6 +58,12 @@
 			min-width: 243px;
 			max-width: calc(51% - 36px);
 			text-decoration: none;
+			filter: grayscale(100%);
+			transition: filter 0.5s ease-in-out;
+
+			&:hover {
+				filter: grayscale(0);
+			}
 
 			&:last-child {
 				// grid-column: span 2;
@@ -130,7 +136,8 @@
 @media (1275px < width <= 1440px) {
 	.repair-services-section {
 		gap: 4.7vw;
-		margin-block-end: 8.334%;
+		// margin-block-end: 8.334%;
+		margin-block-end: 8.8%;
 		inline-size: 80.556%;
 
 		.repair-services-title {

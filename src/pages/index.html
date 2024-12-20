@@ -1,154 +1,187 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Медиа-ремонт. Сервисный центр</title>
-    <meta name="description" content="Медиа-ремонт. Сервисный центр" />
-    <link rel="stylesheet" href="../fonts/fonts.css" />
-    <link rel="icon" href="../images/favicon.ico" sizes="any" />
-    <link rel="icon" href="../svg/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="../images/favicon.png" />
-  </head>
-  <body class="page">
-    <header class="header elastic">
-      <div class="links_container">
-        <a class="links hidden-link" href="#">Главная</a>
-        <div class="dropdown">
-          <button class="dropdown-toggle">
-            <span class="dropdown-icon">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 5L8 10L14 5"
-                  stroke="#B2B2B2"
-                  stroke-linecap="round"
-                  class="dropdown-icon-path"
-                />
-              </svg>
-            </span>
-            Услуги ремонта
-          </button>
-          <div class="dropdown-menu">
-            <a href="#">iPhones</a>
-            <a href="#">Телефоны</a>
-            <a href="#">Ноутбуки</a>
-            <a href="#">Планшеты</a>
-            <a href="#">Компьютеры</a>
-            <a href="#">Телевизоры</a>
-            <a href="#">Мониторы</a>
-            <a href="#">Аудиосистемы и усилители</a>
-            <a href="#">Sony PlayStation</a>
-            <a href="#">Электросамокаты</a>
-            <a href="#">Сборка компьютеров</a>
-          </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Медиа-ремонт. Сервисный центр</title>
+		<meta name="description" content="Медиа-ремонт. Сервисный центр" />
+		<link rel="stylesheet" href="../fonts/fonts.css" />
+		<link rel="icon" href="../images/favicon.ico" sizes="any" />
+		<link rel="icon" href="../svg/icon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="../images/favicon.png" />
+	</head>
+	<body class="page">
+		<header class="header elastic">
+			<div class="links_container">
+				<a class="links hidden-link" href="#">Главная</a>
+				<div class="dropdown">
+					<button class="dropdown-toggle">
+						<span class="dropdown-icon">
+							<svg
+								width="16"
+								height="16"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M2 5L8 10L14 5"
+									stroke="#B2B2B2"
+									stroke-linecap="round"
+									class="dropdown-icon-path"
+								/>
+							</svg>
+						</span>
+						Услуги ремонта
+					</button>
+					<div class="dropdown-menu">
+						<a href="#">iPhones</a>
+						<a href="#">Телефоны</a>
+						<a href="#">Ноутбуки</a>
+						<a href="#">Планшеты</a>
+						<a href="#">Компьютеры</a>
+						<a href="#">Телевизоры</a>
+						<a href="#">Мониторы</a>
+						<a href="#">Аудиосистемы и усилители</a>
+						<a href="#">Sony PlayStation</a>
+						<a href="#">Электросамокаты</a>
+						<a href="#">Сборка компьютеров</a>
+					</div>
+				</div>
+				<a class="links hidden-link" href="#">Отзывы</a>
+				<a class="links hidden-link" href="#">Где нас найти в Орле</a>
+				<a class="header_logo-container" href="#">
+					<img class="header_logo" src="../images/Logo.svg" alt="Логотип" />
+				</a>
+				<div class="order-call_container elastic">
+					<a href="tel:+79536282143" class="hidden-link">+7 (953) 628-21-43</a>
+					<a href="tel:+74862508232" class="hidden-link">+7 (4862) 50-82-32</a>
+					<button id="openModal" class="order-call_button">
+						Заказать звонок
+					</button>
+					<div class="link_buttons hidden-link">
+						<a href="#"><img src="../images/Whatsapp.svg" alt="Whatsapp" /></a>
+						<a href="#" href="#"
+							><img src="../images/Telegram.svg" alt="Telegram"
+						/></a>
+						<a href="#"
+							><img src="../images/Vkontakte.svg" alt="Vkontakte"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section class="order_call_section elastic">
+			<div class="sub_title">
+				<h2 class="sub_title_item">Сервисный центр в Орле</h2>
+				<h1 class="title_item">МЕДИА-РЕМОНТ</h1>
+			</div>
+			<div class="phone_img">
+				<img
+					id="phoneImg"
+					src="../images/PhoneImg.png"
+					alt="Изображение телефона"
+					loading="lazy"
+					data-state="phone"
+				/>
+				<span class="phone_img_description">
+					Мы заставляем Вашу
+					<span>технику работать</span>
+				</span>
+			</div>
+			<div class="tablet">
+				<img
+					id="tabletImg"
+					src="../images/TableImg.png"
+					alt="Изображение ноутбука и телефона на столе"
+					loading="lazy"
+					data-state="tablet"
+				/>
+			</div>
+			<div class="order_button_area">
+				<button class="order_button" onClick="handleShow">
+					Заказать звонок
+					<span class="order_button_arrow">
+						<img
+							class="arrow_in_button"
+							src="../images/arrowUp.svg"
+							alt="Стрелочка вверх и вправо"
+							loading="lazy"
+						/>
+					</span>
+				</button>
+			</div>
+			<div class="laptop">
+				<img
+					id="laptopImg"
+					src="../images/LaptopImg.png"
+					alt="Изображение ноутбука"
+					loading="lazy"
+					data-state="laptop"
+				/>
+				<span class="laptop_description">
+					Мы знаем, что у Вас есть выбор —
+					<span>спасибо, что выбираете нас</span>
+				</span>
+			</div>
+			<div class="many_logo"></div>
+		</section>
+
+		<section class="repair-services-section elastic">
+			<div class="repair-services-title">
+				<h2 class="title_item">Услуги ремонта</h2>
+				<p class="sub_title_item">И не только</p>
+			</div>
+			<div class="cards-container" id="cards-container"></div>
+		</section>
+
+		<section class="about-us-section">
+			<div class="about-us-title-container">
+				<h3 class="about-us-title">Тут все про нас</h3>
+				<p class="about-us-subtitle">На самом деле - это СЕО-текст</p>
+			</div>
+			<div class="about-us-content">
+				<img src="../images/Arrow_about-us.svg" alt="Декоративная иконка стрелочки" class="about-us-content_arrow-bg"></img>
+        <div class="about-us-content_paragraph">
+          <p class="about-us-content_paragraph-item">
+            Мы — команда профессионалов, занимаемся ремонтом техники уже более 8
+            лет.
+          </p>
+          <p class="about-us-content_paragraph-item">
+            За это время мы приобрели богатый опыт и накопили обширные знанияв
+            области ремонта различной техники. Благодаря нашему опыту и отличной
+            репутации, мы смогли стать надежным партнером для тысяч клиентов.Мы
+            понимаем, что поломка техники — это неожиданная и неприятная ситуация.
+            Поэтому мы стремимся сделать процесс ремонта максимально комфортным
+            для наших клиентов. Мы уделяем внимание каждой детали работы, чтобы
+            восстановленное устройство полностью соответствовало ожиданиям
+            клиента.
+          </p>
+          <p class="about-us-content_paragraph-item">
+            Мы предоставляем полную отчетность для организаций.
+          </p>
+
         </div>
-        <a class="links hidden-link" href="#">Отзывы</a>
-        <a class="links hidden-link" href="#">Где нас найти в Орле</a>
-        <a class="header_logo-container" href="#">
-          <img class="header_logo" src="../images/Logo.svg" alt="Логотип" />
-        </a>
-        <div class="order-call_container elastic">
-          <a href="tel:+79536282143" class="hidden-link">+7 (953) 628-21-43</a>
-          <a href="tel:+74862508232" class="hidden-link">+7 (4862) 50-82-32</a>
-          <button id="openModal" class="order-call_button">
-            Заказать звонок
-          </button>
-          <div class="link_buttons hidden-link">
-            <a href="#"><img src="../images/Whatsapp.svg" alt="Whatsapp" /></a>
-            <a href="#" href="#"
-              ><img src="../images/Telegram.svg" alt="Telegram"
-            /></a>
-            <a href="#"><img src="../images/Vkontakte.svg" alt="Vkontakte" /></a>
-          </div>
-        </div>
-      </div>
+        <p class="about-us-content_text">
+          Независимо от марки и модели устройства, наши опытные специалисты
+          готовы взятьсяза его починку и вернуть его вамв наилучшем состоянии.
+        </p>			</div>
+		</section>
 
-    </header>
-    <section class="order_call_section elastic">
-      <div class="sub_title">
-        <h2 class="sub_title_item">Сервисный центр в Орле</h2>
-        <h1 class="title_item">МЕДИА-РЕМОНТ</h1>
-      </div>
-      <div class="phone_img">
-        <img
-          id="phoneImg"
-          src="../images/PhoneImg.png"
-          alt="Изображение телефона"
-          loading="lazy"
-          data-state="phone"
-        />
-        <span class="phone_img_description">
-          Мы заставляем Вашу
-          <span>технику работать</span>
-        </span>
-      </div>
-      <div class="tablet">
-        <img
-          id="tabletImg"
-          src="../images/TableImg.png"
-          alt="Изображение ноутбука и телефона на столе"
-          loading="lazy"
-          data-state="tablet"
-        />
-      </div>
-      <div class="order_button_area">
-        <button class="order_button" onClick="handleShow">
-          Заказать звонок
-          <span class="order_button_arrow">
-            <img
-              class="arrow_in_button"
-              src="../images/arrowUp.svg"
-              alt="Стрелочка вверх и вправо"
-              loading="lazy"
-            />
-          </span>
-        </button>
-      </div>
-      <div class="laptop">
-        <img
-          id="laptopImg"
-          src="../images/LaptopImg.png"
-          alt="Изображение ноутбука"
-          loading="lazy"
-          data-state="laptop"
-        />
-        <span class="laptop_description">
-          Мы знаем, что у Вас есть выбор —
-          <span>спасибо, что выбираете нас</span>
-        </span>
-      </div>
-      <div class="many_logo"></div>
-    </section>
+		<!-- <ModalUI show="showModal} handleClose="handleClose} /> -->
 
-    <section class="repair-services-section elastic">
-      <div class="repair-services-title">
-        <h2 class="title_item">Услуги ремонта</h2>
-        <p class="sub_title_item">И не только</p>
-      </div>
-      <div class="cards-container" id="cards-container"></div>    
-    </section>
-    <div class="test">213123</div>
-
-    <!-- <ModalUI show="showModal} handleClose="handleClose} /> -->
-
-    <template id="card-template">
-      <a href="" class="card-link">
-        <div class="card-container">
-      <div class="card">
-          <img src="" alt="" class="card-image">
-          <!-- <h2 class="card-title"></h2> -->
-      </div>
-      <h2 class="card-title"></h2>
-    </div>
-    </a>
-    </template>
-  </body>
+		<template id="card-template">
+			<a href="" class="card-link">
+				<div class="card-container">
+					<div class="card">
+						<img src="" alt="" class="card-image" />
+						<!-- <h2 class="card-title"></h2> -->
+					</div>
+					<h2 class="card-title"></h2>
+				</div>
+			</a>
+		</template>
+	</body>
 </html>
 
 <!-- <button id="openModal">Заказать звонок</button>
