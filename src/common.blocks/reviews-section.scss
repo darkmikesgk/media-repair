@@ -1,0 +1,88 @@
+.reviews-section {
+	display: flex;
+	flex-direction: column;
+	gap: 3.75rem;
+	margin-block-end: 7.292%;
+	font-weight: 400;
+	font-size: clamp(0.875rem, 0.4907rem + 0.4267vw, 1.01875rem);
+	inline-size: 75%;
+	text-wrap: wrap;
+
+	.reviews-title-container {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		inline-size: 100%;
+
+		.reviews-title {
+			color: var(--color-text);
+			font-family: var(--font-accent);
+			font-size: 1.5rem;
+			line-height: 28.8px;
+		}
+	}
+
+	.reviews-container {
+		display: flex;
+		gap: clamp(1rem, -2rem + 3.3333vw, 2rem);
+
+		&_left-side {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 1.25rem;
+			max-inline-size: 59.3125rem;
+
+			&-description {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				font-size: clamp(0.875rem, 0.5rem + 0.4167vw, 1rem);
+				line-height: 1.36375rem;
+				max-inline-size: 44rem;
+			}
+
+			.gratitude {
+				align-self: flex-end;
+				font-size: 1.25rem;
+				line-height: 1.705rem;
+				max-inline-size: 20.125rem;
+			}
+
+			.reviews-container_left-side-img {
+				block-size: clamp(13.375rem, 0.8125rem + 13.9583vw, 17.5625rem);
+			}
+		}
+
+		.reviews-widget {
+			position: relative;
+			overflow: hidden;
+			inline-size: clamp(23.5rem, 8.875rem + 16.25vw, 28.375rem);
+
+			&-item {
+				border: 1px solid #e6e6e6;
+				border-radius: 8px;
+				inline-size: 100%;
+				block-size: 100%;
+
+				&-link {
+					position: absolute;
+					bottom: 8px;
+					left: 0;
+					display: block;
+					width: 100%;
+					max-height: 14px;
+					padding: 0 16px;
+					overflow: hidden;
+					color: #b3b3b3;
+					font-family: 'YS Text', sans-serif;
+					font-size: 10px;
+					text-align: center;
+					text-decoration: none;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+}
