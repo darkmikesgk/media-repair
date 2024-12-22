@@ -75,6 +75,12 @@
 		margin-block-end: 8.334%;
 		inline-size: 80.556%;
 
+		.about-us-title-container {
+			.about-us-subtitle {
+				font-size: 1rem;
+			}
+		}
+
 		.about-us-content {
 			grid-template-columns: 376px 1fr minmax(428px, 668px);
 
