@@ -1,3 +1,7 @@
+@use './variables.scss';
+@use './globals.scss';
+@use './mixins.scss';
+
 .why-we-section {
 	display: flex;
 	flex-direction: column;

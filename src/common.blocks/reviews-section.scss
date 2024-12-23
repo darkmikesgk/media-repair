@@ -1,3 +1,7 @@
+@use './variables.scss';
+@use './globals.scss';
+@use './mixins.scss';
+
 .reviews-section {
 	display: flex;
 	flex-direction: column;
@@ -52,6 +56,7 @@
 
 			&-img {
 				border-radius: 12.2px;
+				object-fit: cover;
 				block-size: clamp(13.375rem, 0.8125rem + 13.9583vw, 17.5625rem);
 			}
 		}
@@ -98,7 +103,7 @@
 		.reviews-container {
 			&_left-side {
 				flex: 1 1 66%;
-				gap: 14px;
+				gap: 0.875rem;
 				inline-size: clamp(40.3125rem, -19.0137rem + 74.3902vw, 47.9375rem);
 				max-inline-size: 100%;
 
@@ -126,13 +131,12 @@
 					inline-size: 100%;
 				}
 
-				.gratitude {
-					text-align: end;
+				&-img {
+					block-size: 100%;
 				}
 
-				&-img {
-					object-fit: cover;
-					block-size: 100%;
+				.gratitude {
+					text-align: end;
 				}
 			}
 		}
@@ -182,7 +186,7 @@
 			}
 
 			.reviews-widget {
-				min-block-size: 541.38px;
+				min-block-size: 33.83625rem;
 				min-inline-size: 45%;
 			}
 		}

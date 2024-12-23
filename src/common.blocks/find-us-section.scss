@@ -1,0 +1,118 @@
+@use './variables.scss';
+@use './globals.scss';
+@use './mixins.scss';
+
+.find-us-section {
+	display: flex;
+	flex-direction: column;
+	gap: 3.75rem;
+	margin-block-end: 7.292%;
+	font-weight: 400;
+	font-size: clamp(0.875rem, 0.4907rem + 0.4267vw, 1.01875rem);
+	inline-size: 75%;
+	text-wrap: wrap;
+
+	.find-us-title-container {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		inline-size: 100%;
+
+		.find-us-title {
+			color: var(--color-text);
+			font-family: var(--font-accent);
+			font-size: 1.5rem;
+			line-height: 28.8px;
+		}
+	}
+
+	.find-us-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: clamp(0.8125rem, 0.2484rem + 0.6263vw, 1rem);
+
+		&_left-side {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 11.53%;
+			gap: 22px;
+			border-radius: 8px;
+			padding: 20px;
+			background-color: var(--color-dropdown);
+
+			&_street {
+				border-radius: 7px;
+				padding: 9px 64px;
+				color: var(--color-text);
+				text-align: center;
+				background-color: var(--color-contour);
+			}
+
+			&-item {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+
+				&_title {
+					opacity: 0.5;
+					color: var(--color-text);
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 21.82px;
+				}
+
+				&_description {
+					color: var(--color-text);
+					font-weight: 400;
+					font-size: 20px;
+					line-height: 27.28px;
+					inline-size: fit-content;
+
+					&_link {
+						color: var(--color-text);
+						font-weight: 400;
+						font-size: 20px;
+						line-height: 27.28px;
+						text-decoration: none;
+						inline-size: fit-content;
+
+						&:hover {
+							color: var(--color-accent);
+						}
+					}
+				}
+			}
+			&_button_area_button {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 8px;
+				color: var(--color-bg-card);
+				font-family: var(--font-accent);
+				background-color: var(--color-text);
+				cursor: pointer;
+				block-size: 60px;
+
+				&_arrow {
+					position: absolute;
+					top: 10px;
+					right: 10px;
+
+					&_in_button {
+						block-size: 16px;
+						inline-size: 16px;
+					}
+				}
+			}
+		}
+
+		.find-us-container_map-wrapper {
+			position: relative;
+			flex: 1 1 46.7%;
+			border-radius: 8px;
+			overflow: hidden;
+		}
+	}
+}
