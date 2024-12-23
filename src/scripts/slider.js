@@ -1,7 +1,7 @@
 export function initSlider(phoneImg) {
-  const tabletImgSrc = './images/TableImg.png';
-  const laptopImgSrc = './images/LaptopImg.png';
-  const originalImgSrc = './images/PhoneImg.png';
+  const tabletImgSrc = './images/TableImg.webp';
+  const laptopImgSrc = './images/LaptopImg.webp';
+  const originalImgSrc = './images/PhoneImg.webp';
 
   function handleClickOrSwipe(direction) {
     if (window.innerWidth >= 360 && window.innerWidth < 1276) {

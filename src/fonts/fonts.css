@@ -1,4 +1,5 @@
 @font-face {
+  font-display: swap;
   font-family: 'Nunito Sans', system-ui;
   src: url('./fonts-files/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf');
   font-optical-sizing: auto;

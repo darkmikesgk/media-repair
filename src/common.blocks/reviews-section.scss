@@ -24,14 +24,14 @@
 
 	.reviews-container {
 		display: flex;
-		gap: clamp(1rem, -2rem + 3.3333vw, 2rem);
+		flex-wrap: wrap;
+		gap: clamp(1rem, -2.75rem + 4.1667vw, 2.25rem);
 
 		&_left-side {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
 			gap: 1.25rem;
-			max-inline-size: 59.3125rem;
+			max-inline-size: 65.6%;
 
 			&-description {
 				display: flex;
@@ -39,7 +39,8 @@
 				gap: 0.5rem;
 				font-size: clamp(0.875rem, 0.5rem + 0.4167vw, 1rem);
 				line-height: 1.36375rem;
-				max-inline-size: 44rem;
+				text-align: left;
+				inline-size: clamp(35.75rem, 11rem + 27.5vw, 44rem);
 			}
 
 			.gratitude {
@@ -49,15 +50,16 @@
 				max-inline-size: 20.125rem;
 			}
 
-			.reviews-container_left-side-img {
+			&-img {
+				border-radius: 12.2px;
 				block-size: clamp(13.375rem, 0.8125rem + 13.9583vw, 17.5625rem);
 			}
 		}
 
 		.reviews-widget {
 			position: relative;
+			flex: 1 1 31%;
 			overflow: hidden;
-			inline-size: clamp(23.5rem, 8.875rem + 16.25vw, 28.375rem);
 
 			&-item {
 				border: 1px solid #e6e6e6;
@@ -82,6 +84,106 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 				}
+			}
+		}
+	}
+}
+
+@media (1275px < width <= 1440px) {
+	.reviews-section {
+		margin-block-end: 8.334%;
+		font-size: clamp(0.9375rem, 0.4512rem + 0.6098vw, 1rem);
+		inline-size: 80.556%;
+
+		.reviews-container {
+			&_left-side {
+				flex: 1 1 66%;
+				gap: 14px;
+				inline-size: clamp(40.3125rem, -19.0137rem + 74.3902vw, 47.9375rem);
+				max-inline-size: 100%;
+
+				&-description {
+					gap: 0;
+				}
+			}
+
+			.reviews-widget {
+				flex: 1 1 32%;
+			}
+		}
+	}
+}
+
+@media (768px < width <= 1275px) {
+	.reviews-section {
+		.reviews-container {
+			flex-wrap: wrap;
+
+			&_left-side {
+				inline-size: clamp(18.02375rem, -6.2525rem + 50.5097vw, 39.20625rem);
+
+				&-description {
+					inline-size: 100%;
+				}
+
+				.gratitude {
+					text-align: end;
+				}
+
+				&-img {
+					object-fit: cover;
+					block-size: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.reviews-section {
+		gap: 2.5rem;
+		margin-block-end: 22.223%;
+		font-size: 0.875rem;
+		line-height: 1.19375rem;
+		inline-size: 88.889%;
+
+		.reviews-title-container {
+			.reviews-title {
+				font-size: 1.25rem;
+				line-height: 1.5rem;
+			}
+
+			.reviews-subtitle {
+				font-size: 0.875rem;
+				line-height: 1.19375rem;
+			}
+		}
+
+		.reviews-container {
+			&_left-side {
+				flex: 1 1 50%;
+				min-inline-size: 52%;
+				max-inline-size: 100%;
+
+				&-description {
+					font-size: 0.875rem;
+					line-height: 1.31875rem;
+					inline-size: 100%;
+				}
+
+				&-img {
+					object-fit: contain;
+					block-size: 100%;
+				}
+			}
+
+			.gratitude {
+				text-align: end;
+			}
+
+			.reviews-widget {
+				min-block-size: 541.38px;
+				min-inline-size: 45%;
 			}
 		}
 	}

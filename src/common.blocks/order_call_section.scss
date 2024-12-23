@@ -161,6 +161,7 @@
 			cursor: pointer;
 			inline-size: 100%;
 			block-size: clamp(3.125rem, 2.1731rem + 4.2308vw, 7.25rem);
+			border: none;
 
 			&_arrow {
 				position: absolute;
