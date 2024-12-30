@@ -15,12 +15,16 @@
 	max-inline-size: 120rem;
 	min-block-size: 100dvb;
 	white-space: nowrap;
+}
 
-	@media (768px < width <= 1275px) {
+@media (768px < width <= 1275px) {
+	.page {
 		font-size: clamp(0.8125rem, 0.7411rem + 0.1488vw, 0.875rem);
 	}
+}
 
-	@media (320px < width <= 768px) {
+@media (320px <= width <= 768px) {
+	.page {
 		font-size: clamp(1rem, 0.7794rem + 0.9804vw, 1.25rem);
 		min-inline-size: 20rem;
 	}
