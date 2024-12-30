@@ -1,0 +1,82 @@
+@use './variables.scss';
+@use './globals.scss';
+@use './mixins.scss';
+
+.footer_wrapper {
+	margin-block-end: 2.5%;
+	border-block-start: 1px solid rgba(255, 255, 255, 0.5);
+	padding-block-start: 60px;
+	font-weight: 400;
+	font-size: clamp(0.875rem, 0.4907rem + 0.4267vw, 1.01875rem);
+	inline-size: 100%;
+
+	.footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: flex-start;
+		row-gap: 37px;
+		margin: 0 auto;
+		inline-size: 75%;
+
+		&_logo-wrapper {
+			display: flex;
+			flex: 1 1 18%;
+			align-items: center;
+			gap: 1rem;
+      flex-wrap: wrap;
+		}
+
+		&_repair-services-wrapper {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 50%;
+			gap: 24px;
+
+			&_title-item {
+				color: var(--color-text);
+				font-family: var(--font-accent);
+				font-size: 1rem;
+			}
+
+			&_catalog {
+				display: flex;
+				flex-direction: column;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				gap: 12px;
+				block-size: 119px;
+				text-wrap: balance;
+        align-content: space-between;
+
+				&-item {
+					text-decoration: none;
+					max-inline-size: 160px;
+
+					&:hover {
+						color: var(--color-accent);
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+		&_description {
+			display: flex;
+			flex: 1 1 50%;
+			justify-content: space-between;
+			align-items: center;
+
+			&-item {
+				opacity: 0.8;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 19.1px;
+
+				&:nth-child(2) {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+}
