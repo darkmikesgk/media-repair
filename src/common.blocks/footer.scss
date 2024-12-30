@@ -5,9 +5,9 @@
 .footer_wrapper {
 	margin-block-end: 2.5%;
 	border-block-start: 1px solid rgba(255, 255, 255, 0.5);
-	padding-block-start: 60px;
+	padding-block-start: 3.75rem;
 	font-weight: 400;
-	font-size: clamp(0.875rem, 0.4907rem + 0.4267vw, 1.01875rem);
+	font-size: clamp(0.875rem, 0.85rem + 0.125vw, 1rem);
 	inline-size: 100%;
 
 	.footer {
@@ -15,23 +15,23 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: flex-start;
-		row-gap: 37px;
+		row-gap: 2.8125rem;
 		margin: 0 auto;
 		inline-size: 75%;
 
 		&_logo-wrapper {
 			display: flex;
+			flex-wrap: wrap;
 			flex: 1 1 18%;
 			align-items: center;
 			gap: 1rem;
-      flex-wrap: wrap;
 		}
 
 		&_repair-services-wrapper {
 			display: flex;
 			flex-direction: column;
 			flex: 1 1 50%;
-			gap: 24px;
+			gap: 1.25rem;
 
 			&_title-item {
 				color: var(--color-text);
@@ -44,14 +44,13 @@
 				flex-direction: column;
 				flex-wrap: wrap;
 				align-items: flex-start;
-				gap: 12px;
-				block-size: 119px;
+				gap: 0.75rem;
+				block-size: 7.4375rem;
 				text-wrap: balance;
-        align-content: space-between;
 
 				&-item {
 					text-decoration: none;
-					max-inline-size: 160px;
+					inline-size: 25%;
 
 					&:hover {
 						color: var(--color-accent);
@@ -63,19 +62,89 @@
 
 		&_description {
 			display: flex;
+			flex-wrap: wrap;
 			flex: 1 1 50%;
 			justify-content: space-between;
 			align-items: center;
 
 			&-item {
 				opacity: 0.8;
-				font-weight: 400;
-				font-size: 14px;
-				line-height: 19.1px;
+				font-size: clamp(0.625rem, 0.575rem + 0.25vw, 0.875rem);
+				line-height: 1.19375rem;
 
 				&:nth-child(2) {
-					font-size: 10px;
+					font-size: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
 				}
+			}
+		}
+	}
+}
+
+@media (1275px < width <= 1440px) {
+	.footer_wrapper {
+		.footer {
+			inline-size: 80.556%;
+		}
+	}
+}
+
+@media (768px < width <= 1275px) {
+	.footer_wrapper {
+		.footer {
+			&_logo-wrapper {
+				align-self: center;
+
+				&_img {
+					inline-size: 20%;
+
+					&-text {
+						align-self: center;
+						inline-size: 60%;
+					}
+				}
+			}
+
+			&_repair-services-wrapper {
+				&_catalog {
+					justify-content: center;
+					block-size: 8.5rem;
+				}
+			}
+		}
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.footer_wrapper {
+		font-size: clamp(0.75rem, 0.6607rem + 0.4464vw, 0.875rem);
+
+		.footer {
+			flex-direction: column;
+			align-items: center;
+			inline-size: 88.889%;
+			min-inline-size: 18.75rem;
+
+			&_logo-wrapper {
+				flex-direction: column;
+				inline-size: 100%;
+			}
+
+			&_repair-services-wrapper {
+				inline-size: 100%;
+
+				&_catalog {
+					align-content: space-between;
+					block-size: 8.5rem;
+
+					&-item {
+						max-inline-size: 34%;
+						inline-size: fit-content;
+					}
+				}
+			}
+
+			&_description {
+				flex-direction: column;
 			}
 		}
 	}
