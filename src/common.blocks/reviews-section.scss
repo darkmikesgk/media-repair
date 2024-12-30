@@ -35,7 +35,9 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1.25rem;
-			max-inline-size: 65.6%;
+			overflow: hidden;
+			flex: 1 1 40%;
+			min-inline-size: 20.9375rem;
 
 			&-description {
 				display: flex;
@@ -43,8 +45,7 @@
 				gap: 0.5rem;
 				font-size: clamp(0.875rem, 0.5rem + 0.4167vw, 1rem);
 				line-height: 1.36375rem;
-				text-align: left;
-				inline-size: clamp(35.75rem, 11rem + 27.5vw, 44rem);
+				max-inline-size: 44rem;
 			}
 
 			.gratitude {
@@ -63,8 +64,10 @@
 
 		.reviews-widget {
 			position: relative;
-			flex: 1 1 31%;
+			flex: 1 1 6%;
 			overflow: hidden;
+			min-inline-size: 23.425rem;
+			min-block-size: 31.875rem;
 
 			&-item {
 				border: 1px solid #e6e6e6;
@@ -102,18 +105,13 @@
 
 		.reviews-container {
 			&_left-side {
-				flex: 1 1 66%;
-				gap: 0.875rem;
-				inline-size: clamp(40.3125rem, -19.0137rem + 74.3902vw, 47.9375rem);
-				max-inline-size: 100%;
+				gap: 13px;
+
 
 				&-description {
 					gap: 0;
+					max-inline-size: 35.8125rem;
 				}
-			}
-
-			.reviews-widget {
-				flex: 1 1 32%;
 			}
 		}
 	}
@@ -122,15 +120,9 @@
 @media (768px < width <= 1275px) {
 	.reviews-section {
 		.reviews-container {
-			flex-wrap: wrap;
+			gap: clamp(0.8125rem, 0.2484rem + 0.6263vw, 1rem);
 
 			&_left-side {
-				inline-size: clamp(18.02375rem, -6.2525rem + 50.5097vw, 39.20625rem);
-
-				&-description {
-					inline-size: 100%;
-				}
-
 				&-img {
 					block-size: 100%;
 				}
@@ -138,6 +130,10 @@
 				.gratitude {
 					text-align: end;
 				}
+			}
+
+			.reviews-widget {
+				min-inline-size: 25rem;
 			}
 		}
 	}
@@ -165,9 +161,7 @@
 
 		.reviews-container {
 			&_left-side {
-				flex: 1 1 50%;
-				min-inline-size: 52%;
-				max-inline-size: 100%;
+				min-inline-size: 100%;
 
 				&-description {
 					font-size: 0.875rem;
@@ -181,13 +175,12 @@
 				}
 			}
 
-			.gratitude {
-				text-align: end;
+			.reviews-widget {
+				min-inline-size: 100%;
 			}
 
-			.reviews-widget {
-				min-block-size: 33.83625rem;
-				min-inline-size: 45%;
+			.gratitude {
+				text-align: end;
 			}
 		}
 	}

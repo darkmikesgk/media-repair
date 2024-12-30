@@ -108,11 +108,70 @@
 			}
 		}
 
-		.find-us-container_map-wrapper {
+		&_map-wrapper {
 			position: relative;
 			flex: 1 1 46.7%;
 			border-radius: 8px;
 			overflow: hidden;
+			min-inline-size: 25rem;
+			min-block-size: 31.875rem;
+		}
+	}
+}
+
+@media (1275px < width <= 1440px) {
+	.find-us-section {
+		gap: 1.25rem;
+		margin-block-end: 8.334%;
+		font-size: clamp(0.9375rem, 0.4512rem + 0.6098vw, 1rem);
+		inline-size: 80.556%;
+
+		.find-us-container {
+			&_left-side {
+				flex: 1 1 20%;
+			}
+
+			&_map-wrapper {
+				flex: 1 1 40%;
+			}
+		}
+	}
+}
+
+@media (768px < width <= 1275px) {
+	.find-us-section {
+		gap: 1.25rem;
+
+		.find-us-container {
+			&_left-side {
+				flex: 1 1 20%;
+				min-inline-size: 20.9375rem;
+			}
+
+			&_map-wrapper {
+				flex: 1 1 40%;
+			}
+		}
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.find-us-section {
+		gap: 1.25rem;
+		margin-block-end: 22.223%;
+		font-size: 0.875rem;
+		line-height: 1.19375rem;
+		inline-size: 88.889%;
+
+		.find-us-container {
+			&_left-side {
+				flex: 1 1 40%;
+			}
+
+			&_map-wrapper {
+				flex: 1 1 40%;
+				min-inline-size: 100%;
+			}
 		}
 	}
 }
