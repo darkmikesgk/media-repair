@@ -1,14 +1,14 @@
 export function initDropdown(dropdownToggle, dropdownMenu, dropdownIcon) {
 	function toggleDropdown() {
 		dropdownMenu.classList.toggle('show');
-		dropdownMenu.classList.toggle('rotate');
-		dropdownMenu.classList.toggle('active');
+		dropdownIcon.classList.toggle('rotate');
+		dropdownToggle.classList.toggle('active');
 	}
 
 	function closeDropdown() {
 		dropdownMenu.classList.remove('show');
-		dropdownMenu.classList.remove('rotate');
-		dropdownMenu.classList.remove('active');
+		dropdownIcon.classList.remove('rotate');
+		dropdownToggle.classList.remove('active');
 	}
 
 	document.addEventListener('click', (evt) => {

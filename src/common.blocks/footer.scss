@@ -25,6 +25,13 @@
 			flex: 1 1 18%;
 			align-items: center;
 			gap: 1rem;
+			text-decoration: none;
+			transition: filter 0.5s ease-in-out;
+
+			&:hover {
+				cursor: pointer;
+				filter: hue-rotate(45deg) brightness(1);
+			}
 		}
 
 		&_repair-services-wrapper {

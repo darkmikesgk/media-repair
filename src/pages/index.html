@@ -11,7 +11,7 @@
 		<link rel="apple-touch-icon" href="../images/favicon.png" />
 	</head>
 	<body class="page">
-		<header class="header elastic">
+		<header class="header">
 			<div class="links_container">
 				<a class="links hidden-link" href="#">Главная</a>
 				<div class="dropdown">
@@ -23,6 +23,7 @@
 								viewBox="0 0 16 16"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
+								title="Стрелочка вниз для выпадающего меню"
 							>
 								<path
 									d="M2 5L8 10L14 5"
@@ -51,22 +52,69 @@
 				<a class="links hidden-link" href="#">Отзывы</a>
 				<a class="links hidden-link" href="#">Где нас найти в Орле</a>
 				<a class="header_logo-container" href="#">
-					<img class="header_logo" src="../images/Logo.svg" alt="Логотип" />
+					<img
+						class="header_logo"
+						src="../images/Logo.svg"
+						alt="Вернуться на главную"
+					/>
 				</a>
 				<div class="order-call_container elastic">
 					<a href="tel:+79536282143" class="hidden-link">+7 (953) 628-21-43</a>
 					<a href="tel:+74862508232" class="hidden-link">+7 (4862) 50-82-32</a>
-					<button id="openModal" class="order-call_button">
+					<button id="callButton" class="order-call_button callButton">
 						Заказать звонок
 					</button>
 					<div class="link_buttons hidden-link">
-						<a href="#"><img src="../images/Whatsapp.svg" alt="Whatsapp" /></a>
+						<a class="link_buttons-image" href="#"
+							><svg
+								class="link_buttons-image-link"
+								width="30"
+								height="30"
+								viewBox="0 0 30 30"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect width="30" height="30" rx="6" fill="#2D2E2E" />
+								<path
+									d="M7.5 21.9446L8.57622 17.943C7.70827 16.3842 7.43252 14.5651 7.79956 12.8197C8.16659 11.0743 9.1518 9.51953 10.5744 8.44076C11.997 7.36199 13.7615 6.83156 15.5442 6.9468C17.3269 7.06205 19.0082 7.81524 20.2796 9.06816C21.5509 10.3211 22.327 11.9897 22.4655 13.7678C22.604 15.5459 22.0956 17.3143 21.0335 18.7483C19.9715 20.1824 18.427 21.186 16.6836 21.575C14.9402 21.964 13.1147 21.7122 11.5422 20.866L7.5 21.9446ZM11.7371 19.3685L11.9871 19.5166C13.1261 20.1906 14.4564 20.4695 15.7708 20.3099C17.0852 20.1502 18.3097 19.561 19.2536 18.634C20.1975 17.707 20.8078 16.4944 20.9893 15.185C21.1708 13.8756 20.9133 12.543 20.257 11.395C19.6007 10.2469 18.5824 9.34786 17.3608 8.8379C16.1393 8.32793 14.7831 8.23571 13.5035 8.5756C12.224 8.91549 11.093 9.6684 10.2868 10.717C9.48065 11.7656 9.04456 13.051 9.04653 14.3729C9.04546 15.4689 9.34908 16.5437 9.9236 17.4777L10.0804 17.7357L9.47871 19.9692L11.7371 19.3685Z"
+									fill="white"
+								/>
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M17.8045 15.4004C17.658 15.2824 17.4864 15.1993 17.3028 15.1575C17.1193 15.1157 16.9286 15.1163 16.7453 15.1593C16.4699 15.2735 16.2919 15.7049 16.114 15.9207C16.0764 15.9724 16.0213 16.0087 15.9589 16.0227C15.8965 16.0367 15.8311 16.0275 15.775 15.9968C14.7667 15.6025 13.9215 14.8795 13.3768 13.9452C13.3303 13.8869 13.3084 13.8129 13.3155 13.7387C13.3226 13.6646 13.3582 13.5961 13.4149 13.5476C13.6134 13.3514 13.7591 13.1085 13.8386 12.8412C13.8563 12.5464 13.7886 12.2527 13.6437 11.9952C13.5317 11.6342 13.3185 11.3127 13.0294 11.0688C12.8802 11.0018 12.7149 10.9794 12.5532 11.0041C12.3916 11.0289 12.2406 11.0999 12.1184 11.2084C11.9063 11.3911 11.738 11.6189 11.6258 11.8751C11.5136 12.1314 11.4604 12.4094 11.4701 12.6889C11.4708 12.8458 11.4907 13.0021 11.5294 13.1542C11.6278 13.5196 11.7791 13.8688 11.9786 14.1906C12.1225 14.4371 12.2795 14.6757 12.4489 14.9055C12.9995 15.6601 13.6917 16.3008 14.4869 16.7921C14.886 17.0417 15.3125 17.2447 15.758 17.397C16.2209 17.6064 16.7319 17.6868 17.2368 17.6296C17.5245 17.5861 17.797 17.4727 18.0305 17.2994C18.264 17.1261 18.4512 16.8981 18.5757 16.6355C18.6488 16.4769 18.671 16.2996 18.6392 16.1279C18.563 15.7768 18.0927 15.5696 17.8045 15.4004Z"
+									fill="white"
+								/></svg></a>
 						<a href="#" href="#"
-							><img src="../images/Telegram.svg" alt="Telegram"
-						/></a>
+							><svg
+								class="link_buttons-image-link"
+								width="30"
+								height="30"
+								viewBox="0 0 30 30"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect width="30" height="30" rx="6" fill="#2D2E2E" />
+								<path
+									d="M8.34605 14.4686C8.34605 14.4686 14.4495 11.898 16.5662 10.9928C17.3777 10.6307 20.1295 9.47209 20.1295 9.47209C20.1295 9.47209 21.3996 8.96522 21.2937 10.1962C21.2584 10.7031 20.9762 12.4772 20.694 14.3962C20.2706 17.1117 19.812 20.0807 19.812 20.0807C19.812 20.0807 19.7414 20.9134 19.1417 21.0583C18.5419 21.2031 17.5541 20.5514 17.3777 20.4065C17.2365 20.2979 14.7317 18.6686 13.8144 17.8721C13.5674 17.6548 13.2852 17.2204 13.8497 16.7135C15.1198 15.5186 16.6368 14.0342 17.554 13.0928C17.9774 12.6583 18.4008 11.6445 16.6368 12.8755C14.1319 14.6497 11.6624 16.3152 11.6624 16.3152C11.6624 16.3152 11.0979 16.6772 10.0395 16.3514C8.98105 16.0255 7.74626 15.591 7.74626 15.591C7.74626 15.591 6.89959 15.0479 8.34605 14.4686Z"
+									fill="white"
+								/></svg></a>
 						<a href="#"
-							><img src="../images/Vkontakte.svg" alt="Vkontakte"
-						/></a>
+							><svg
+								class="link_buttons-image-link"
+								width="30"
+								height="30"
+								viewBox="0 0 30 30"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<rect width="30" height="30" rx="6" fill="#2D2E2E" />
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M23.7535 10.6805C23.8803 10.2839 23.7535 9.99246 23.1501 9.99246H21.1549C20.6476 9.99246 20.4137 10.2442 20.2868 10.5218C20.2868 10.5218 19.2722 12.8418 17.8348 14.3488C17.3698 14.785 17.1584 14.9238 16.9047 14.9238C16.7779 14.9238 16.5943 14.785 16.5943 14.3885V10.6805C16.5943 10.2046 16.4471 9.99246 16.0243 9.99246H12.8889C12.5719 9.99246 12.3812 10.2133 12.3812 10.4227C12.3812 10.8738 13.0999 10.9779 13.1739 12.2469V15.0032C13.1739 15.6074 13.0576 15.717 12.8039 15.717C12.1275 15.717 10.4822 13.3866 9.50638 10.7201C9.31514 10.2018 9.12333 9.99246 8.6134 9.99246H6.61817C6.0481 9.99246 5.93408 10.2442 5.93408 10.5218C5.93408 11.0175 6.61051 13.4763 9.08365 16.7283C10.7324 18.9491 13.0554 20.1529 15.1692 20.1529C16.4374 20.1529 16.5943 19.8855 16.5943 19.425V17.7465C16.5943 17.2117 16.7145 17.105 17.1161 17.105C17.412 17.105 17.9193 17.2438 19.1031 18.3146C20.4559 19.5836 20.679 20.1529 21.4399 20.1529H23.4351C24.0052 20.1529 24.2902 19.8855 24.1258 19.3579C23.9459 18.832 23.3 18.069 22.4429 17.1645C21.9779 16.6489 21.2803 16.0938 21.0689 15.8161C20.773 15.4592 20.8575 15.3005 21.0689 14.9833C21.0689 14.9833 23.4998 11.771 23.7535 10.6805Z"
+									fill="white"
+								/></svg></a>
 					</div>
 				</div>
 			</div>
@@ -81,7 +129,6 @@
 					id="phoneImg"
 					src="../images/PhoneImg.webp"
 					alt="Изображение телефона"
-					loading="lazy"
 					data-state="phone"
 				/>
 				<span class="phone_img_description">
@@ -99,7 +146,7 @@
 				/>
 			</div>
 			<div class="order_button_area">
-				<button class="order_button" onClick="handleShow">
+				<button id="callButton" class="order_button callButton">
 					Заказать звонок
 					<span class="order_button_arrow">
 						<img
@@ -130,15 +177,15 @@
 		<section class="repair-services-section elastic">
 			<div class="repair-services-title">
 				<h2 class="title_item">Услуги ремонта</h2>
-				<p class="sub_title_item">И не только</p>
+				<h3 class="sub_title_item">И не только</h3>
 			</div>
 			<div class="cards-container" id="cards-container"></div>
 		</section>
 
 		<section class="about-us-section">
 			<div class="about-us-title-container">
-				<h3 class="about-us-title">Тут все про нас</h3>
-				<p class="about-us-subtitle">На самом деле - это СЕО-текст</p>
+				<h2 class="about-us-title">Тут все про нас</h2>
+				<h3 class="about-us-subtitle">На самом деле - это СЕО-текст</h3>
 			</div>
 			<div class="about-us-content">
 				<img
@@ -178,49 +225,47 @@
 
 		<section class="why-we-section">
 			<div class="why-we-title-container">
-				<h3 class="why-we-title">Почему мы супер</h3>
-				<p class="why-we-subtitle">Потому что</p>
+				<h2 class="why-we-title">Почему мы супер</h2>
+				<h3 class="why-we-subtitle">Потому что</h3>
 			</div>
 			<div class="why-we-card-container">
 				<article class="why-we-card-container-item">
-					<h4 class="why-we-card-container-item-title">
+					<p class="why-we-card-container-item-title">
 						До проведения услуг мы бесплатно проведем диагностику любой вашей
 						техники
-					</h4>
-					<h5 class="why-we-card-container-item-description">
+					</p>
+					<p class="why-we-card-container-item-description">
 						Бесплатная диагностика
-					</h5>
+					</p>
 				</article>
 				<article class="why-we-card-container-item">
-					<h4 class="why-we-card-container-item-title">
+					<p class="why-we-card-container-item-title">
 						После оказания услуги мы даём гарантию на всю проделанную работу
-					</h4>
-					<h5 class="why-we-card-container-item-description">
-						Гарантия — 1 год
-					</h5>
+					</p>
+					<p class="why-we-card-container-item-description">Гарантия — 1 год</p>
 				</article>
 				<article class="why-we-card-container-item">
-					<h4 class="why-we-card-container-item-title">
+					<p class="why-we-card-container-item-title">
 						Несложный ремонт мы сможем осуществить в день обращения, уточняйте
 						такую возможность по номеру телефона
-					</h4>
-					<h5 class="why-we-card-container-item-description">
+					</p>
+					<p class="why-we-card-container-item-description">
 						Ремонт в день заказа
-					</h5>
+					</p>
 				</article>
 				<article class="why-we-card-container-item">
-					<h4 class="why-we-card-container-item-title">
+					<p class="why-we-card-container-item-title">
 						Мы стараемся не поднимать цены на наши услуги даже в самые сложные
 						времена
-					</h4>
-					<h5 class="why-we-card-container-item-description">Лояльные цены</h5>
+					</p>
+					<p class="why-we-card-container-item-description">Лояльные цены</p>
 				</article>
 				<article class="why-we-card-container-item">
 					<div>
-						<h4 class="why-we-card-container-item-title">
+						<p class="why-we-card-container-item-title">
 							Наша основная цель — максимально упростить процесс ремонта для
 							вас, начиная с доставки.
-						</h4>
+						</p>
 						<p class="why-we-card-container-item-title">
 							Мы заберем технику любых габаритов для ремонта и привезем вам её
 							уже в отличном состоянии.
@@ -229,9 +274,9 @@
 							Гарантируем аккуратную доставку и ваше сэкономленное время.
 						</p>
 					</div>
-					<h5 class="why-we-card-container-item-description">
+					<p class="why-we-card-container-item-description">
 						Мы можем забрать и привезти технику, чтобы вы не тратили своё время
-					</h5>
+					</p>
 					<span class="why-we-card-container-item-note"
 						>*Мы не занимаемся ремонтом на дому</span
 					>
@@ -247,8 +292,8 @@
 
 		<section class="reviews-section">
 			<div class="reviews-title-container">
-				<h3 class="reviews-title">Нас благодарят</h3>
-				<p class="reviews-subtitle">Спасибо :)</p>
+				<h2 class="reviews-title">Нас благодарят</h2>
+				<h3 class="reviews-subtitle">Спасибо :)</h3>
 			</div>
 			<div class="reviews-container">
 				<div class="reviews-container_left-side">
@@ -280,10 +325,12 @@
 						class="reviews-container_left-side-img"
 						src="../images/Reviews_Many_logo_bg.webp"
 						alt="Декоративная картинка с логотипами"
+						loading="lazy"
 					/>
 				</div>
-				<div class="reviews-widget">
+				<!-- <div class="reviews-widget">
 					<iframe
+						title="Виджет отзывов"
 						class="reviews-widget-item"
 						src="https://yandex.ru/maps-reviews-widget/1727440253?comments"
 					>
@@ -294,21 +341,21 @@
 						target="_blank"
 						>Медиа-Ремонт на карте Орла — Яндекс Карты</a
 					>
-				</div>
+				</div> -->
 			</div>
 		</section>
 
 		<section class="find-us-section">
 			<div class="find-us-title-container">
-				<h3 class="find-us-title">где нас найти</h3>
-				<p class="find-us-subtitle">По адресу:</p>
+				<h2 class="find-us-title">где нас найти</h2>
+				<h3 class="find-us-subtitle">По адресу:</h3>
 			</div>
 			<div class="find-us-container">
 				<div class="find-us-container_left-side">
 					<p class="find-us-container_left-side_street">ул. Ленина</p>
 
 					<div class="find-us-container_left-side-item">
-						<h6 class="find-us-container_left-side-item_title">Телефоны</h6>
+						<p class="find-us-container_left-side-item_title">Телефоны</p>
 						<a
 							href="tel:+79536282143"
 							class="find-us-container_left-side-item_description_link"
@@ -322,7 +369,7 @@
 					</div>
 
 					<div class="find-us-container_left-side-item">
-						<h6 class="find-us-container_left-side-item_title">Адрес</h6>
+						<p class="find-us-container_left-side-item_title">Адрес</p>
 						<a
 							href="https://yandex.ru/maps/-/CHQYeA49"
 							class="find-us-container_left-side-item_description_link"
@@ -331,18 +378,16 @@
 					</div>
 
 					<div class="find-us-container_left-side-item">
-						<h6 class="find-us-container_left-side-item_title">
-							График работы
-						</h6>
+						<p class="find-us-container_left-side-item_title">График работы</p>
 						<p class="find-us-container_left-side-item_description">
 							c 10.00 — 19.00 (пн-пт)
 						</p>
 					</div>
 
 					<div class="find-us-container_left-side-item">
-						<h6 class="find-us-container_left-side-item_title">
+						<p class="find-us-container_left-side-item_title">
 							Электронный адрес
-						</h6>
+						</p>
 						<a
 							href="mailto:orel.media-remont@ro.ru"
 							class="find-us-container_left-side-item_description_link"
@@ -350,8 +395,8 @@
 						>
 					</div>
 					<button
-						class="find-us-container_left-side_button_area_button"
-						onClick="handleShow"
+						id="callButton"
+						class="find-us-container_left-side_button_area_button callButton"
 					>
 						Заказать звонок
 						<span class="find-us-container_left-side_button_area_button_arrow">
@@ -365,7 +410,7 @@
 					</button>
 				</div>
 
-				<div class="find-us-container_map-wrapper">
+				<!-- <div class="find-us-container_map-wrapper">
 					<a
 						href="https://yandex.ru/maps/org/media_remont/1727440253/?utm_medium=mapframe&utm_source=maps"
 						style="color: #eee; font-size: 12px; position: absolute; top: 0px"
@@ -388,19 +433,20 @@
 						frameborder="1"
 						allowfullscreen="true"
 						style="position: relative"
+						title="Виджет карты"
 					>
 					</iframe>
-				</div>
+				</div> -->
 			</div>
 		</section>
 
 		<footer class="footer_wrapper">
 			<div class="footer">
-				<div class="footer_logo-wrapper">
+				<a href="#" class="footer_logo-wrapper">
 					<img
 						class="footer_logo-wrapper_img"
 						src="../images/Footer_Logo.svg"
-						alt="Логотип Медиа-Ремонт"
+						alt="Логотип"
 						loading="lazy"
 					/>
 					<img
@@ -409,7 +455,7 @@
 						alt="Медиа-Ремонт"
 						loading="lazy"
 					/>
-				</div>
+				</a>
 				<div class="footer_repair-services-wrapper">
 					<h2 class="footer_repair-services-wrapper_title-item">
 						Услуги ремонта
@@ -462,19 +508,66 @@
 			</div>
 		</footer>
 
-		<!-- <ModalUI show="showModal} handleClose="handleClose} /> -->
-
 		<template id="card-template">
 			<a href="" class="card-link">
 				<div class="card-container">
 					<div class="card">
 						<img src="" alt="" class="card-image" loading="lazy" />
-						<!-- <h2 class="card-title"></h2> -->
 					</div>
-					<h2 class="card-title"></h2>
+					<p class="card-title"></p>
 				</div>
 			</a>
 		</template>
+
+		<div id="modal" class="modal">
+			<div class="modal-content">
+				<button class="modal__close">
+					<img
+						src="../images/Close_Button.png"
+						class="modal__close-button"
+						alt="Кнопка закрытия модального окна"
+						loading="lazy"
+					/>
+				</button>
+				<div class="modal-content-description">
+					<p>Наш менеджер перезвонит вам</p>
+					<p>в ближайшее время для консультации :)</p>
+				</div>
+				<form id="modal__form" class="modal__form">
+					<div class="modal__form-label-container">
+						<label class="modal__form-label-container-label" for="phone">Номер телефона</label>
+						<input
+							class="modal__form-label-container-input"
+							type="tel"
+							id="phone"
+							name="phone"
+							placeholder="+7"
+							required
+						/>
+						<label class="modal__form-label-container-label" for="name">Имя</label>
+						<input
+							class="modal__form-label-container-input"
+							type="text"
+							id="name"
+							name="name"
+							required
+						/>
+					</div>
+					<button id="submit__button" type="submit" class="modal__submit">
+						Заказать звонок
+						<span class="modal__submit_arrow">
+							<img
+								class="arrow_in_button"
+								src="../images/arrowUp.svg"
+								alt="Стрелочка вверх и вправо"
+								loading="lazy"
+							/>
+						</span>
+					</button>
+				</form>
+				<div id="modal-message" class="modal-message">Спасибо за заявку!</div>
+			</div>
+		</div>
 	</body>
 </html>
 

@@ -34,9 +34,10 @@
 		&_left-side {
 			display: flex;
 			flex-direction: column;
+			flex: 1 1 40%;
+			justify-content: space-between;
 			gap: 1.25rem;
 			overflow: hidden;
-			flex: 1 1 40%;
 			min-inline-size: 20.9375rem;
 
 			&-description {
@@ -58,7 +59,12 @@
 			&-img {
 				border-radius: 12.2px;
 				object-fit: cover;
-				block-size: clamp(13.375rem, 0.8125rem + 13.9583vw, 17.5625rem);
+				// block-size: clamp(13.375rem, 0.8125rem + 13.9583vw, 17.5625rem);
+				max-block-size: 280px;
+
+				&:hover {
+					transform: rotateX(180deg);
+				}
 			}
 		}
 
@@ -107,6 +113,9 @@
 			&_left-side {
 				gap: 13px;
 
+				&-img {
+					max-block-size: 215px;
+				}
 
 				&-description {
 					gap: 0;
@@ -123,9 +132,10 @@
 			gap: clamp(0.8125rem, 0.2484rem + 0.6263vw, 1rem);
 
 			&_left-side {
-				&-img {
-					block-size: 100%;
-				}
+				// &-img {
+				// 	block-size: 100%;
+				// 	// max-block-size: 221px;
+				// }
 
 				.gratitude {
 					text-align: end;
@@ -170,10 +180,11 @@
 					inline-size: 100%;
 				}
 
-				&-img {
-					object-fit: contain;
-					block-size: 100%;
-				}
+				// &-img {
+				// 	object-fit: contain;
+				// 	block-size: 100%;
+				// 	// max-block-size: 202px;
+				// }
 			}
 
 			.reviews-widget {

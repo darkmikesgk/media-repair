@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 const corsOptions = {
-  origin: 'http://127.0.0.1:5500', // Замените на ваш доверенный домен
+  origin: 'http://localhost:8081', // Замените на ваш доверенный домен
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   optionsSuccessStatus: 204,
   allowedHeaders: 'Content-Type,Authorization'

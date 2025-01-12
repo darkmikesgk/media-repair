@@ -13,7 +13,7 @@ export async function createCards() {
 
     link.href = card.url;
     img.src = card.imageUrl;
-    img.alt = card.title;
+    img.alt = `Карточка`;
     title.textContent = card.title;
 
     container.appendChild(cardElement);
