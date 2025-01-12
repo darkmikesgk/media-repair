@@ -1,78 +1,93 @@
-export function initSlider(phoneImg) {
-  const tabletImgSrc = './images/TableImg.webp';
-  const laptopImgSrc = './images/LaptopImg.webp';
-  const originalImgSrc = './images/PhoneImg.webp';
+export function initSlider() {
+	const sliderData = [
+		{
+			id: 'phoneImg',
+			src: '../images/PhoneImg.webp',
+			state: 'phone',
+			alt: 'Изображение телефона',
+		},
+		{
+			id: 'tabletImg',
+			src: '../images/TableImg.webp',
+			state: 'tablet',
+			alt: 'Изображение ноутбука и телефона на столе',
+		},
+		{
+			id: 'laptopImg',
+			src: '../images/LaptopImg.webp',
+			state: 'laptop',
+			alt: 'Изображение ноутбука',
+		},
+	];
 
-  function handleClickOrSwipe(direction) {
-    if (window.innerWidth >= 360 && window.innerWidth < 1276) {
-      const currentState = phoneImg.getAttribute('data-state');
-      if (direction === 'next') {
-        if (currentState === 'phone') {
-          phoneImg.src = tabletImgSrc;
-          phoneImg.setAttribute('data-state', 'tablet');
-        } else if (currentState === 'tablet') {
-          phoneImg.src = laptopImgSrc;
-          phoneImg.setAttribute('data-state', 'laptop');
-        } else {
-          phoneImg.src = originalImgSrc;
-          phoneImg.setAttribute('data-state', 'phone');
-        }
-      } else if (direction === 'prev') {
-        if (currentState === 'phone') {
-          phoneImg.src = laptopImgSrc;
-          phoneImg.setAttribute('data-state', 'laptop');
-        } else if (currentState === 'tablet') {
-          phoneImg.src = originalImgSrc;
-          phoneImg.setAttribute('data-state', 'phone');
-        } else {
-          phoneImg.src = tabletImgSrc;
-          phoneImg.setAttribute('data-state', 'tablet');
-        }
-      }
-    }
-  }
+	let currentIndex = 0;
+	const phoneImg = document.getElementById('phoneImg');
 
-  // Обработчик клика
-  phoneImg.addEventListener('click', function () {
-    handleClickOrSwipe('next');
-  });
+	function updateImage(index) {
+		const { src, state, alt } = sliderData[index];
+		phoneImg.src = src;
+		phoneImg.setAttribute('data-state', state);
+		phoneImg.setAttribute('alt', alt);
+	}
 
-  // Обработчик свайпа
-  let startX, startY;
+	function handleClick(direction) {
+		if (window.innerWidth >= 360 && window.innerWidth < 1276) {
+			if (direction === 'next') {
+				currentIndex = (currentIndex + 1) % sliderData.length;
+			} else if (direction === 'prev') {
+				currentIndex =
+					(currentIndex - 1 + sliderData.length) % sliderData.length;
+			}
+			updateImage(currentIndex);
+		}
+	}
 
-  phoneImg.addEventListener('touchstart', function (e) {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-  });
+	let startX = 0;
+	let startY = 0;
+	let isSwiping = false;
 
-  phoneImg.addEventListener('touchmove', function (e) {
-    if (!startX || !startY) return;
+	phoneImg.addEventListener('touchstart', (event) => {
+		const touch = event.touches[0];
+		startX = touch.clientX;
+		startY = touch.clientY;
+		isSwiping = false;
+	});
 
-    const endX = e.touches[0].clientX;
-    const endY = e.touches[0].clientY;
+	phoneImg.addEventListener('touchmove', (event) => {
+		const touch = event.touches[0];
+		const diffX = touch.clientX - startX;
+		const diffY = touch.clientY - startY;
 
-    const deltaX = endX - startX;
-    const deltaY = endY - startY;
+		if (Math.abs(diffX) > Math.abs(diffY)) {
+			event.preventDefault();
+			isSwiping = true;
+		}
+	});
 
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-      if (deltaX > 0) {
-        handleClickOrSwipe('prev');
-      } else {
-        handleClickOrSwipe('next');
-      }
-    }
-  });
+	phoneImg.addEventListener('touchend', (event) => {
+		const touch = event.changedTouches[0];
+		const diffX = touch.clientX - startX;
+		const diffY = touch.clientY - startY;
 
-  phoneImg.addEventListener('touchend', function () {
-    startX = null;
-    startY = null;
-  });
+		if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+			if (diffX > 0) {
+				handleClick('prev');
+			} else {
+				handleClick('next');
+			}
+		}
+	});
 
-  // Сброс состояния изображений при изменении разрешения экрана
-  window.addEventListener('resize', function () {
-    if (window.innerWidth >= 1276) {
-      phoneImg.src = originalImgSrc;
-      phoneImg.setAttribute('data-state', 'phone');
-    }
-  });
+	phoneImg.addEventListener('click', () => {
+		if (!isSwiping) {
+			handleClick('next');
+		}
+	});
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth >= 1276) {
+			currentIndex = 0;
+			updateImage(currentIndex);
+		}
+	});
 }
