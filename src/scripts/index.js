@@ -2,8 +2,7 @@ import '../styles/style.scss';
 import { createCards } from './card.js';
 import { initSlider } from './slider.js';
 import { initDropdown } from './dropdown.js';
-import { openModal } from './modal.js';
-// import { handleSubmitForm } from './submit.js';
+import { openModal, toggleFormListener } from './modal.js';
 import { validateForm } from './validateForm.js';
 
 const dropdownToggle = document.querySelector('.dropdown-toggle');
@@ -17,7 +16,7 @@ const phoneInput = document.getElementById('phone');
 const submitButton = document.getElementById('submit__button');
 const form = document.getElementById('modal__form');
 
-validateForm(phoneInput, nameInput, submitButton, form);
+validateForm(phoneInput, nameInput, submitButton);
 
 function renderLoading(isLoading, buttonElement) {
 	if (isLoading) {
@@ -60,24 +59,24 @@ function handleSubmitForm(evt) {
 		.then((data) => {
 			if (data.success) {
 				form.style.display = 'none';
-				console.log(form);
 				modalMessage.style.display = 'block';
 				modalMessage.classList.add('modal-message');
-				modalMessage.textContent = 'Спасибо за заявку!'; // Успешное сообщение
+				modalMessage.textContent = 'Спасибо за заявку!';
 			} else {
 				form.style.display = 'none';
 				modalMessage.style.display = 'block';
 				modalMessage.classList.add('modal-message');
-				modalMessage.textContent = 'Ошибка отправки формы. Попробуйте позже.'; // Ошибка отправки
+				modalMessage.textContent =
+					'Ошибка отправки формы. Перезагрузите страницу и попробуйте снова.'; // Ошибка отправки
 			}
 		})
 		.catch((error) => {
 			console.error('Error:', error);
-			console.log(form);
 			form.style.display = 'none';
 			modalMessage.style.display = 'block';
 			modalMessage.classList.add('modal-message');
-			modalMessage.textContent = 'Ошибка отправки формы. Попробуйте позже.'; // Ошибка в процессе отправки
+			modalMessage.textContent =
+				'Ошибка отправки формы. Перезагрузите страницу и попробуйте снова.'; // Ошибка в процессе отправки
 		})
 		.finally(() => {
 			renderLoading(false, submitButton);
@@ -88,6 +87,10 @@ initDropdown(dropdownToggle, dropdownMenu, dropdownIcon);
 initSlider(phoneImg);
 createCards();
 openButtons.forEach((button) => {
-	button.addEventListener('click', () => openModal(modal));
+	button.addEventListener('click', () => {
+		modal.onCloseCallback = () =>
+			toggleFormListener(modal, form, handleSubmitForm);
+		openModal(modal);
+		toggleFormListener(modal, form, handleSubmitForm);
+	});
 });
-form.addEventListener('submit', handleSubmitForm);

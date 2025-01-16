@@ -1,4 +1,4 @@
-export function validateForm(phoneInput, nameInput, submitButton, form) {
+export function validateForm(phoneInput, nameInput, submitButton) {
 	function isPhoneValid(phone) {
 		const phoneRegex = /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/;
 		return phoneRegex.test(phone);
@@ -72,7 +72,7 @@ export function validateForm(phoneInput, nameInput, submitButton, form) {
 		} else {
 			showError(phoneInput, 'Поле должно содержать корректный номер телефона.');
 		}
-
+		console.log('Текущее значение: ' + input.value);
 		toggleSubmitButton();
 	});
 
@@ -99,6 +99,118 @@ export function validateForm(phoneInput, nameInput, submitButton, form) {
 			input.value = '+7 ';
 			input.setSelectionRange(3, 3); // Устанавливаем курсор после "+7 "
 		}
+	});
+
+	phoneInput.addEventListener('keydown', (event) => {
+		const input = event.target;
+		const cursorPosition = input.selectionStart;
+
+		if (event.key === 'Backspace') {
+			event.preventDefault();
+
+			if (cursorPosition > 4) {
+				// Предотвращаем удаление +7 и скобок
+				let value = input.value;
+				let newValue = '';
+
+				// Проверяем ситуацию, когда курсор находится между "(" и первой цифрой
+				if (value[cursorPosition - 1] === '(' && cursorPosition === 5) {
+					return; // Ничего не делаем
+				}
+
+				if (
+					value[cursorPosition - 1] === '-' &&
+					value[cursorPosition - 2] !== ' '
+				) {
+					newValue =
+						value.slice(0, cursorPosition - 2) + value.slice(cursorPosition);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition - 2, cursorPosition - 2);
+				} else if (
+					value[cursorPosition - 1] === ' ' &&
+					value[cursorPosition - 2] === ')'
+				) {
+					newValue =
+						value.slice(0, cursorPosition - 3) + value.slice(cursorPosition);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition - 3, cursorPosition - 3);
+				} else if (
+					value[cursorPosition - 1] === '(' &&
+					value[cursorPosition - 2] === ' '
+				) {
+					return; // Ничего не делаем, если курсор после " ("
+				} else if (
+					value[cursorPosition - 1] === ')' &&
+					value[cursorPosition - 2] === '('
+				) {
+					newValue =
+						value.slice(0, cursorPosition - 2) + value.slice(cursorPosition);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition - 2, cursorPosition - 2);
+				} else if (value[cursorPosition - 1] === ')') {
+					newValue =
+						value.slice(0, cursorPosition - 2) + value.slice(cursorPosition);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition - 2, cursorPosition - 2);
+				} else {
+					newValue =
+						value.slice(0, cursorPosition - 1) + value.slice(cursorPosition);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition - 1, cursorPosition - 1);
+				}
+			}
+
+			console.log('После Backspace: ' + input.value);
+		} else if (event.key === 'Delete') {
+			event.preventDefault();
+
+			if (cursorPosition < input.value.length) {
+				// Предотвращаем удаление за пределами строки
+				let value = input.value;
+				let newValue = '';
+
+				if (
+					cursorPosition === 0 ||
+					cursorPosition === 1 ||
+					cursorPosition === 2
+				) {
+					return; // Предотвращаем удаление "+" или "7 "
+				}
+
+				if (
+					value[cursorPosition] === '-' &&
+					value[cursorPosition + 1] !== ' '
+				) {
+					newValue =
+						value.slice(0, cursorPosition) + value.slice(cursorPosition + 2);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition, cursorPosition);
+				} else if (value[cursorPosition] === '(') {
+					newValue =
+						value.slice(0, cursorPosition) + value.slice(cursorPosition + 2);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition, cursorPosition);
+				} else if (value[cursorPosition] === ')') {
+					newValue =
+						value.slice(0, cursorPosition) + value.slice(cursorPosition + 3);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition, cursorPosition);
+				} else {
+					newValue =
+						value.slice(0, cursorPosition) + value.slice(cursorPosition + 1);
+					input.value = newValue;
+					input.setSelectionRange(cursorPosition, cursorPosition);
+				}
+			}
+
+			console.log('После Delete: ' + input.value);
+		}
+
+		if (input.value === '+7 ') {
+			input.setSelectionRange(3, 3);
+		}
+
+		toggleSubmitButton();
 	});
 
 	// Функция для форматирования номера телефона
