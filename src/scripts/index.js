@@ -2,21 +2,92 @@ import '../styles/style.scss';
 import { createCards } from './card.js';
 import { initSlider } from './slider.js';
 import { initDropdown } from './dropdown.js';
-import { openModal, closeModal } from './modal.js';
-import { handleSubmitForm } from './submit.js';
+import { openModal } from './modal.js';
+// import { handleSubmitForm } from './submit.js';
+import { validateForm } from './validateForm.js';
 
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
 const dropdownIcon = document.querySelector('.dropdown-icon');
 const phoneImg = document.getElementById('phoneImg');
-const modal = document.getElementById('modal'); // Получаем модальное окно
-const openButtons = document.querySelectorAll('.callButton'); // Кнопка для открытия модального окна
+const modal = document.getElementById('modal');
+const openButtons = document.querySelectorAll('.callButton');
+const nameInput = document.getElementById('name');
+const phoneInput = document.getElementById('phone');
+const submitButton = document.getElementById('submit__button');
 const form = document.getElementById('modal__form');
+
+validateForm(phoneInput, nameInput, submitButton, form);
+
+function renderLoading(isLoading, buttonElement) {
+	if (isLoading) {
+		// buttonElement.textContent = 'Отправка...';
+		buttonElement.disabled = true;
+	} else {
+		// buttonElement.textContent = 'Заказать звонок';
+		buttonElement.disabled = false;
+	}
+}
+
+// Функция для обработки отправки формы
+function handleSubmitForm(evt) {
+	evt.preventDefault();
+
+	const form = evt.target;
+	const name = form.querySelector('#name').value;
+	const phone = form.querySelector('#phone').value;
+	const submitButton = form.querySelector('button[type="submit"]');
+	const modalMessage = document.getElementById('modal-message');
+
+	renderLoading(true, submitButton);
+
+	fetch('http://localhost:3000/send-email', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		body: new URLSearchParams({
+			name: name,
+			phone: phone,
+		}),
+	})
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			return response.json();
+		})
+		.then((data) => {
+			if (data.success) {
+				form.style.display = 'none';
+				console.log(form);
+				modalMessage.style.display = 'block';
+				modalMessage.classList.add('modal-message');
+				modalMessage.textContent = 'Спасибо за заявку!'; // Успешное сообщение
+			} else {
+				form.style.display = 'none';
+				modalMessage.style.display = 'block';
+				modalMessage.classList.add('modal-message');
+				modalMessage.textContent = 'Ошибка отправки формы. Попробуйте позже.'; // Ошибка отправки
+			}
+		})
+		.catch((error) => {
+			console.error('Error:', error);
+			console.log(form);
+			form.style.display = 'none';
+			modalMessage.style.display = 'block';
+			modalMessage.classList.add('modal-message');
+			modalMessage.textContent = 'Ошибка отправки формы. Попробуйте позже.'; // Ошибка в процессе отправки
+		})
+		.finally(() => {
+			renderLoading(false, submitButton);
+		});
+}
 
 initDropdown(dropdownToggle, dropdownMenu, dropdownIcon);
 initSlider(phoneImg);
 createCards();
 openButtons.forEach((button) => {
-  button.addEventListener('click', () => openModal(modal));
+	button.addEventListener('click', () => openModal(modal));
 });
 form.addEventListener('submit', handleSubmitForm);
