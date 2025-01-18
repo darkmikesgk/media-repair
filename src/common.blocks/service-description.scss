@@ -1,31 +1,39 @@
 .service-description {
-  inline-size: 75%;
-  display: flex;
-  margin-block-end: 7.292%;
-  gap: 33px;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 33px;
+	margin-block-end: 7.292%;
+	inline-size: 75%;
 
-  &__text-container {
-    display: flex;
-    flex-direction: column;
-    text-wrap: auto;
-    gap: 24px;
-    font-size: 14px;
-    line-height: 19.1px;
-    flex: 1 1 47%;
+	&__text-container {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 47%;
+		gap: 24px;
+		font-size: clamp(0.75rem, 0.725rem + 0.125vw, 0.875rem);
+		line-height: 19.1px;
+		text-wrap: auto;
 
-    &__paragraph {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  }
+		&__paragraph {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
 
-  &__img {
-    border-radius: 8px;
-    flex: 1 1 50%;
-    object-fit: fill;
-    object-position: top;
-    max-block-size: 281px;
-  }
+	&__img {
+		flex: 1 1 50%;
+		border-radius: 8px;
+		object-fit: fill;
+		object-position: top;
+		max-block-size: 281px;
+		min-inline-size: 300px;
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.service-description {
+		inline-size: 88.889%;
+		min-inline-size: 18.75rem;
+	}
 }

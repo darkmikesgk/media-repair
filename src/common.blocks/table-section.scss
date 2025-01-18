@@ -6,7 +6,7 @@
 .service-table {
 	color: var(--color-text);
 	font-weight: 400;
-	font-size: 20px;
+	font-size: clamp(0.75rem, 0.65rem + 0.5vw, 1.25rem);
 	line-height: 27.28px;
 	inline-size: 100%;
 	border-spacing: 0;
@@ -17,16 +17,17 @@
 		justify-content: space-between;
 		border: none;
 		inline-size: 100%;
+		text-wrap: balance;
 
 		&__row {
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-end;
 			border-bottom: 1px solid var(--color-dropdown);
-			line-height: 59px;
+			line-height: clamp(1.875rem, 1.5125rem + 1.8125vw, 3.6875rem);
 
-			&-cell-service {
-				text-wrap: balance;
+			&-cell {
+				text-align: end;
 			}
 		}
 	}
@@ -37,5 +38,12 @@
 
 	.last-price {
 		color: var(--color-accent);
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.table-section {
+		inline-size: 88.889%;
+		min-inline-size: 18.75rem;
 	}
 }
