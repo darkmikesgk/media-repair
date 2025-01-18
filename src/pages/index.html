@@ -13,7 +13,7 @@
 	<body class="page">
 		<header class="header">
 			<div class="links_container">
-				<a class="links hidden-link" href="#">Главная</a>
+				<a class="links hidden-link" href="/">Главная</a>
 				<div class="dropdown">
 					<button class="dropdown-toggle">
 						<span class="dropdown-icon">
@@ -49,9 +49,13 @@
 						<a href="#">Сборка компьютеров</a>
 					</div>
 				</div>
-				<a class="links hidden-link" href="#">Отзывы</a>
-				<a class="links hidden-link" href="#">Где нас найти в Орле</a>
-				<a class="header_logo-container" href="#">
+				<a id="reviews-link" class="links hidden-link" href="#reviews-section"
+					>Отзывы</a
+				>
+				<a id="find-us-link" class="links hidden-link" href="#find-us-section"
+					>Где нас найти в Орле</a
+				>
+				<a class="header_logo-container" href="/">
 					<img
 						class="header_logo"
 						src="../images/Logo.svg"
@@ -73,6 +77,7 @@
 								viewBox="0 0 30 30"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
+								title="Whatsapp"
 							>
 								<rect width="30" height="30" rx="6" fill="#2D2E2E" />
 								<path
@@ -95,6 +100,7 @@
 								viewBox="0 0 30 30"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
+								title="Telegram"
 							>
 								<rect width="30" height="30" rx="6" fill="#2D2E2E" />
 								<path
@@ -111,6 +117,7 @@
 								viewBox="0 0 30 30"
 								fill="none"
 								xmlns="http://www.w3.org/2000/svg"
+								title="Vk"
 							>
 								<rect width="30" height="30" rx="6" fill="#2D2E2E" />
 								<path
@@ -304,7 +311,7 @@
 				</div>
 			</section>
 
-			<section class="reviews-section">
+			<section id="reviews-section" class="reviews-section">
 				<div class="reviews-title-container">
 					<h2 class="reviews-title">Нас благодарят</h2>
 					<h3 class="reviews-subtitle">Спасибо :)</h3>
@@ -359,7 +366,7 @@
 				</div>
 			</section>
 
-			<section class="find-us-section">
+			<section id="find-us-section" class="find-us-section">
 				<div class="find-us-title-container">
 					<h2 class="find-us-title">где нас найти</h2>
 					<h3 class="find-us-subtitle">По адресу:</h3>
@@ -468,6 +475,22 @@
 				</div>
 			</section>
 
+			<!-- <div id="device-buttons">
+				<button data-device="iPhone 5">iPhone 5</button>
+				<button data-device="iPhone 6">iPhone 6</button>
+				<button data-device="iPhone 6">iPhone 7</button>
+			</div>
+			
+			<table id="service-table">
+				<thead>
+					<tr>
+						<th>Услуга</th>
+						<th>Цена</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table> -->
+
 			<section id="modal" class="modal">
 				<div class="modal-content">
 					<button class="modal__close">
@@ -548,7 +571,7 @@
 		</main>
 		<footer class="footer_wrapper">
 			<div class="footer">
-				<a href="#" class="footer_logo-wrapper">
+				<a href="/" class="footer_logo-wrapper">
 					<img
 						class="footer_logo-wrapper_img"
 						src="../images/Footer_Logo.svg"
@@ -613,5 +636,19 @@
 				</div>
 			</div>
 		</footer>
+
+		<button id="scrollToTopButton" class="scrollToTopButton">
+			<svg
+				class="scrollToTopButton_img"
+				width="14"
+				height="7"
+				viewBox="0 0 14 7"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				title="Прокрутка вверх"
+			>
+				<path d="M1 6L7 1L13 6" stroke="#B2B2B2" stroke-linecap="round" />
+			</svg>
+		</button>
 	</body>
 </html>

@@ -4,6 +4,7 @@ import { initSlider } from './slider.js';
 import { initDropdown } from './dropdown.js';
 import { openModal, toggleFormListener } from './modal.js';
 import { validateForm } from './validateForm.js';
+// import { initPage } from './table.js';
 
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -15,20 +16,22 @@ const nameInput = document.getElementById('name');
 const phoneInput = document.getElementById('phone');
 const submitButton = document.getElementById('submit__button');
 const form = document.getElementById('modal__form');
+const reviewsAnchor = document.getElementById('reviews-link');
+const findUsAnchor = document.getElementById('find-us-link');
+const reviewsSection = document.getElementById('reviews-section');
+const findUsSection = document.getElementById('find-us-section');
+const scrollToTopButton = document.getElementById('scrollToTopButton');
 
 validateForm(phoneInput, nameInput, submitButton);
 
 function renderLoading(isLoading, buttonElement) {
 	if (isLoading) {
-		// buttonElement.textContent = 'Отправка...';
 		buttonElement.disabled = true;
 	} else {
-		// buttonElement.textContent = 'Заказать звонок';
 		buttonElement.disabled = false;
 	}
 }
 
-// Функция для обработки отправки формы
 function handleSubmitForm(evt) {
 	evt.preventDefault();
 
@@ -84,6 +87,18 @@ function handleSubmitForm(evt) {
 }
 
 initDropdown(dropdownToggle, dropdownMenu, dropdownIcon);
+reviewsAnchor.addEventListener('click', function (evt) {
+	evt.preventDefault();
+	reviewsSection.scrollIntoView({
+		behavior: 'smooth',
+	});
+});
+findUsAnchor.addEventListener('click', function (evt) {
+	evt.preventDefault();
+	findUsSection.scrollIntoView({
+		behavior: 'smooth',
+	});
+});
 initSlider(phoneImg);
 createCards();
 openButtons.forEach((button) => {
@@ -94,3 +109,40 @@ openButtons.forEach((button) => {
 		toggleFormListener(modal, form, handleSubmitForm);
 	});
 });
+
+document.addEventListener('scroll', function () {
+	if (
+		document.body.scrollTop > 200 ||
+		document.documentElement.scrollTop > 200
+	) {
+		scrollToTopButton.style.display = 'block';
+		// Добавляем обработчик события click, если его еще нет
+		if (!scrollToTopButton.hasClickHandler) {
+			const scrollToTopHandler = function () {
+				document.body.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Для Safari
+				document.documentElement.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start',
+				}); // Для Chrome, Firefox, IE и Opera
+			};
+			scrollToTopButton.addEventListener('click', scrollToTopHandler);
+			scrollToTopButton.hasClickHandler = true; // Устанавливаем флаг, что обработчик добавлен
+			scrollToTopButton.scrollToTopHandler = scrollToTopHandler; // Сохраняем ссылку на обработчик
+		}
+	} else {
+		scrollToTopButton.style.display = 'none';
+		// Удаляем обработчик события click, если он был добавлен
+		if (scrollToTopButton.hasClickHandler) {
+			scrollToTopButton.removeEventListener(
+				'click',
+				scrollToTopButton.scrollToTopHandler
+			);
+			scrollToTopButton.hasClickHandler = false; // Сбрасываем флаг
+			scrollToTopButton.scrollToTopHandler = null; // Удаляем ссылку на обработчик
+		}
+	}
+});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   initPage();
+// });

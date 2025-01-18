@@ -1,0 +1,27 @@
+.scrollToTopButton {
+	position: fixed;
+	right: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+	bottom: clamp(0.625rem, 0.5rem + 0.625vw, 1.25rem);
+	z-index: 1000;
+	display: none;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	background-color: var(--color-dropdown);
+	inline-size: 50px;
+	block-size: 50px;
+
+	&:hover {
+		background-color: var(--color-contour);
+		cursor: pointer;
+	}
+
+	&_img {
+		inline-size: 20px;
+		block-size: 20px;
+
+		& path {
+			stroke: var(--color-text);
+		}
+	}
+}

@@ -39,8 +39,13 @@
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
+			transition: filter 0.3s ease-in-out;
 			inline-size: clamp(18.453125rem, 12.1615rem + 6.9907vw, 20.8125rem);
 			block-size: clamp(18.453125rem, 12.1615rem + 6.9907vw, 20.8125rem);
+
+			&:hover {
+				filter: hue-rotate(45deg) brightness(1);
+			}
 		}
 
 		&_paragraph {

@@ -1,22 +1,37 @@
 export function initDropdown(dropdownToggle, dropdownMenu, dropdownIcon) {
-	function toggleDropdown() {
-		dropdownMenu.classList.toggle('show');
-		dropdownIcon.classList.toggle('rotate');
-		dropdownToggle.classList.toggle('active');
-	}
+  let isDropdownOpen = false; // Флаг для отслеживания состояния дропдауна
 
-	function closeDropdown() {
-		dropdownMenu.classList.remove('show');
-		dropdownIcon.classList.remove('rotate');
-		dropdownToggle.classList.remove('active');
-	}
+  function toggleDropdown() {
+    dropdownMenu.classList.toggle('show');
+    dropdownIcon.classList.toggle('rotate');
+    dropdownToggle.classList.toggle('active');
+    isDropdownOpen = !isDropdownOpen; // Меняем состояние флага
 
-	document.addEventListener('click', (evt) => {
-		if (evt.target.matches('.dropdown-toggle')) {
-			evt.stopPropagation();
-			toggleDropdown();
-		} else if (!evt.target.closest('.dropdown-menu')) {
-			closeDropdown();
-		}
-	});
+    if (isDropdownOpen) {
+      // Если дропдаун открылся, добавляем обработчик для кликов вне дропдауна
+      document.addEventListener('click', closeDropdownOnClickOutside);
+    } else {
+      // Если дропдаун закрылся, удаляем обработчик
+      document.removeEventListener('click', closeDropdownOnClickOutside);
+    }
+  }
+
+  function closeDropdown() {
+    dropdownMenu.classList.remove('show');
+    dropdownIcon.classList.remove('rotate');
+    dropdownToggle.classList.remove('active');
+    isDropdownOpen = false; // Сбрасываем флаг
+    document.removeEventListener('click', closeDropdownOnClickOutside);
+  }
+
+  function closeDropdownOnClickOutside(evt) {
+    if (!evt.target.closest('.dropdown')) {
+      closeDropdown();
+    }
+  }
+
+  dropdownToggle.addEventListener('click', (evt) => {
+    evt.stopPropagation();
+    toggleDropdown();
+  });
 }
