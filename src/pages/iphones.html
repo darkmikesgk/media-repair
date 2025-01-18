@@ -49,7 +49,7 @@
 						<a href="#">Сборка компьютеров</a>
 					</div>
 				</div>
-				<a id="reviews-link" class="links hidden-link" href="#reviews-section"
+				<a id="reviews-link" class="links hidden-link" href="/?section=reviews"
 					>Отзывы</a
 				>
 				<a id="find-us-link" class="links hidden-link" href="#find-us-section"
@@ -133,237 +133,373 @@
 			</div>
 		</header>
 		<main class="main">
-			<section class="order_call_section elastic">
-				<div class="sub_title">
-					<h2 class="sub_title_item">Сервисный центр в Орле</h2>
-					<h1 class="title_item">МЕДИА-РЕМОНТ</h1>
-				</div>
-				<div
-					class="phone_img"
-					role="region"
-					aria-label="Слайдер изображений с телефонами, планшетами и ноутбуками"
-				>
+			<section class="choose-iphone-section">
+				<div id="iphone-buttons" class="choose-iphone-section-container">
 					<img
-						id="phoneImg"
-						src="../images/PhoneImg.webp"
-						alt="Изображение телефона"
-						data-state="phone"
+						class="choose-iphone-section-container__background-image"
+						src="../images/ChooseIphoneImg.webp"
+						alt="Картинка с айфонами"
 					/>
-					<span class="phone_img_description">
-						Мы заставляем Вашу
-						<span>технику работать</span>
-					</span>
-				</div>
-				<div class="tablet">
-					<img
-						id="tabletImg"
-						src="../images/TableImg.webp"
-						alt="Изображение ноутбука и телефона на столе"
-						loading="lazy"
-						data-state="tablet"
-					/>
-				</div>
-				<div class="order_button_area">
-					<button id="callButton" class="order_button callButton">
-						Заказать звонок
-						<span class="order_button_arrow">
-							<img
-								class="arrow_in_button"
-								src="../images/arrowUp.svg"
-								alt="Стрелочка вверх и вправо"
-								loading="lazy"
-							/>
-						</span>
-					</button>
-				</div>
-				<div class="laptop">
-					<img
-						id="laptopImg"
-						src="../images/LaptopImg.webp"
-						alt="Изображение ноутбука"
-						loading="lazy"
-						data-state="laptop"
-					/>
-					<span class="laptop_description">
-						Мы знаем, что у Вас есть выбор —
-						<span>спасибо, что выбираете нас</span>
-					</span>
-				</div>
-				<div class="many_logo"></div>
-			</section>
-
-			<section class="repair-services-section elastic">
-				<div class="repair-services-title">
-					<h2 class="title_item">Услуги ремонта</h2>
-					<h3 class="sub_title_item">И не только</h3>
-				</div>
-				<div class="cards-container" id="cards-container"></div>
-			</section>
-
-			<section class="about-us-section">
-				<div class="about-us-title-container">
-					<h2 class="about-us-title">Тут все про нас</h2>
-					<h3 class="about-us-subtitle">На самом деле - это СЕО-текст</h3>
-				</div>
-				<div class="about-us-content">
-					<img
-						src="../images/Arrow_about-us.svg"
-						alt="Декоративная иконка стрелочки"
-						class="about-us-content_arrow-bg"
-					/>
-					<span class="about-us-content_paragraph-item mobile-item">
-						Мы — команда профессионалов, занимаемся ремонтом техники уже более 8
-						лет.
-					</span>
-					<div class="about-us-content_paragraph">
-						<p class="about-us-content_paragraph-item pc-item">
-							Мы — команда профессионалов, занимаемся ремонтом техники уже более
-							8 лет.
+					<div class="choose-iphone-section-container__buttons-container">
+						<p
+							class="choose-iphone-section-container__buttons-container_choose-model"
+						>
+							Выберите модель
 						</p>
-						<p class="about-us-content_paragraph-item">
-							За это время мы приобрели богатый опыт и накопили обширные знанияв
-							области ремонта различной техники. Благодаря нашему опыту и
-							отличной репутации, мы смогли стать надежным партнером для тысяч
-							клиентов.Мы понимаем, что поломка техники — это неожиданная и
-							неприятная ситуация. Поэтому мы стремимся сделать процесс ремонта
-							максимально комфортным для наших клиентов. Мы уделяем внимание
-							каждой детали работы, чтобы восстановленное устройство полностью
-							соответствовало ожиданиям клиента.
-						</p>
-						<p class="about-us-content_paragraph-item">
-							Мы предоставляем полную отчетность для организаций.
-						</p>
-					</div>
-					<p class="about-us-content_text">
-						Независимо от марки и модели устройства, наши опытные специалисты
-						готовы взятьсяза его починку и вернуть его вамв наилучшем состоянии.
-					</p>
-				</div>
-			</section>
-
-			<section class="why-we-section">
-				<div class="why-we-title-container">
-					<h2 class="why-we-title">Почему мы супер</h2>
-					<h3 class="why-we-subtitle">Потому что</h3>
-				</div>
-				<div class="why-we-card-container">
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							До проведения услуг мы бесплатно проведем диагностику любой вашей
-							техники
-						</p>
-						<p class="why-we-card-container-item-description">
-							Бесплатная диагностика
-						</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							После оказания услуги мы даём гарантию на всю проделанную работу
-						</p>
-						<p class="why-we-card-container-item-description">
-							Гарантия — 1 год
-						</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							Несложный ремонт мы сможем осуществить в день обращения, уточняйте
-							такую возможность по номеру телефона
-						</p>
-						<p class="why-we-card-container-item-description">
-							Ремонт в день заказа
-						</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							Мы стараемся не поднимать цены на наши услуги даже в самые сложные
-							времена
-						</p>
-						<p class="why-we-card-container-item-description">Лояльные цены</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<div>
-							<p class="why-we-card-container-item-title">
-								Наша основная цель — максимально упростить процесс ремонта для
-								вас, начиная с доставки.
-							</p>
-							<p class="why-we-card-container-item-title">
-								Мы заберем технику любых габаритов для ремонта и привезем вам её
-								уже в отличном состоянии.
-							</p>
-							<p class="why-we-card-container-item-title">
-								Гарантируем аккуратную доставку и ваше сэкономленное время.
-							</p>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone SE"
+							>
+								iPhone SE
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 5"
+							>
+								iPhone 5
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 5S"
+							>
+								iPhone 5S
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 6"
+							>
+								iPhone 6
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 6S"
+							>
+								iPhone 6S
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 6S+"
+							>
+								iPhone 6S+
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 7"
+							>
+								iPhone 7
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 7+"
+							>
+								iPhone 7+
+							</button>
 						</div>
-						<p class="why-we-card-container-item-description">
-							Мы можем забрать и привезти технику, чтобы вы не тратили своё
-							время
-						</p>
-						<span class="why-we-card-container-item-note"
-							>*Мы не занимаемся ремонтом на дому</span
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
 						>
-						<span class="why-we-card_arrow">
-							<img
-								src="../images/Why-We_Arrow.webp"
-								alt="Декоративная иконка стрелочки"
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 8"
+							>
+								iPhone 8
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 8 Plus"
+							>
+								iPhone 8 Plus
+							</button>
+						</div>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone X"
+							>
+								iPhone X
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone XR"
+							>
+								iPhone XR
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone XS"
+							>
+								iPhone XS
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone XS Max"
+							>
+								iPhone XS Max
+							</button>
+						</div>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 11"
+							>
+								iPhone 11
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 11 Pro"
+							>
+								iPhone 11 Pro
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 11 Pro Max"
+							>
+								iPhone 11 Pro Max
+							</button>
+						</div>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 12"
+							>
+								iPhone 12
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 12 mini"
+							>
+								iPhone 12 mini
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 12 Pro"
+							>
+								iPhone 12 Pro
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 12 Pro Max"
+							>
+								iPhone 12 Pro Max
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone SE 2"
+							>
+								iPhone SE 2
+							</button>
+						</div>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 13"
+							>
+								iPhone 13
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 13 mini"
+							>
+								iPhone 13 mini
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 13 Pro"
+							>
+								iPhone 13 Pro
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 13 Pro Max"
+							>
+								iPhone 13 Pro Max
+							</button>
+						</div>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 14"
+							>
+								iPhone 14
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 14 mini"
+							>
+								iPhone 14 mini
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 14 Plus"
+							>
+								iPhone 14 Plus
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 14 Pro"
+							>
+								iPhone 14 Pro
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 14 Pro Max"
+							>
+								iPhone 14 Pro Max
+							</button>
+						</div>
+						<div
+							class="choose-iphone-section-container__buttons-container_buttons-line"
+						>
+							<svg
+								width="58"
+								height="17"
+								viewBox="0 0 58 17"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								title="Новинка"
+							>
+								<path
+									d="M0.926125 17V0.079999H3.23013L12.3261 11.888V0.079999H15.1821V17H12.9021L3.78213 5.144V17H0.926125ZM18.8793 17V0.079999H30.1353V2.528H21.8313V7.184H29.6073V9.632H21.8313V14.552H30.1353V17H18.8793ZM37.7853 17L31.8093 0.079999H34.9773L39.1773 12.56L43.5933 0.079999H45.8733L50.1933 12.728L54.5133 0.079999H57.5133L51.4893 17H48.9453L44.6493 4.784L40.3293 17H37.7853Z"
+									fill="#06E0E7"
+								/>
+							</svg>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 15"
+							>
+								iPhone 15
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 15 mini"
+							>
+								iPhone 15 mini
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 15 Plus"
+							>
+								iPhone 15 Plus
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 15 Pro"
+							>
+								iPhone 15 Pro
+							</button>
+							<button
+								class="choose-iphone-section-container__buttons-container_buttons-line_button"
+								data-device="iPhone 15 Pro Max"
+							>
+								iPhone 15 Pro Max
+							</button>
+						</div>
+					</div>
+					<div class="choose-iphone-section-container__title-container">
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M0 24V0.0415535H3.99311V17.1832L21.1764 0L24 2.82347L6.81637 20.0069H23.9587V24H0Z"
+								fill="url(#paint0_linear_101_6932)"
 							/>
-						</span>
-					</article>
+							<defs>
+								<linearGradient
+									id="paint0_linear_101_6932"
+									x1="22.3102"
+									y1="53.5178"
+									x2="-47.3786"
+									y2="6.26093"
+									gradientUnits="userSpaceOnUse"
+								>
+									<stop stop-color="#06FFD2" />
+									<stop offset="1" stop-color="#06BDFF" />
+								</linearGradient>
+							</defs>
+						</svg>
+						<h1 class="choose-iphone-section-container__title-container-title">
+							iPhones
+						</h1>
+					</div>
 				</div>
 			</section>
 
-			<section id="reviews-section" class="reviews-section">
-				<div class="reviews-title-container">
-					<h2 class="reviews-title">Нас благодарят</h2>
-					<h3 class="reviews-subtitle">Спасибо :)</h3>
-				</div>
-				<div class="reviews-container">
-					<div class="reviews-container_left-side">
-						<div class="reviews-container_left-side-description">
-							<p class="reviews-container_left-side-description-item">
-								Сервисный центр в Орле «Медиа-ремонт» оказывает профессиональный
-								ремонт цифровой техники в Орле.
-							</p>
-							<p class="reviews-container_left-side-description-item">
-								Мы ремонтируем мобильные телефоны, ноутбуки, планшеты,
-								телевизоры, компьютеры, аудиосистемы, мониторы, Sony
-								PlayStation, электросамокаты, усилители.
-							</p>
-							<p class="reviews-container_left-side-description-item">
-								Ремонт производится на профессиональном специализированном
-								оборудовании нашими квалифицированными специалистами. Каждый
-								клиент получает гарантию на все предоставленные ему услуги.
-							</p>
-							<p class="reviews-container_left-side-description-item">
-								Сервисный центр в Орле «Медиа-ремонт» всегда держит низкие цены.
-								Работаем за счёт большого оборота, огромного количества
-								клиентов, каждый пятый из которых становится постоянным.
-							</p>
-						</div>
-						<p class="reviews-container_left-side-description-item gratitude">
-							Мы знаем, что у вас есть выбор — спасибо, что выбираете нас
+			<section class="table-section">
+				<table id="service-table" class="service-table">
+					<tbody id="service-table-body" class="service-table-body"></tbody>
+				</table>
+			</section>
+
+			<section class="service-description">
+				<div class="service-description__text-container">
+					<div class="service-description__text-container__paragraph">
+						<p class="service-description__text-container__paragraph-item">
+							Ищете надёжный сервисный центр для ремонта вашего iPhone в Орле?
+							Чувствуете, что ваш любимый смартфон нуждается в профессиональном
+							вмешательстве? Не волнуйтесь, мы здесь, чтобы помочь вам!
 						</p>
-						<img
-							class="reviews-container_left-side-img"
-							src="../images/Reviews_Many_logo_bg.webp"
-							alt="Декоративная картинка с логотипами"
-							loading="lazy"
-						/>
+						<p class="service-description__text-container__paragraph-item">
+							Медиа Ремонт — это ведущий сервисный центр по ремонту айфонов в
+							Орле. Мы специализируемся на ремонте различных моделей iPhone.
+							Независимо от того, с какими проблемами вы столкнулись, наши
+							эксперты обладают глубокими знаниями и опытом в ремонте айфонов
+							любых поколений.
+						</p>
 					</div>
-					<div class="reviews-widget">
-						<iframe
-							title="Виджет отзывов"
-							class="reviews-widget-item"
-							src="https://yandex.ru/maps-reviews-widget/1727440253?comments"
-						>
-						</iframe>
-						<a
-							class="reviews-widget-item-link"
-							href="https://yandex.ru/maps/org/media_remont/1727440253/"
-							target="_blank"
-							>Медиа-Ремонт на карте Орла — Яндекс Карты</a
-						>
+					<div class="service-description__text-container__paragraph">
+						<p class="service-description__text-container__paragraph-item">
+							Одной из наших главных целей является предоставление клиентам
+							высококачественного ремонта в кратчайшие сроки. У нас работают
+							только профессионалы, которые оснащены передовыми инструментами и
+							технологиями, чтобы решить любые проблемы с вашим iPhone — от
+							замены аккумулятора и ремонта разбитого экрана до устранения
+							неисправностей со звуком и кнопками.
+						</p>
+						<p class="service-description__text-container__paragraph-item">
+							Мы понимаем, что ваш iPhone — это не просто телефон, это
+							устройство, с которым вы проводите большую часть своего времени.
+							Поэтому мы ценим ваше доверие и делаем все возможное, чтобы
+							вернуть ваш смартфон в идеальное состояние как можно быстрее.
+						</p>
+					</div>
+					<div class="service-description__text-container__paragraph">
+						<p class="service-description__text-container__paragraph-item">
+							Наши услуги ремонта айфонов в Орле также включают гарантию на все
+							выполненные работы. Мы стремимся к совершенству и уверены в
+							качестве нашего сервиса, поэтому предоставляем долгосрочную
+							поддержку для всех наших клиентов.
+						</p>
+						<p class="service-description__text-container__paragraph-item">
+							Не откладывайте ремонт вашего iPhone на потом — обращайтесь к нам
+							уже сегодня и доверьте ваш смартфон профессионалам! Мы гарантируем
+							быстрый ремонт, высокое качество и индивидуальный подход к каждому
+							клиенту.
+						</p>
 					</div>
 				</div>
+				<img
+					class="service-description__img"
+					src="../images/Service_Description_Img.webp"
+					alt="Декоративная картинка с логотипами"
+					loading="lazy"
+				/>
 			</section>
 
 			<section id="find-us-section" class="find-us-section">
@@ -541,17 +677,6 @@
 					>
 				</div>
 			</section>
-
-			<template id="card-template">
-				<a href="" class="card-link">
-					<div class="card-container">
-						<div class="card">
-							<img src="" alt="" class="card-image" loading="lazy" />
-						</div>
-						<p class="card-title"></p>
-					</div>
-				</a>
-			</template>
 		</main>
 		<footer class="footer_wrapper">
 			<div class="footer">
@@ -577,7 +702,9 @@
 						<a href="#" class="footer_repair-services-wrapper_catalog-item"
 							>Сборка компьютеров</a
 						>
-						<a href="/iphones" class="footer_repair-services-wrapper_catalog-item"
+						<a
+							href="/iphones"
+							class="footer_repair-services-wrapper_catalog-item"
 							>iPhones</a
 						>
 						<a href="#" class="footer_repair-services-wrapper_catalog-item"

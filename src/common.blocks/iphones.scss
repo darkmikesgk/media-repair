@@ -1,0 +1,73 @@
+.choose-iphone-section {
+	margin-block-start: 6.539%;
+	margin-block-end: 7.292%;
+	inline-size: 75%;
+
+	&-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 2rem;
+
+		&__background-image {
+			flex: 1 1 18%;
+			border-radius: 8px;
+			object-fit: fill;
+			object-position: center;
+			max-block-size: 340px;
+		}
+
+		&__buttons-container {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 58%;
+			row-gap: 12px;
+
+			&_choose-model {
+				font-weight: 300;
+				font-size: 1rem;
+				line-height: 21.82px;
+			}
+
+			&_buttons-line {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 12px;
+
+				&_button {
+					border: none;
+					border-radius: 4px;
+					padding: 4px 16px;
+					outline: 1px solid var(--color-dropdown);
+					background-color: inherit;
+
+					&:hover {
+						color: var(--color-bg-card);
+						background-color: var(--color-accent);
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		&__title-container {
+			display: flex;
+			flex: 1 1 7%;
+			align-items: center;
+			gap: 0.5rem;
+			block-size: fit-content;
+
+			&-title {
+				color: var(--color-text);
+				font-family: var(--font-secondary-title);
+				font-size: 34px;
+				line-height: 39.88px;
+			}
+		}
+	}
+
+	.active {
+		color: var(--color-bg-card);
+		background-color: var(--color-accent);
+	}
+}

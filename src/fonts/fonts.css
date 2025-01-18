@@ -20,4 +20,12 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-display: swap;
+  font-family: 'Work Sans';
+  src:
+    url('./fonts-files/Work_Sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 700;
+}
+
 /* В этом файле импорт всех шрифтов для сайта. */

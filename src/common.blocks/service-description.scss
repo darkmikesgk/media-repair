@@ -1,0 +1,31 @@
+.service-description {
+  inline-size: 75%;
+  display: flex;
+  margin-block-end: 7.292%;
+  gap: 33px;
+  flex-wrap: wrap;
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    text-wrap: auto;
+    gap: 24px;
+    font-size: 14px;
+    line-height: 19.1px;
+    flex: 1 1 47%;
+
+    &__paragraph {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+    flex: 1 1 50%;
+    object-fit: fill;
+    object-position: top;
+    max-block-size: 281px;
+  }
+}

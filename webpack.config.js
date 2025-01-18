@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { DefinePlugin } = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 require('dotenv').config({
   path: path.join(
@@ -16,11 +17,14 @@ const isProduction = process.env.NODE_ENV == 'production';
 const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
-  entry: './src/scripts/index.js',
+  entry: {
+    main: './src/scripts/index.js',
+    iphones: './src/scripts/iphones.js',
+  },
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     publicPath: '/',
   },
   devServer: {
@@ -36,15 +40,33 @@ const config = {
       directory: path.join(__dirname, 'src'),
       publicPath: '/',
     },
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/iphones\/?$/, to: '/iphones.html' },
+        { from: /^\/?$/, to: '/index.html' },
+      ],
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/pages/index.html',
+      filename: 'index.html',
+      chunks: ['main'], // подключаем чанк для основной страницы
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/iphones.html',
+      filename: 'iphones.html', // генерируем файл в корневой директории
+      chunks: ['iphones'], // подключаем чанк для страницы iphones
     }),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
       'process.env.DEVELOPMENT': !isProduction,
       'process.env.API_ORIGIN': JSON.stringify(process.env.API_ORIGIN ?? ''),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/data/pricingData.json', to: 'data/pricingData.json' },
+      ],
     }),
   ],
   module: {
@@ -90,6 +112,9 @@ const config = {
     extensions: ['.js', '.jsx', '.json'],
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
     minimize: true,
     minimizer: [
       new TerserPlugin({

@@ -1,5 +1,5 @@
 export async function createCards() {
-  const response = await fetch('../scripts/cards.json');
+  const response = await fetch('../data/cards.json');
   const cardsData = await response.json();
 
   const container = document.getElementById('cards-container');
