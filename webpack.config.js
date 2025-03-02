@@ -20,6 +20,7 @@ const config = {
   entry: {
     main: './src/scripts/index.js',
     iphones: './src/scripts/iphones.js',
+    phones: './src/scripts/phones.js',
   },
   devtool: 'source-map',
   output: {
@@ -42,6 +43,7 @@ const config = {
     },
     historyApiFallback: {
       rewrites: [
+        { from: /^\/phones\/?$/, to: '/phones.html' },
         { from: /^\/iphones\/?$/, to: '/iphones.html' },
         { from: /^\/?$/, to: '/index.html' },
       ],
@@ -58,6 +60,11 @@ const config = {
       filename: 'iphones.html', // генерируем файл в корневой директории
       chunks: ['iphones'], // подключаем чанк для страницы iphones
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/phones.html',
+      filename: 'phones.html', // генерируем файл в корневой директории
+      chunks: ['phones'], // подключаем чанк для страницы iphones
+    }),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
       'process.env.DEVELOPMENT': !isProduction,
@@ -65,7 +72,9 @@ const config = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/data/pricingData.json', to: 'data/pricingData.json' },
+        { from: 'src/data/pricingDataPhones.json', to: 'data/pricingDataPhones.json' },
+        { from: 'src/data/pricingDataIphones.json', to: 'data/pricingDataIphones.json' },
+        { from: 'src/data/cards.json', to: 'data/cards.json' },
       ],
     }),
   ],

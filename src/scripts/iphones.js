@@ -11,7 +11,7 @@ if (reviewsLink) {
 }
 
 async function loadPricingData() {
-	return loadDataFromJson('../data/pricingData.json');
+	return loadDataFromJson('../data/pricingDataIphones.json');
 }
 
 function handleButtonClicks(pricingData) {
