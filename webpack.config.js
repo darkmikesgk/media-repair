@@ -19,8 +19,7 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 const config = {
   entry: {
     main: './src/scripts/index.js',
-    iphones: './src/scripts/iphones.js',
-    phones: './src/scripts/phones.js',
+    pricing: './src/scripts/pricing.js', // Универсальный скрипт для страниц iphones и phones
   },
   devtool: 'source-map',
   output: {
@@ -58,12 +57,12 @@ const config = {
     new HtmlWebpackPlugin({
       template: 'src/pages/iphones.html',
       filename: 'iphones.html', // генерируем файл в корневой директории
-      chunks: ['iphones'], // подключаем чанк для страницы iphones
+      chunks: ['pricing'], // подключаем чанк для страницы iphones
     }),
     new HtmlWebpackPlugin({
       template: 'src/pages/phones.html',
       filename: 'phones.html', // генерируем файл в корневой директории
-      chunks: ['phones'], // подключаем чанк для страницы iphones
+      chunks: ['pricing'], // подключаем чанк для страницы phones
     }),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
