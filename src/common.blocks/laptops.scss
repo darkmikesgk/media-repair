@@ -1,4 +1,4 @@
-.choose-phone-section {
+.choose-laptop-section {
 	margin-block-start: 6.539%;
 	margin-block-end: 4.948%;
 	inline-size: 75%;
@@ -66,7 +66,6 @@
 			&_buttons-line {
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: space-between;
 				align-items: center;
 				gap: 8px;
 
@@ -83,6 +82,7 @@
 					background-color: var(--color-dropdown);
 					block-size: 95px;
 					min-inline-size: 145px;
+					max-inline-size: 173px;
 
 					& img {
 						pointer-events: none;
@@ -105,23 +105,55 @@
 }
 
 @media (1275px < width <= 1440px) {
-	.choose-phone-section {
+	.choose-laptop-section {
 		inline-size: 80.556%;
+
+		&-container {
+			&__buttons-container {
+				&_buttons-line {
+					&_button {
+						max-inline-size: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (1120px < width <= 1275px) {
+	.choose-laptop-section {
+		&-container {
+			&__buttons-container {
+				&_buttons-line {
+					&_button {
+						max-inline-size: none;
+					}
+				}
+			}
+		}
 	}
 }
 
 @media (768px <= width <= 1120px) {
-	.choose-phone-section {
+	.choose-laptop-section {
 		&-container {
 			&__background-image {
 				max-block-size: 370px;
+			}
+
+			&__buttons-container {
+				&_buttons-line {
+					&_button {
+						max-inline-size: none;
+					}
+				}
 			}
 		}
 	}
 }
 
 @media (320px <= width <= 768px) {
-	.choose-phone-section {
+	.choose-laptop-section {
 		inline-size: 88.889%;
 		min-inline-size: 18.75rem;
 
@@ -133,6 +165,12 @@
 
 			&__buttons-container {
 				flex: 1 1 72%;
+
+				&_buttons-line {
+					&_button {
+						max-inline-size: none;
+					}
+				}
 			}
 		}
 	}

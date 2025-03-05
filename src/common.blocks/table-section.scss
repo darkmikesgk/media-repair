@@ -1,6 +1,30 @@
 .table-section {
 	margin-block-end: 7.292%;
 	inline-size: 75%;
+
+	.service-type-buttons {
+		margin-block-end: 1.389%;
+		border-radius: 7px;
+		outline: 1px solid var(--color-dropdown);
+		inline-size: fit-content;
+
+		&-item {
+			border: none;
+			padding: 9px 77px;
+			color: var(--color-text);
+			background-color: inherit;
+
+			&:nth-child(2) {
+				padding: 9px 47px;
+			}
+		}
+	}
+
+	.active-service {
+		border-radius: 7px;
+		color: var(--color-text);
+		background-color: var(--color-contour);
+	}
 }
 
 .service-table {

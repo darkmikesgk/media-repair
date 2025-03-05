@@ -12,11 +12,11 @@ export async function loadDataFromJson(jsonPath) {
 	}
 }
 
-export function updateTable(tableBody, device, data) {
+export function updateTable(tableBody, device, serviceType, data) {
 	tableBody.innerHTML = '';
 
-	const services = data[device];
-	if (services) {
+	const services = serviceType ? data[device]?.[serviceType] : data[device];
+	if (services && Array.isArray(services)) {
 		services.forEach(({ service, price }, index) => {
 			const row = document.createElement('tr');
 			row.classList.add('service-table-body__row');
@@ -41,6 +41,9 @@ export function updateTable(tableBody, device, data) {
 			tableBody.appendChild(row);
 		});
 	} else {
-		console.error(`No data found for device: ${device}`);
+		console.error(
+			`No data found for device: ${device}` +
+				(serviceType ? ` and service type: ${serviceType}` : '')
+		);
 	}
 }
