@@ -42,6 +42,7 @@ const config = {
     },
     historyApiFallback: {
       rewrites: [
+        { from: /^\/tablets\/?$/, to: '/tablets.html' },
         { from: /^\/phones\/?$/, to: '/phones.html' },
         { from: /^\/iphones\/?$/, to: '/iphones.html' },
         { from: /^\/?$/, to: '/index.html' },
@@ -64,6 +65,11 @@ const config = {
       filename: 'phones.html', // генерируем файл в корневой директории
       chunks: ['pricing'], // подключаем чанк для страницы phones
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/tablets.html',
+      filename: 'tablets.html', // генерируем файл в корневой директории
+      chunks: ['pricing'], // подключаем чанк для страницы phones
+    }),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
       'process.env.DEVELOPMENT': !isProduction,
@@ -71,6 +77,7 @@ const config = {
     }),
     new CopyWebpackPlugin({
       patterns: [
+        { from: 'src/data/pricingDataTablets.json', to: 'data/pricingDataTablets.json' },
         { from: 'src/data/pricingDataPhones.json', to: 'data/pricingDataPhones.json' },
         { from: 'src/data/pricingDataIphones.json', to: 'data/pricingDataIphones.json' },
         { from: 'src/data/cards.json', to: 'data/cards.json' },

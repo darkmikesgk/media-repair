@@ -56,3 +56,8 @@ if (document.body.dataset.page === 'iphones') {
 if (document.body.dataset.page === 'phones') {
   initPage('../data/pricingDataPhones.json', 'Meizu', 'phone-buttons');
 }
+
+// Инициализация для страницы планшетов
+if (document.body.dataset.page === 'tablets') {
+  initPage('../data/pricingDataTablets.json', 'Irbis', 'tablet-buttons');
+}
