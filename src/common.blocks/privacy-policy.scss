@@ -53,6 +53,15 @@
 	}
 }
 
+@media (1275px < width <= 1440px) {
+	.privacy-policy_container {
+		margin-block-end: 8.334%;
+		font-size: clamp(0.9375rem, 0.4512rem + 0.6098vw, 1rem);
+		inline-size: 80.556%;
+	}
+}
+
+
 @media (768px < width <= 1275px) {
 	.privacy-policy_container {
 		margin-block-start: 6.539%;
