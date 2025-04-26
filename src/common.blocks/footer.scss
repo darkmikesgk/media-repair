@@ -81,6 +81,16 @@
 
 				&:nth-child(2) {
 					font-size: clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem);
+					opacity: 0.29;
+				}
+
+				&-link {
+					text-decoration: none;
+				}
+
+				&-link:hover {
+					cursor: pointer;
+					color: var(--color-accent);
 				}
 			}
 		}

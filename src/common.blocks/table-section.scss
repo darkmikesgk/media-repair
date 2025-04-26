@@ -14,10 +14,16 @@
 			color: var(--color-text);
 			background-color: inherit;
 
+			&:hover {
+				cursor: pointer;
+				color: var(--color-accent);
+			}
+
 			&:nth-child(2) {
 				padding: 9px 47px;
 			}
 		}
+
 	}
 
 	.active-service {

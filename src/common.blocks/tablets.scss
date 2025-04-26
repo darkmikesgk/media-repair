@@ -22,7 +22,7 @@
 			flex-direction: column;
 			flex: 1 1 70%;
 			justify-content: flex-end;
-			row-gap: 12px;
+			row-gap: 8px;
 
 			&__title-container {
 				display: flex;
@@ -49,6 +49,7 @@
 					font-weight: 300;
 					font-size: 1rem;
 					line-height: 21.82px;
+					color: #fff;
 				}
 			}
 
@@ -60,6 +61,7 @@
 				&.down-element {
 					text-align: end;
 					text-wrap: balance;
+					color: #fff;
 				}
 			}
 

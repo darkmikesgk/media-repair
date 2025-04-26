@@ -88,6 +88,12 @@
 				inline-size: 100%;
 			}
 		}
+
+		&_privacy {
+			text-wrap: balance;
+    	text-align: center;
+			font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
+		}
 	}
 }
 

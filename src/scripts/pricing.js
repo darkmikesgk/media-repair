@@ -16,7 +16,7 @@ async function loadPricingData(jsonPath) {
 
 function handleModelButtonClicks(
 	pricingData,
-	currentServiceType,
+	state,
 	buttonsContainerId,
 	serviceTypeButtonsContainerId
 ) {
@@ -25,32 +25,38 @@ function handleModelButtonClicks(
 	buttonsContainer.addEventListener('click', (event) => {
 		if (event.target.tagName === 'BUTTON') {
 			const device = event.target.dataset.device;
+			state.currentDevice = device;
+
 			const tableBody = document.querySelector('#service-table-body');
-			updateTable(tableBody, device, currentServiceType, pricingData);
+
+			const deviceData = pricingData[device];
+
+			if (Array.isArray(deviceData)) {
+				// Структура без типов услуг (телефоны, айфоны)
+				updateTable(tableBody, device, null, pricingData);
+			} else {
+				// Структура с типами услуг (ноутбуки)
+				if (!state.currentServiceType) {
+					const serviceTypes = Object.keys(deviceData || {});
+					state.currentServiceType =
+						serviceTypes.length > 0 ? serviceTypes[0] : null;
+				}
+				updateTable(tableBody, device, state.currentServiceType, pricingData);
+			}
 
 			document
 				.querySelectorAll(`#${buttonsContainerId} button`)
 				.forEach((button) => {
 					button.classList.remove('active-model');
 				});
-
 			event.target.classList.add('active-model');
-
-			// Убедиться, что активная кнопка услуги остается актуальной
-			const activeServiceButton = document.querySelector(
-				`#${serviceTypeButtonsContainerId} button.active-service`
-			);
-			if (activeServiceButton) {
-				const activeServiceType = activeServiceButton.dataset.serviceType;
-				updateTable(tableBody, device, activeServiceType, pricingData);
-			}
 		}
 	});
 }
 
 function handleServiceTypeButtonClicks(
 	pricingData,
-	currentDevice,
+	state,
 	serviceTypeButtonsContainerId
 ) {
 	const buttonsContainer = document.getElementById(
@@ -60,15 +66,17 @@ function handleServiceTypeButtonClicks(
 	buttonsContainer.addEventListener('click', (event) => {
 		if (event.target.tagName === 'BUTTON') {
 			const serviceType = event.target.dataset.serviceType;
+			state.currentServiceType = serviceType; // обновляем текущую услугу
 			const tableBody = document.querySelector('#service-table-body');
-			updateTable(tableBody, currentDevice, serviceType, pricingData);
 
+			updateTable(tableBody, state.currentDevice, serviceType, pricingData);
+
+			// сбрасываем активные кнопки услуг
 			document
 				.querySelectorAll(`#${serviceTypeButtonsContainerId} button`)
 				.forEach((button) => {
 					button.classList.remove('active-service');
 				});
-
 			event.target.classList.add('active-service');
 		}
 	});
@@ -77,11 +85,16 @@ function handleServiceTypeButtonClicks(
 async function initPage(jsonPath, defaultDevice, buttonsContainerId) {
 	const pricingData = await loadPricingData(jsonPath);
 	const tableBody = document.querySelector('#service-table-body');
+
+	const state = {
+		currentDevice: defaultDevice,
+		currentServiceType: null,
+	};
+
 	updateTable(tableBody, defaultDevice, null, pricingData);
 
-	handleModelButtonClicks(pricingData, null, buttonsContainerId);
+	handleModelButtonClicks(pricingData, state, buttonsContainerId);
 
-	// Установить активную кнопку модели по умолчанию
 	const defaultModelButton = document.querySelector(
 		`#${buttonsContainerId} button[data-device='${defaultDevice}']`
 	);
@@ -99,21 +112,31 @@ async function initPageWithServiceTypes(
 ) {
 	const pricingData = await loadPricingData(jsonPath);
 	const tableBody = document.querySelector('#service-table-body');
-	updateTable(tableBody, defaultDevice, defaultServiceType, pricingData);
+
+	const state = {
+		currentDevice: defaultDevice,
+		currentServiceType: defaultServiceType,
+	};
+
+	updateTable(
+		tableBody,
+		state.currentDevice,
+		state.currentServiceType,
+		pricingData
+	);
 
 	handleModelButtonClicks(
 		pricingData,
-		defaultServiceType,
+		state,
 		modelButtonsContainerId,
 		serviceTypeButtonsContainerId
 	);
 	handleServiceTypeButtonClicks(
 		pricingData,
-		defaultDevice,
+		state,
 		serviceTypeButtonsContainerId
 	);
 
-	// Установить активную кнопку модели по умолчанию
 	const defaultModelButton = document.querySelector(
 		`#${modelButtonsContainerId} button[data-device='${defaultDevice}']`
 	);
@@ -121,7 +144,6 @@ async function initPageWithServiceTypes(
 		defaultModelButton.classList.add('active-model');
 	}
 
-	// Установить активную кнопку услуги "Ремонт" по умолчанию
 	const defaultServiceTypeButton = document.querySelector(
 		`#${serviceTypeButtonsContainerId} button[data-service-type='${defaultServiceType}']`
 	);

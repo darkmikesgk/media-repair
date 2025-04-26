@@ -42,6 +42,7 @@ const config = {
     },
     historyApiFallback: {
       rewrites: [
+        { from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
         { from: /^\/laptops\/?$/, to: '/laptops.html' },
         { from: /^\/tablets\/?$/, to: '/tablets.html' },
         { from: /^\/phones\/?$/, to: '/phones.html' },
@@ -75,6 +76,11 @@ const config = {
       template: 'src/pages/laptops.html',
       filename: 'laptops.html', // генерируем файл в корневой директории
       chunks: ['pricing'], // подключаем чанк для страницы phones
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/privacy-policy.html',
+      filename: 'privacy-policy.html', // генерируем файл в корневой директории
+      chunks: ['main'], // подключаем чанк для страницы phones
     }),
     new MiniCssExtractPlugin(),
     new DefinePlugin({
