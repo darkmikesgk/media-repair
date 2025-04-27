@@ -139,14 +139,10 @@
 
 	.many_logo {
 		border-radius: 0.5rem;
-		background-image: url('../images/ManyLogoImg.svg');
+		background-image: url('../images/Many_logo-Gif.gif');
 		background-size: cover;
 		transition: background-image 0.1s ease-in-out;
 		block-size: 49%;
-
-		&:hover {
-			background-image: url('../images/ManyLogoImg2.svg');
-		}
 	}
 
 	.order_button_area {
