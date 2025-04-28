@@ -130,3 +130,50 @@ document.addEventListener('scroll', function () {
 		}
 	}
 });
+
+function initImageZoom() {
+	const images = document.querySelectorAll(
+		'.where-is-we_image-container-item img'
+	);
+	let currentModal = null; // Храним ссылку на текущее модальное окно
+
+	function closeModal() {
+		if (currentModal) {
+			document.body.removeChild(currentModal);
+			document.body.classList.remove('no-scroll');
+			currentModal = null;
+		}
+	}
+
+	images.forEach((img) => {
+		img.addEventListener('click', function () {
+			// Закрываем предыдущее модальное окно, если оно есть
+			closeModal();
+
+			// Блокируем прокрутку
+			document.body.classList.add('no-scroll');
+
+			// Создаем модальное окно
+			currentModal = document.createElement('div');
+			currentModal.className = 'enlarged-img';
+
+			const enlargedImg = document.createElement('img');
+			enlargedImg.src = this.src;
+			enlargedImg.alt = this.alt;
+
+			currentModal.appendChild(enlargedImg);
+			document.body.appendChild(currentModal);
+
+			// Закрытие по клику
+			currentModal.addEventListener('click', closeModal);
+		});
+	});
+
+	// Закрытие по ESC
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Escape') {
+			closeModal();
+		}
+	});
+}
+initImageZoom();

@@ -42,6 +42,7 @@ const config = {
     },
     historyApiFallback: {
       rewrites: [
+        { from: /^\/kontakty\/?$/, to: '/kontakty.html' },
         { from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
         { from: /^\/laptops\/?$/, to: '/laptops.html' },
         { from: /^\/tablets\/?$/, to: '/tablets.html' },
@@ -80,6 +81,11 @@ const config = {
     new HtmlWebpackPlugin({
       template: 'src/pages/privacy-policy.html',
       filename: 'privacy-policy.html', // генерируем файл в корневой директории
+      chunks: ['main'], // подключаем чанк для страницы phones
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/pages/kontakty.html',
+      filename: 'kontakty.html', // генерируем файл в корневой директории
       chunks: ['main'], // подключаем чанк для страницы phones
     }),
     new MiniCssExtractPlugin(),
