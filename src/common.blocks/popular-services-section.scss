@@ -1,0 +1,294 @@
+.popular-services-section {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 3.75rem;
+	margin-block-end: 7.292%;
+	font-weight: 400;
+	font-size: clamp(0.875rem, 0.4907rem + 0.4267vw, 1.01875rem);
+	inline-size: 75%;
+	text-wrap: wrap;
+
+	&__title-container {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		inline-size: 100%;
+
+		&__title {
+			color: var(--color-text);
+			font-family: var(--font-accent);
+			font-size: 1.5rem;
+			line-height: 28.8px;
+		}
+
+		&__subtitle {
+			font-size: 1rem;
+		}
+	}
+
+	&__slider-container {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		overflow: hidden;
+		touch-action: pan-y;
+
+		&-slider {
+			display: flex;
+			gap: 32px;
+			width: max-content;
+			transition: transform 0.3s ease-in-out;
+
+			&-slide {
+				position: relative;
+				z-index: 1;
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				flex-shrink: 0;
+				justify-content: space-between;
+				width: 100%;
+				max-width: none;
+				height: 221px;
+				border-radius: 0.5rem;
+				padding: 20px;
+				background-color: #2d2e2e;
+
+				&-description {
+					color: var(--color-text);
+				}
+
+				&-description_bottom {
+					color: var(--color-text);
+					font-weight: 600;
+					font-size: clamp(1.1875rem, 0.25rem + 1.0417vw, 1.5rem);
+					line-height: clamp(1.705rem, 0.6784rem + 1.1399vw, 2.04625rem);
+				}
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: -2;
+					width: 100%;
+					height: 100%;
+					background-repeat: no-repeat;
+					background-size: contain;
+					transition: filter 0.3s ease;
+				}
+
+				&:first-child::before {
+					background-image: url('../images/first_top_card.svg');
+					background-repeat: no-repeat;
+					background-position: bottom center;
+					background-size: 100%;
+				}
+
+				&:nth-child(2)::before {
+					background-image: url('../images/Why-We_Card-Bg3.svg');
+					background-repeat: no-repeat;
+					background-position: top;
+					background-size: 100%;
+				}
+
+				&:nth-child(3)::before {
+					background-image: url('../images/thrid_top_card.svg');
+					background-repeat: no-repeat;
+					background-position: right center;
+					background-size: 100%;
+				}
+
+				&:hover::before {
+					filter: saturate(100%) invert(86%) sepia(56%) saturate(550%)
+						hue-rotate(165deg) brightness(50%);
+				}
+			}
+		}
+
+		&-prev {
+			position: absolute;
+			top: 65%;
+			left: -4%;
+			width: 32px;
+			height: 32px;
+			border: none;
+			border-radius: 106.67px;
+			color: white;
+			background-color: transparent;
+			background-image: url('../images/prev.png');
+			cursor: pointer;
+		}
+
+		&-next {
+			position: absolute;
+			top: 65%;
+			right: -4%;
+			width: 32px;
+			height: 32px;
+			border: none;
+			border-radius: 106.67px;
+			color: white;
+			background-color: transparent;
+			background-image: url('../images/next.png');
+			cursor: pointer;
+		}
+
+		&-prev.disabled,
+		&-next.disabled {
+			background-color: transparent;
+			background-image: none;
+			cursor: default;
+			pointer-events: none;
+		}
+
+		&-next.disabled {
+			background-image: url('../images/disable-button-next.png');
+		}
+
+		&-prev.disabled {
+			background-image: url('../images/disable-button-prev.png');
+		}
+	}
+}
+
+// @media (min-width: 1280px) {
+// 	.popular-services-section {
+// 		&__slider {
+// 			&-container {
+// 				&-slider {
+// 					&-slide {
+// 						width: calc((100% - 32px) / 2); /* 2 карточки + 1 gap */
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+/* ≥1920px: показываем 3 карточки */
+@media (min-width: 1920px) {
+	.popular-services-section {
+		&__slider {
+			&-container {
+				&-slider {
+					&-slide {
+						width: calc((100% - 32px * 2) / 3); /* 3 карточки + 2 gap */
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (1275px < width <= 1440px) {
+	.popular-services-section {
+		margin-block-end: 8.334%;
+		font-size: clamp(0.9375rem, 0.4512rem + 0.6098vw, 1rem);
+		inline-size: 80.556%;
+
+		&__slider-container {
+			&-slider {
+				&-slide {
+					width: calc((100% - 32px) / 2); /* 2 карточки + 1 gap */
+
+					&-description {
+					}
+
+					&-description_bottom {
+					}
+				}
+			}
+
+			&-prev {
+			}
+
+			&-next {
+			}
+		}
+	}
+}
+
+@media (768px < width <= 1275px) {
+	.popular-services-section {
+		margin-block-end: 9%;
+		inline-size: 75%;
+
+		&__slider-container {
+			&-slider {
+				&-slide {
+					&-description {
+					}
+
+					&-description_bottom {
+					}
+				}
+			}
+
+			&-prev {
+				left: -45px;
+			}
+
+			&-next {
+				right: -45px;
+			}
+		}
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.popular-services-section {
+		gap: 2.5rem;
+		margin-block-end: 22.223%;
+		inline-size: 88.889%;
+		min-inline-size: 18.75rem;
+
+		&__slider-container {
+			&-slider {
+				&-slide {
+					max-width: clamp(18.75rem, 17.6339rem + 5.5804vw, 20.3125rem);
+					&-description {
+					}
+
+					&-description_bottom {
+					}
+				}
+			}
+
+			&-prev {
+				top: 105%;
+				left: 35%;
+			}
+
+			&-next {
+				top: 105%;
+				right: 35%;
+			}
+		}
+	}
+}
+
+@media (width = 360px) {
+	.popular-services-section {
+		&__slider-container {
+			&-slider {
+				&-slide {
+					max-width: 320px;
+					&-description {
+					}
+
+					&-description_bottom {
+					}
+				}
+			}
+
+			&-prev {
+			}
+
+			&-next {
+			}
+		}
+	}
+}

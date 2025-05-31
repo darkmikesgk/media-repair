@@ -61,10 +61,6 @@
 				object-fit: cover;
 				// block-size: clamp(13.375rem, 0.8125rem + 13.9583vw, 17.5625rem);
 				max-block-size: 280px;
-
-				&:hover {
-					transform: rotateX(180deg);
-				}
 			}
 		}
 

@@ -1,6 +1,7 @@
 import './common.js';
 import { createCards } from './card.js';
 import { initSlider } from './slider.js';
+import { initSliderPopularService } from './slider-popular-service.js';
 
 const phoneImg = document.getElementById('phoneImg');
 const reviewsAnchor = document.getElementById('reviews-link');
@@ -10,6 +11,7 @@ const section = urlParams.get('section');
 
 initSlider(phoneImg);
 createCards();
+initSliderPopularService();
 
 reviewsAnchor.addEventListener('click', function (evt) {
 	evt.preventDefault();
