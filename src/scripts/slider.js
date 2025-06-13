@@ -1,4 +1,10 @@
 export function initSlider() {
+	const phoneImg = document.getElementById('phoneImg');
+	if (!phoneImg) {
+		console.warn('initSlider: элемент с id "phoneImg" не найден.');
+		return;
+	}
+
 	const sliderData = [
 		{
 			id: 'phoneImg',
@@ -21,7 +27,6 @@ export function initSlider() {
 	];
 
 	let currentIndex = 0;
-	const phoneImg = document.getElementById('phoneImg');
 
 	function updateImage(index) {
 		const { src, state, alt } = sliderData[index];

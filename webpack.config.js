@@ -28,9 +28,12 @@ const config = {
     publicPath: '/',
   },
   devServer: {
+    // cloudflared tunnel --url http://localhost:8081
     open: true,
-    host: 'localhost',
+    // host: 'localhost',
+    host: '0.0.0.0',
     port: 8081,
+    allowedHosts: 'all',
     watchFiles: ['src/pages/*.html'],
     hot: true,
     proxy: {

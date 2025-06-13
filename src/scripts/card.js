@@ -1,21 +1,49 @@
 export async function createCards() {
-  const response = await fetch('../data/cards.json');
-  const cardsData = await response.json();
+	const container = document.getElementById('cards-container');
+	const templateElement = document.getElementById('card-template');
 
-  const container = document.getElementById('cards-container');
-  const template = document.getElementById('card-template').content;
+	if (!container) {
+		console.warn('createCards: элемент с id "cards-container" не найден.');
+		return;
+	}
 
-  cardsData.forEach(card => {
-    const cardElement = template.cloneNode(true);
-    const link = cardElement.querySelector('.card-link');
-    const img = cardElement.querySelector('.card-image');
-    const title = cardElement.querySelector('.card-title');
+	if (!templateElement) {
+		console.warn('createCards: элемент с id "card-template" не найден.');
+		return;
+	}
 
-    link.href = card.url;
-    img.src = card.imageUrl;
-    img.alt = `Карточка`;
-    title.textContent = card.title;
+	const template = templateElement.content;
 
-    container.appendChild(cardElement);
-  });
+	try {
+		const response = await fetch('../data/cards.json');
+		if (!response.ok) {
+			console.error(
+				'createCards: ошибка загрузки cards.json:',
+				response.statusText
+			);
+			return;
+		}
+		const cardsData = await response.json();
+
+		cardsData.forEach((card) => {
+			const cardElement = template.cloneNode(true);
+			const link = cardElement.querySelector('.card-link');
+			const img = cardElement.querySelector('.card-image');
+			const title = cardElement.querySelector('.card-title');
+
+			if (link) link.href = card.url;
+			if (img) {
+				img.src = card.imageUrl;
+				img.alt = `Карточка`;
+			}
+			if (title) title.textContent = card.title;
+
+			container.appendChild(cardElement);
+		});
+	} catch (error) {
+		console.error(
+			'createCards: ошибка при загрузке или парсинге данных:',
+			error
+		);
+	}
 }

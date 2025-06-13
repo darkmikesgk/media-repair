@@ -15,6 +15,14 @@ export function initSliderPopularService() {
 		'.popular-services-section__slider-container'
 	);
 
+	// 🔒 Проверка: все необходимые элементы должны быть найдены
+	if (!slider || !slides.length || !prevButton || !nextButton || !container) {
+		console.warn(
+			'initSliderPopularService: один или несколько элементов не найдены.'
+		);
+		return;
+	}
+
 	let index = 0;
 	let touchStartX = 0;
 	let touchEndX = 0;
@@ -57,16 +65,12 @@ export function initSliderPopularService() {
 
 	function handleSwipe() {
 		const swipeDistance = touchEndX - touchStartX;
-
-		// Порог чувствительности (px)
 		const threshold = 50;
 
 		if (Math.abs(swipeDistance) > threshold) {
 			if (swipeDistance < 0) {
-				// Свайп влево (вперёд)
 				nextButton.click();
 			} else {
-				// Свайп вправо (назад)
 				prevButton.click();
 			}
 		}
@@ -83,8 +87,6 @@ export function initSliderPopularService() {
 		const containerWidth = container.offsetWidth;
 		const totalSlidesWidth = slider.scrollWidth;
 		const slideWidthWithGap = getSlideWidthWithGap();
-
-		// Сколько карточек можем сместить, чтобы последняя встала у правой границы
 		return Math.max(
 			0,
 			Math.ceil((totalSlidesWidth - containerWidth) / slideWidthWithGap)
@@ -96,7 +98,7 @@ export function initSliderPopularService() {
 		const maxIndex = getMaxIndex();
 		const offset = Math.min(index, maxIndex) * slideWidthWithGap;
 		slider.style.transform = `translateX(-${offset}px)`;
-		updateButtons(); // обновляем состояние кнопок
+		updateButtons();
 	}
 
 	nextButton.addEventListener('click', () => {
@@ -122,8 +124,7 @@ export function initSliderPopularService() {
 		updateSlider();
 	});
 
-	document.addEventListener('DOMContentLoaded', () => {
-		updateSlider();
-		updateButtons();
-	});
+	// Заменим на явный вызов — DOM уже загружен к этому моменту
+	updateSlider();
+	updateButtons();
 }

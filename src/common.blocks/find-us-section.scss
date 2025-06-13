@@ -24,6 +24,13 @@
 			font-size: 1.5rem;
 			line-height: 28.8px;
 		}
+
+		.find-us-subtitle {
+			font-family: var(--font-main);
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 100%;
+		}
 	}
 
 	.find-us-container {
@@ -88,13 +95,13 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				border: none;
 				border-radius: 8px;
 				color: var(--color-bg-card);
 				font-family: var(--font-accent);
 				background-color: var(--color-text);
 				cursor: pointer;
 				block-size: 60px;
-				border: none;
 
 				&:hover {
 					color: #121212cc;
@@ -103,8 +110,8 @@
 						.find-us-container_left-side_button_area_button_arrow_in_button {
 							transform: rotateZ(180deg);
 						}
+					}
 				}
-			}
 
 				&_arrow {
 					position: absolute;
@@ -112,9 +119,9 @@
 					right: 10px;
 
 					&_in_button {
+						transition: transform 0.3s ease-in-out;
 						block-size: 16px;
 						inline-size: 16px;
-						transition: transform 0.3s ease-in-out;
 					}
 				}
 			}
