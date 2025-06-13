@@ -11,7 +11,7 @@
 	&__title-container {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 0.25rem;
 		inline-size: 100%;
 
 		&-title {
@@ -24,7 +24,7 @@
 		&-h3 {
 			font-family: var(--font-main);
 			font-weight: 400;
-			font-size: 16px;
+			font-size: 1rem;
 			line-height: 100%;
 		}
 	}
@@ -52,7 +52,7 @@
 			background-size: cover;
 			transition: background-image 0.1s ease-in-out;
 			inline-size: 100%;
-			block-size: 269px;
+			block-size: 16.8125rem;
 		}
 	}
 }
@@ -60,7 +60,7 @@
 .qa-item {
 	position: relative;
 	border-bottom: 1px solid #2d2e2e;
-	padding: 16px 0;
+	padding: 1rem 0;
 }
 .question {
 	display: flex;
@@ -69,7 +69,7 @@
 	color: var(--color-text);
 	font-weight: bold;
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 1.25rem;
 	line-height: 27.28px;
 	cursor: pointer;
 }
@@ -79,7 +79,7 @@
 	padding: 0 12px;
 	color: var(--color-text);
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 27.28px;
 }
 .toggle-btn {
@@ -89,7 +89,7 @@
 	border-radius: 4px;
 	padding: 0;
 	color: white;
-	font-size: 14px;
+	font-size: 0.875rem;
 	background-color: transparent;
 	transition: transform 0.3s ease;
 	cursor: pointer;

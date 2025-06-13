@@ -154,6 +154,13 @@ export function initQA(
 			data.forEach((qa, index) => {
 				container.appendChild(createQAItem(index + 1, qa.question, qa.answer));
 			});
+
+			// Открываем первый вопрос сразу
+			const firstItem = container.querySelector('.qa-item');
+			if (firstItem) {
+				const questionDiv = firstItem.querySelector('.question');
+				questionDiv.click(); // имитируем клик, чтобы открыть ответ и обновить стрелку
+			}
 		})
 		.catch((err) => {
 			container.textContent = `Ошибка: ${err.message}`;

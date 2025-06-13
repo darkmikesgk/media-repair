@@ -10,7 +10,7 @@
 		<link rel="icon" href="../svg/icon.svg" type="image/svg+xml" />
 		<link rel="apple-touch-icon" href="../images/favicon.png" />
 	</head>
-	<body class="page">
+	<body class="page" data-page="tv">
 		<header class="header">
 			<div class="links_container">
 				<a class="links hidden-link" href="/">Главная</a>
@@ -49,7 +49,7 @@
 						<a href="#">Сборка компьютеров</a>
 					</div>
 				</div>
-				<a id="reviews-link" class="links hidden-link" href="#reviews-section"
+				<a id="reviews-link" class="links hidden-link" href="/?section=reviews"
 					>Отзывы</a
 				>
 				<a id="find-us-link" class="links hidden-link" href="#find-us-section"
@@ -137,318 +137,253 @@
 			</div>
 		</header>
 		<main class="main">
-			<section class="order_call_section elastic">
-				<div class="sub_title">
-					<h2 class="sub_title_item">Сервисный центр в Орле</h2>
-					<h1 class="title_item">МЕДИА-РЕМОНТ</h1>
-				</div>
-				<div
-					class="phone_img"
-					role="region"
-					aria-label="Слайдер изображений с телефонами, планшетами и ноутбуками"
-				>
+			<section class="choose-tv-section">
+				<div id="tv-buttons" class="choose-tv-section-container">
 					<img
-						id="phoneImg"
-						src="../images/PhoneImg.webp"
-						alt="Изображение телефона"
-						data-state="phone"
+						class="choose-tv-section-container__background-image"
+						src="../images/ChooseTvImg.png"
+						alt="Картинка с айфонами"
 					/>
-					<span class="phone_img_description">
-						Мы заставляем Вашу
-						<span>технику работать</span>
-					</span>
-				</div>
-				<div class="tablet">
-					<img
-						id="tabletImg"
-						src="../images/TableImg.webp"
-						alt="Изображение ноутбука и телефона на столе"
-						loading="lazy"
-						data-state="tablet"
-					/>
-				</div>
-				<div class="order_button_area">
-					<button id="callButton" class="order_button callButton">
-						Заказать звонок
-						<span class="order_button_arrow">
-							<img
-								class="arrow_in_button"
-								src="../images/arrowUp.svg"
-								alt="Стрелочка вверх и вправо"
-								loading="lazy"
-							/>
-						</span>
-					</button>
-				</div>
-				<div class="laptop">
-					<img
-						id="laptopImg"
-						src="../images/LaptopImg.webp"
-						alt="Изображение ноутбука"
-						loading="lazy"
-						data-state="laptop"
-					/>
-					<span class="laptop_description">
-						Мы знаем, что у Вас есть выбор —
-						<span>спасибо, что выбираете нас</span>
-					</span>
-				</div>
-				<div class="many_logo"></div>
-			</section>
-
-			<section class="repair-services-section elastic">
-				<div class="repair-services-title">
-					<h2 class="title_item">Услуги ремонта</h2>
-					<h3 class="sub_title_item">И не только</h3>
-				</div>
-				<div class="cards-container" id="cards-container"></div>
-			</section>
-
-			<section class="about-us-section">
-				<div class="about-us-title-container">
-					<h2 class="about-us-title">Тут все про нас</h2>
-					<h3 class="about-us-subtitle">На самом деле - это СЕО-текст</h3>
-				</div>
-				<div class="about-us-content">
-					<img
-						src="../images/Arrow_about-us.svg"
-						alt="Декоративная иконка стрелочки"
-						class="about-us-content_arrow-bg"
-					/>
-					<span class="about-us-content_paragraph-item mobile-item">
-						Мы — команда профессионалов, занимаемся ремонтом техники уже более 9
-						лет.
-					</span>
-					<div class="about-us-content_paragraph">
-						<p class="about-us-content_paragraph-item pc-item">
-							Мы — команда профессионалов, занимаемся ремонтом техники уже более
-							8 лет.
-						</p>
-						<p class="about-us-content_paragraph-item">
-							За это время мы приобрели богатый опыт и накопили обширные знанияв
-							области ремонта различной техники. Благодаря нашему опыту и
-							отличной репутации, мы смогли стать надежным партнером для тысяч
-							клиентов.Мы понимаем, что поломка техники — это неожиданная и
-							неприятная ситуация. Поэтому мы стремимся сделать процесс ремонта
-							максимально комфортным для наших клиентов. Мы уделяем внимание
-							каждой детали работы, чтобы восстановленное устройство полностью
-							соответствовало ожиданиям клиента.
-						</p>
-						<p class="about-us-content_paragraph-item">
-							Мы предоставляем полную отчетность для организаций.
-						</p>
-					</div>
-					<p class="about-us-content_text">
-						Независимо от марки и модели устройства, наши опытные специалисты
-						готовы взятьсяза его починку и вернуть его вамв наилучшем состоянии.
-					</p>
-				</div>
-			</section>
-
-			<section class="why-we-section">
-				<div class="why-we-title-container">
-					<h2 class="why-we-title">Почему мы супер</h2>
-					<h3 class="why-we-subtitle">Потому что</h3>
-				</div>
-				<div class="why-we-card-container">
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							До проведения услуг мы бесплатно проведем диагностику любой вашей
-							техники
-						</p>
-						<p class="why-we-card-container-item-description">
-							Бесплатная диагностика
-						</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							После оказания услуги мы даём гарантию на всю проделанную работу
-						</p>
-						<p class="why-we-card-container-item-description">
-							Гарантия — до 1 года
-						</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							Несложный ремонт мы сможем осуществить в день обращения, уточняйте
-							такую возможность по номеру телефона
-						</p>
-						<p class="why-we-card-container-item-description">
-							Ремонт в день заказа
-						</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<p class="why-we-card-container-item-title">
-							Мы стараемся не поднимать цены на наши услуги даже в самые сложные
-							времена
-						</p>
-						<p class="why-we-card-container-item-description">Лояльные цены</p>
-					</article>
-					<article class="why-we-card-container-item">
-						<div class="why-we-card-container-item-width">
-							<p class="why-we-card-container-item-title">
-								Если ремонт невыгоден — честно скажем об этом. Мы не предлагаем
-								лишнего и всегда подбираем решение, которое действительно
-								подходит. Всё понятно, спокойно и с уважением к вашему выбору.
+					<div class="choose-tv-section-container__buttons-container">
+						<div
+							class="choose-tv-section-container__buttons-container__title-container"
+						>
+							<p
+								class="choose-tv-section-container__buttons-container__title-container_choose-model"
+							>
+								Модели, которые мы ремонтируем
 							</p>
-							<p class="why-we-card-container-item-title">
-								Нам важно, чтобы вы остались довольны не только результатом, но
-								и самим процессом — с ощущением заботы и уверенности на каждом
-								этапе.
-							</p>
+							<div
+								class="choose-tv-section-container__buttons-container__title-container-item"
+							>
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M0 24V0.0415535H3.99311V17.1832L21.1764 0L24 2.82347L6.81637 20.0069H23.9587V24H0Z"
+										fill="url(#paint0_linear_101_6932)"
+									/>
+									<defs>
+										<linearGradient
+											id="paint0_linear_101_6932"
+											x1="22.3102"
+											y1="53.5178"
+											x2="-47.3786"
+											y2="6.26093"
+											gradientUnits="userSpaceOnUse"
+										>
+											<stop stop-color="#06FFD2" />
+											<stop offset="1" stop-color="#06BDFF" />
+										</linearGradient>
+									</defs>
+								</svg>
+								<h1
+									class="choose-tv-section-container__buttons-container__title-container-title"
+								>
+									Телевизоры
+								</h1>
+							</div>
 						</div>
-						<p class="why-we-card-container-item-description">
-							Честно расскажем, как выгоднее
-						</p>
-						<span class="why-we-card-container-item-note"
-							>*Мы не занимаемся ремонтом на дому</span
+						<div
+							class="choose-tv-section-container__buttons-container_buttons-line"
 						>
-						<span class="why-we-card_arrow">
-							<img
-								src="../images/Why-We_Arrow.webp"
-								alt="Декоративная иконка стрелочки"
-							/>
-						</span>
-					</article>
-				</div>
-			</section>
-
-			<section class="popular-services-section">
-				<div class="popular-services-section__title-container">
-					<h2 class="popular-services-section__title-container__title">
-						Популярные услуги
-					</h2>
-					<h3 class="popular-services-section__title-container__subtitle">
-						Вы чаще всего обращаетесь с этими проблемами
-					</h3>
-				</div>
-				<div class="popular-services-section__slider-container">
-					<button
-						class="popular-services-section__slider-container-prev"
-					></button>
-					<div class="popular-services-section__slider-container-slider">
-						<article
-							class="popular-services-section__slider-container-slider-slide"
-						>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description"
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Philips"
 							>
-								Качественный ремонт с использованием оригинальных запчастей.
-								Восстановление яркости, сенсора и защиты от дальнейших
-								повреждений. Быстро, аккуратно и надежно.
-							</p>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description_bottom"
+								<img src="../images/Philips.png" alt="Philips" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Hisense"
 							>
-								Замена экрана на телефонах
-							</p>
-						</article>
-						<article
-							class="popular-services-section__slider-container-slider-slide"
-						>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description"
+								<img src="../images/Hisense.png" alt="Hisense" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Dns"
 							>
-								Восстановление полной емкости и долгой работы устройства.
-								Использование оригинальныхили сертифицированных батарей.
-							</p>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description_bottom"
+								<img src="../images/Dns.png" alt="Dns" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Dexp"
 							>
-								Замена аккумулятора на телефонах
-							</p>
-						</article>
-						<article
-							class="popular-services-section__slider-container-slider-slide"
-						>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description"
+								<img src="../images/Dexp.png" alt="Dexp" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Mystery"
 							>
-								Профессиональный ремонт с оригинальнымиили сертифицированными
-								запчастями.Восстановление внешнего вида, защита корпусаи
-								сохранение функциональности устройства. Выполняется с тщательной
-								проверкой качества.
-							</p>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description_bottom"
-							>
-								Замена заднего стекла на iPhone
-							</p>
-						</article>
-						<article
-							class="popular-services-section__slider-container-slider-slide"
-						>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description"
-							>
-								4 карточка и так далее
-							</p>
-							<p
-								class="popular-services-section__slider-container-slider-slide-description_bottom"
-							>
-								Замена заднего стекла на iPhone
-							</p>
-						</article>
-					</div>
-					<button
-						class="popular-services-section__slider-container-next"
-					></button>
-				</div>
-			</section>
-
-			<section id="reviews-section" class="reviews-section">
-				<div class="reviews-title-container">
-					<h2 class="reviews-title">Нас благодарят</h2>
-					<h3 class="reviews-subtitle">Спасибо :)</h3>
-				</div>
-				<div class="reviews-container">
-					<div class="reviews-container_left-side">
-						<div class="reviews-container_left-side-description">
-							<p class="reviews-container_left-side-description-item">
-								Сервисный центр в Орле «Медиа-ремонт» оказывает профессиональный
-								ремонт цифровой техники в Орле.
-							</p>
-							<p class="reviews-container_left-side-description-item">
-								Мы ремонтируем мобильные телефоны, ноутбуки, планшеты,
-								телевизоры, компьютеры, аудиосистемы, мониторы, Sony
-								PlayStation, электросамокаты, усилители.
-							</p>
-							<p class="reviews-container_left-side-description-item">
-								Ремонт производится на профессиональном специализированном
-								оборудовании нашими квалифицированными специалистами. Каждый
-								клиент получает гарантию на все предоставленные ему услуги.
-							</p>
-							<p class="reviews-container_left-side-description-item">
-								Сервисный центр в Орле «Медиа-ремонт» всегда держит низкие цены.
-								Работаем за счёт большого оборота, огромного количества
-								клиентов, каждый пятый из которых становится постоянным.
-							</p>
+								<img src="../images/Mystery.png" alt="Mystery" />
+							</button>
 						</div>
-						<p class="reviews-container_left-side-description-item gratitude">
-							Мы знаем, что у вас есть выбор — спасибо, что выбираете нас
+
+						<div
+							class="choose-tv-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Telefunken"
+							>
+								<img
+									class="custom-width"
+									src="../images/Telefunken.png"
+									alt="Telefunken"
+								/>
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Sony"
+							>
+								<img src="../images/Sony.png" alt="Sony" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Akai"
+							>
+								<img src="../images/Akai.png" alt="Akai" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Grundig"
+							>
+								<img
+									class="custom-width"
+									src="../images/Grundig.png"
+									alt="Grundig"
+								/>
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Rolsen"
+							>
+								<img
+									class="custom-width"
+									src="../images/Rolsen.png"
+									alt="Rolsen"
+								/>
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Asano"
+							>
+								<img
+									class="custom-width"
+									src="../images/Asano.png"
+									alt="Asano"
+								/>
+							</button>
+						</div>
+
+						<div
+							class="choose-tv-section-container__buttons-container_buttons-line"
+						>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Lg"
+							>
+								<img src="../images/Lg.png" alt="Lg" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Vytaz"
+							>
+								<img
+									class="custom-width"
+									src="../images/Vytaz.png"
+									alt="Vytaz"
+								/>
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Mi"
+							>
+								<img src="../images/Mi.png" alt="Mi" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Samsung"
+							>
+								<img src="../images/Samsung.png" alt="Samsung" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Kivi"
+							>
+								<img src="../images/Kivi.png" alt="Kivi" />
+							</button>
+							<button
+								class="choose-tv-section-container__buttons-container_buttons-line_button"
+								data-device="Tcl"
+							>
+								<img src="../images/Tcl.png" alt="Tcl" />
+							</button>
+						</div>
+
+						<p
+							class="choose-tv-section-container__buttons-container_choose-model down-element"
+						>
+							Если здесь нет интересующей вас модели, позвоните нам
 						</p>
-						<img
-							class="reviews-container_left-side-img"
-							src="../images/Many_logo-Gif.gif"
-							alt="Декоративная картинка с логотипами"
-							loading="lazy"
-						/>
-					</div>
-					<div class="reviews-widget">
-						<iframe
-							title="Виджет отзывов"
-							class="reviews-widget-item"
-							src="https://yandex.ru/maps-reviews-widget/1727440253?comments"
-						>
-						</iframe>
-						<a
-							class="reviews-widget-item-link"
-							href="https://yandex.ru/maps/org/media_remont/1727440253/"
-							target="_blank"
-							>Медиа-Ремонт на карте Орла — Яндекс Карты</a
-						>
 					</div>
 				</div>
+			</section>
+
+			<section class="table-section">
+				<table id="service-table" class="service-table">
+					<tbody id="service-table-body" class="service-table-body"></tbody>
+				</table>
+			</section>
+
+			<section class="service-description">
+				<div class="service-description__text-container">
+					<div class="service-description__text-container__paragraph">
+						<p class="service-description__text-container__paragraph-item">
+							Вам требуется качественный ремонт телевизора в Орле? Обратитесь к
+							нам! Мы — команда опытных и профессиональных мастеров,
+							специализирующихся на ремонте телевизоров всех марок и моделей.
+						</p>
+						<p class="service-description__text-container__paragraph-item">
+							Независимо от проблемы, с которой вы столкнулись, мы готовы
+							взяться за ее решение. Мы имеем богатый опыт в диагностике и
+							ремонте различных видов неисправностей, включая неработающие
+							экраны, отсутствие звука, проблемы с подключением и многие другие.
+						</p>
+						<p class="service-description__text-container__paragraph-item">
+							Наша команда оснащена современным оборудованием и использует
+							только оригинальные запчасти при ремонте. Это позволяет нам
+							обеспечить высокое качество работы и долговечность
+							восстановленного телевизора.
+						</p>
+
+						<p class="service-description__text-container__paragraph-item">
+							Мы понимаем, что неработающий телевизор может создавать неудобства
+							и негативно влиять на ваше времяпровождение. Поэтому мы стремимся
+							предоставить быстрый и эффективный сервис ремонта. Наши мастера
+							оперативно реагируют на заявки, осуществляют экспресс-диагностику
+							и предлагают подходящее решение вашей проблемы.
+						</p>
+
+						<p class="service-description__text-container__paragraph-item">
+							Имея много лет опыта работы с клиентами в Орле, мы гордимся своей
+							репутацией надежного и доверенного сервисного центра. Если вам
+							нужен ремонт телевизора в Орле, обратитесь к нам и вы получите
+							профессиональное обслуживание и качественный ремонт по адекватной
+							цене.
+						</p>
+					</div>
+				</div>
+				<img
+					class="service-description__img"
+					src="../images/Many_logo-Gif.gif"
+					alt="Декоративная картинка с логотипами"
+					loading="lazy"
+				/>
 			</section>
 
 			<section id="find-us-section" class="find-us-section">
@@ -560,19 +495,6 @@
 				</div>
 			</section>
 
-			<section class="faq-section" id="faq">
-				<div class="faq-section__title-container">
-					<h2 class="faq-section__title-container-title">FAQ</h2>
-					<h3 class="faq-section__title-container-h3">Популярные вопросы</h3>
-				</div>
-				<div class="faq-section__content">
-					<div class="faq-section__content__qa-container" id="qa-container">
-						Загрузка вопросов...
-					</div>
-					<div class="faq-section__content-right-side"></div>
-				</div>
-			</section>
-
 			<section id="modal" class="modal">
 				<div class="modal-content">
 					<button class="modal__close">
@@ -615,7 +537,6 @@
 								type="text"
 								id="name"
 								name="name"
-								maxlength="18"
 								required
 							/>
 							<span class="name-error modal__error">
@@ -644,17 +565,6 @@
 					>
 				</div>
 			</section>
-
-			<template id="card-template">
-				<a href="" class="card-link">
-					<div class="card-container">
-						<div class="card">
-							<img src="" alt="" class="card-image" loading="lazy" />
-						</div>
-						<p class="card-title"></p>
-					</div>
-				</a>
-			</template>
 		</main>
 		<footer class="footer_wrapper">
 			<div class="footer">

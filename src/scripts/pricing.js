@@ -167,6 +167,11 @@ if (document.body.dataset.page === 'tablets') {
 	initPage('../data/pricingDataTablets.json', 'Irbis', 'tablet-buttons');
 }
 
+// Инициализация для страницы телевизоров
+if (document.body.dataset.page === 'tv') {
+	initPage('../data/pricingDataTv.json', 'Philips', 'tv-buttons');
+}
+
 // Инициализация для страницы ноутбуков
 if (document.body.dataset.page === 'laptops') {
 	initPageWithServiceTypes(
