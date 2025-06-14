@@ -172,6 +172,11 @@ if (document.body.dataset.page === 'tv') {
 	initPage('../data/pricingDataTv.json', 'Philips', 'tv-buttons');
 }
 
+// Инициализация для страницы мониторов
+if (document.body.dataset.page === 'monitors') {
+	initPage('../data/pricingDataMonitors.json', 'Hp', 'monitors-buttons');
+}
+
 // Инициализация для страницы ноутбуков
 if (document.body.dataset.page === 'laptops') {
 	initPageWithServiceTypes(
