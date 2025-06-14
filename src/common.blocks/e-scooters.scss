@@ -1,0 +1,56 @@
+.choose-scooters-section {
+	margin-block-start: 6.539%;
+	margin-block-end: 4.948%;
+	inline-size: 75%;
+
+	&-container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: flex-end;
+		border-radius: 0.5rem;
+		padding: 0 30px 30px 0;
+		background-image: url('../images/ScootersBg.png');
+		background-position: center;
+		block-size: 25rem;
+
+		&-price {
+			color: var(--color-text);
+			font-family: var(--font-secondary-title);
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 100%;
+			text-align: right;
+		}
+
+		&-title {
+			color: var(--color-text);
+			font-family: var(--font-secondary-title);
+			font-size: 34px;
+			line-height: 39.88px;
+		}
+	}
+}
+
+@media (1275px < width <= 1440px) {
+	.choose-scooters-section {
+		inline-size: 80.556%;
+	}
+}
+
+@media (320px <= width <= 768px) {
+	.choose-scooters-section {
+		inline-size: 88.889%;
+		min-inline-size: 18.75rem;
+
+		&-container {
+			padding: 0 10px 15px 0;
+			&-title {
+				width: min-content;
+				text-align: end;
+				text-wrap: balance;
+			}
+		}
+	}
+}

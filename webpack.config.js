@@ -47,6 +47,9 @@ const config = {
 			rewrites: [
 				{ from: /^\/kontakty\/?$/, to: '/kontakty.html' },
 				{ from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
+				{ from: /^\/e-scooters\/?$/, to: '/e-scooters.html' },
+				{ from: /^\/ps\/?$/, to: '/ps.html' },
+				{ from: /^\/audio\/?$/, to: '/audio.html' },
 				{ from: /^\/monitors\/?$/, to: '/monitors.html' },
 				{ from: /^\/tv\/?$/, to: '/tv.html' },
 				{ from: /^\/laptops\/?$/, to: '/laptops.html' },
@@ -94,6 +97,16 @@ const config = {
 			chunks: ['pricing'], // подключаем чанк для страницы phones
 		}),
 		new HtmlWebpackPlugin({
+			template: 'src/pages/audio.html',
+			filename: 'audio.html', // генерируем файл в корневой директории
+			chunks: ['pricing'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
+			template: 'src/pages/ps.html',
+			filename: 'ps.html', // генерируем файл в корневой директории
+			chunks: ['pricing'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
 			template: 'src/pages/privacy-policy.html',
 			filename: 'privacy-policy.html', // генерируем файл в корневой директории
 			chunks: ['main'], // подключаем чанк для страницы phones
@@ -103,6 +116,11 @@ const config = {
 			filename: 'kontakty.html', // генерируем файл в корневой директории
 			chunks: ['main'], // подключаем чанк для страницы phones
 		}),
+		new HtmlWebpackPlugin({
+			template: 'src/pages/e-scooters.html',
+			filename: 'e-scooters.html', // генерируем файл в корневой директории
+			chunks: ['main'], // подключаем чанк для страницы phones
+		}),
 		new MiniCssExtractPlugin(),
 		new DefinePlugin({
 			'process.env.DEVELOPMENT': !isProduction,
@@ -110,6 +128,14 @@ const config = {
 		}),
 		new CopyWebpackPlugin({
 			patterns: [
+				{
+					from: 'src/data/pricingDataPs.json',
+					to: 'data/pricingDataPs.json',
+				},
+				{
+					from: 'src/data/pricingDataAudio.json',
+					to: 'data/pricingDataAudio.json',
+				},
 				{
 					from: 'src/data/pricingDataMonitors.json',
 					to: 'data/pricingDataMonitors.json',

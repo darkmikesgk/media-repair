@@ -22,6 +22,8 @@ function handleModelButtonClicks(
 ) {
 	const buttonsContainer = document.getElementById(buttonsContainerId);
 
+	if (!buttonsContainer) return;
+
 	buttonsContainer.addEventListener('click', (event) => {
 		if (event.target.tagName === 'BUTTON') {
 			const device = event.target.dataset.device;
@@ -62,6 +64,8 @@ function handleServiceTypeButtonClicks(
 	const buttonsContainer = document.getElementById(
 		serviceTypeButtonsContainerId
 	);
+
+	if (!buttonsContainer) return;
 
 	buttonsContainer.addEventListener('click', (event) => {
 		if (event.target.tagName === 'BUTTON') {
@@ -175,6 +179,16 @@ if (document.body.dataset.page === 'tv') {
 // Инициализация для страницы мониторов
 if (document.body.dataset.page === 'monitors') {
 	initPage('../data/pricingDataMonitors.json', 'Hp', 'monitors-buttons');
+}
+
+// Инициализация для страницы аудио систем
+if (document.body.dataset.page === 'audio') {
+	initPage('../data/pricingDataAudio.json', 'Audio', 'audio-buttons');
+}
+
+// Инициализация для страницы PS
+if (document.body.dataset.page === 'ps') {
+	initPage('../data/pricingDataPs.json', 'Ps', 'ps-buttons');
 }
 
 // Инициализация для страницы ноутбуков
