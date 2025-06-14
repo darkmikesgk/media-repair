@@ -24,9 +24,11 @@ const config = {
 	devtool: 'source-map',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		filename: '[name].bundle.js',
+		filename: 'js/[name].bundle.js',
 		publicPath: '/',
+		assetModuleFilename: 'images/[name][ext]', // для png, jpg и т.п.
 	},
+
 	devServer: {
 		// cloudflared tunnel --url http://localhost:8081
 		open: true,
@@ -48,6 +50,7 @@ const config = {
 				{ from: /^\/kontakty\/?$/, to: '/kontakty.html' },
 				{ from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
 				{ from: /^\/computer-assembly\/?$/, to: '/computer-assembly.html' },
+				{ from: /^\/computers\/?$/, to: '/computers.html' },
 				{ from: /^\/e-scooters\/?$/, to: '/e-scooters.html' },
 				{ from: /^\/ps\/?$/, to: '/ps.html' },
 				{ from: /^\/audio\/?$/, to: '/audio.html' },
@@ -108,6 +111,11 @@ const config = {
 			chunks: ['pricing'], // подключаем чанк для страницы phones
 		}),
 		new HtmlWebpackPlugin({
+			template: 'src/pages/computers.html',
+			filename: 'computers.html', // генерируем файл в корневой директории
+			chunks: ['pricing'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
 			template: 'src/pages/privacy-policy.html',
 			filename: 'privacy-policy.html', // генерируем файл в корневой директории
 			chunks: ['main'], // подключаем чанк для страницы phones
@@ -127,46 +135,68 @@ const config = {
 			filename: 'computer-assembly.html', // генерируем файл в корневой директории
 			chunks: ['main'], // подключаем чанк для страницы phones
 		}),
-		new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].css',
+		}),
 		new DefinePlugin({
 			'process.env.DEVELOPMENT': !isProduction,
 			'process.env.API_ORIGIN': JSON.stringify(process.env.API_ORIGIN ?? ''),
 		}),
+		// new CopyWebpackPlugin({
+		// 	patterns: [
+		// 		{
+		// 			from: 'src/data/pricingDataPs.json',
+		// 			to: 'data/pricingDataPs.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataAudio.json',
+		// 			to: 'data/pricingDataAudio.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataMonitors.json',
+		// 			to: 'data/pricingDataMonitors.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataTv.json',
+		// 			to: 'data/pricingDataTv.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataLaptops.json',
+		// 			to: 'data/pricingDataLaptops.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataTablets.json',
+		// 			to: 'data/pricingDataTablets.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataPhones.json',
+		// 			to: 'data/pricingDataPhones.json',
+		// 		},
+		// 		{
+		// 			from: 'src/data/pricingDataIphones.json',
+		// 			to: 'data/pricingDataIphones.json',
+		// 		},
+		// 		{ from: 'src/data/cards.json', to: 'data/cards.json' },
+		// 	],
+		// }),
 		new CopyWebpackPlugin({
 			patterns: [
 				{
-					from: 'src/data/pricingDataPs.json',
-					to: 'data/pricingDataPs.json',
+					from: 'src/data',
+					to: 'data',
 				},
 				{
-					from: 'src/data/pricingDataAudio.json',
-					to: 'data/pricingDataAudio.json',
+					from: 'src/images',
+					to: 'images',
 				},
 				{
-					from: 'src/data/pricingDataMonitors.json',
-					to: 'data/pricingDataMonitors.json',
+					from: 'src/fonts',
+					to: 'fonts',
 				},
 				{
-					from: 'src/data/pricingDataTv.json',
-					to: 'data/pricingDataTv.json',
+					from: 'src/svg',
+					to: 'svg',
 				},
-				{
-					from: 'src/data/pricingDataLaptops.json',
-					to: 'data/pricingDataLaptops.json',
-				},
-				{
-					from: 'src/data/pricingDataTablets.json',
-					to: 'data/pricingDataTablets.json',
-				},
-				{
-					from: 'src/data/pricingDataPhones.json',
-					to: 'data/pricingDataPhones.json',
-				},
-				{
-					from: 'src/data/pricingDataIphones.json',
-					to: 'data/pricingDataIphones.json',
-				},
-				{ from: 'src/data/cards.json', to: 'data/cards.json' },
 			],
 		}),
 	],
@@ -206,6 +236,16 @@ const config = {
 			{
 				test: /\.(eot|ttf|woff|woff2)$/i,
 				type: 'asset/resource',
+				generator: {
+					filename: 'fonts/[name][ext]',
+				},
+			},
+			{
+				test: /\.svg$/i,
+				type: 'asset/resource',
+				generator: {
+					filename: 'svg/[name][ext]',
+				},
 			},
 		],
 	},

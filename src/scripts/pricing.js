@@ -191,6 +191,15 @@ if (document.body.dataset.page === 'ps') {
 	initPage('../data/pricingDataPs.json', 'Ps', 'ps-buttons');
 }
 
+// Инициализация для страницы PS
+if (document.body.dataset.page === 'computers') {
+	initPage(
+		'../data/pricingDataComputers.json',
+		'Computers',
+		'computers-buttons'
+	);
+}
+
 // Инициализация для страницы ноутбуков
 if (document.body.dataset.page === 'laptops') {
 	initPageWithServiceTypes(

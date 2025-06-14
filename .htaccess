@@ -1,0 +1,10 @@
+# Включаем механизм перезаписи URL
+RewriteEngine On
+
+# Если файл или папка по запросу существуют — отдаём их как есть
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Если файла или папки нет, пытаемся добавить .html и отдать файл
+RewriteRule ^([^/]+)/?$ $1.html [L]
