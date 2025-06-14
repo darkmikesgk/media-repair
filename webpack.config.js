@@ -47,6 +47,7 @@ const config = {
 			rewrites: [
 				{ from: /^\/kontakty\/?$/, to: '/kontakty.html' },
 				{ from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
+				{ from: /^\/computer-assembly\/?$/, to: '/computer-assembly.html' },
 				{ from: /^\/e-scooters\/?$/, to: '/e-scooters.html' },
 				{ from: /^\/ps\/?$/, to: '/ps.html' },
 				{ from: /^\/audio\/?$/, to: '/audio.html' },
@@ -119,6 +120,11 @@ const config = {
 		new HtmlWebpackPlugin({
 			template: 'src/pages/e-scooters.html',
 			filename: 'e-scooters.html', // генерируем файл в корневой директории
+			chunks: ['main'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
+			template: 'src/pages/computer-assembly.html',
+			filename: 'computer-assembly.html', // генерируем файл в корневой директории
 			chunks: ['main'], // подключаем чанк для страницы phones
 		}),
 		new MiniCssExtractPlugin(),
