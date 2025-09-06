@@ -1,5 +1,8 @@
 import './common.js';
 import { loadDataFromJson, updateTable } from './table.js';
+import { initCookieNotice } from './common';
+
+initCookieNotice();
 
 const reviewsLink = document.getElementById('reviews-link');
 

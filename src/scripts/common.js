@@ -2,6 +2,7 @@ import '../styles/style.scss';
 import { openModal, toggleFormListener } from './modal.js';
 import { validateForm } from './validateForm.js';
 import { initDropdown } from './dropdown.js';
+import cookieHTML from '../components/cookieNotice.html';
 
 const dropdownToggle = document.querySelector('.dropdown-toggle');
 const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -177,3 +178,20 @@ function initImageZoom() {
 	});
 }
 initImageZoom();
+
+export function initCookieNotice() {
+	if (!localStorage.getItem('cookiesAccepted')) {
+		document.body.insertAdjacentHTML('beforeend', cookieHTML);
+		const notice = document.getElementById('cookieNotice');
+		const acceptBtn = document.getElementById('cookieAccept');
+
+		notice.style.display = 'block';
+		setTimeout(() => notice.classList.add('show'), 50);
+
+		acceptBtn.addEventListener('click', () => {
+			localStorage.setItem('cookiesAccepted', 'true');
+			notice.classList.remove('show');
+			setTimeout(() => (notice.style.display = 'none'), 500);
+		});
+	}
+}

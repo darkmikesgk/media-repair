@@ -3,8 +3,10 @@ import { createCards } from './card.js';
 import { initSlider } from './slider.js';
 import { initSliderPopularService } from './slider-popular-service.js';
 import { initQA } from './qa.js';
+import { initCookieNotice } from './common';
 
 document.addEventListener('DOMContentLoaded', () => {
+	initCookieNotice();
 	// Проверяем элементы перед вызовом
 	if (document.getElementById('phoneImg')) {
 		initSlider();

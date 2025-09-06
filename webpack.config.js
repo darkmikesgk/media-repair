@@ -224,6 +224,13 @@ const config = {
 	module: {
 		rules: [
 			{
+				test: /\.html$/i,
+				loader: 'html-loader',
+				options: {
+					sources: false, // отключает обработку src в <img>, <source> и т.п.
+				},
+			},
+			{
 				test: /\.(js|jsx)$/i,
 				use: ['babel-loader'],
 				exclude: ['/node_modules/'],
