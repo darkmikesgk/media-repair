@@ -170,8 +170,6 @@ async function initPageWithServiceTypes(
 		serviceTypeButtonsContainerId
 	);
 
-	handleServicesContentToggle();
-
 	const defaultModelButton = document.querySelector(
 		`#${modelButtonsContainerId} button[data-device='${defaultDevice}']`
 	);
@@ -184,6 +182,28 @@ async function initPageWithServiceTypes(
 	);
 	if (defaultServiceTypeButton) {
 		defaultServiceTypeButton.classList.add('active-service');
+	}
+}
+
+async function initSimplePage(jsonPath) {
+	try {
+		const pricingData = await loadPricingData(jsonPath);
+		const tableBody = document.querySelector('#service-table-body');
+
+		if (Object.keys(pricingData).length > 0) {
+			const firstDevice = Object.keys(pricingData)[0];
+			updateTable(tableBody, firstDevice, null, pricingData);
+
+			// Скрываем секцию выбора устройства
+			const chooseIphoneSection = document.querySelector(
+				'.choose-iphone-section'
+			);
+			if (chooseIphoneSection) {
+				chooseIphoneSection.style.display = 'none';
+			}
+		}
+	} catch (error) {
+		console.error('Error initializing simple page:', error);
 	}
 }
 
@@ -240,4 +260,21 @@ if (document.body.dataset.page === 'laptops') {
 		'laptop-buttons',
 		'service-type-buttons'
 	);
+}
+
+// Инициализация для страницы sb
+if (document.body.dataset.page === 'services') {
+	initSimplePage('../data/service.json');
+}
+
+handleServicesContentToggle();
+
+// Инициализация для страницы sb
+if (document.body.dataset.page === 'sb') {
+	initSimplePage('../data/service__battery.json');
+}
+
+// Инициализация для страницы gr
+if (document.body.dataset.page === 'gr') {
+	initSimplePage('../data/services__glass-replacement.json');
 }

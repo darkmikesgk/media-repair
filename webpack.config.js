@@ -47,6 +47,11 @@ const config = {
 		},
 		historyApiFallback: {
 			rewrites: [
+				{
+					from: /^\/services__glass-replacement\/?$/,
+					to: '/services__glass-replacement.html',
+				},
+				{ from: /^\/services__battery\/?$/, to: '/services__battery.html' },
 				{ from: /^\/services\/?$/, to: '/services.html' },
 				{ from: /^\/kontakty\/?$/, to: '/kontakty.html' },
 				{ from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
@@ -139,6 +144,16 @@ const config = {
 		new HtmlWebpackPlugin({
 			template: 'src/pages/services.html',
 			filename: 'services.html', // генерируем файл в корневой директории
+			chunks: ['pricing'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
+			template: 'src/pages/services__battery.html',
+			filename: 'services__battery.html', // генерируем файл в корневой директории
+			chunks: ['pricing'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
+			template: 'src/pages/services__glass-replacement.html',
+			filename: 'services__glass-replacement.html', // генерируем файл в корневой директории
 			chunks: ['pricing'], // подключаем чанк для страницы phones
 		}),
 		new MiniCssExtractPlugin({
