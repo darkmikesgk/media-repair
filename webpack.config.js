@@ -47,6 +47,7 @@ const config = {
 		},
 		historyApiFallback: {
 			rewrites: [
+				{ from: /^\/services\/?$/, to: '/services.html' },
 				{ from: /^\/kontakty\/?$/, to: '/kontakty.html' },
 				{ from: /^\/privacy-policy\/?$/, to: '/privacy-policy.html' },
 				{ from: /^\/computer-assembly\/?$/, to: '/computer-assembly.html' },
@@ -134,6 +135,11 @@ const config = {
 			template: 'src/pages/computer-assembly.html',
 			filename: 'computer-assembly.html', // генерируем файл в корневой директории
 			chunks: ['main'], // подключаем чанк для страницы phones
+		}),
+		new HtmlWebpackPlugin({
+			template: 'src/pages/services.html',
+			filename: 'services.html', // генерируем файл в корневой директории
+			chunks: ['pricing'], // подключаем чанк для страницы phones
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',

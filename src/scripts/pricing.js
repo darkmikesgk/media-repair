@@ -10,6 +10,33 @@ if (reviewsLink) {
 	});
 }
 
+function handleServicesContentToggle() {
+	const servicesButtons = document.querySelectorAll(
+		'.services__container--buttons--item'
+	);
+	const contentItems = document.querySelectorAll('.services__content-item');
+
+	if (servicesButtons.length === 0 || contentItems.length === 0) return;
+
+	servicesButtons.forEach((button) => {
+		button.addEventListener('click', function () {
+			// Убираем активный класс у всех кнопок
+			servicesButtons.forEach((btn) => btn.classList.remove('active'));
+			// Добавляем активный класс текущей кнопке
+			this.classList.add('active');
+
+			// Получаем тип устройства из data-атрибута
+			const deviceType = this.getAttribute('data-device');
+
+			// Скрываем все блоки с контентом
+			contentItems.forEach((item) => item.classList.remove('active'));
+
+			// Показываем нужный блок
+			document.getElementById(deviceType + '-content').classList.add('active');
+		});
+	});
+}
+
 async function loadPricingData(jsonPath) {
 	return loadDataFromJson(jsonPath);
 }
@@ -99,6 +126,8 @@ async function initPage(jsonPath, defaultDevice, buttonsContainerId) {
 
 	handleModelButtonClicks(pricingData, state, buttonsContainerId);
 
+	handleServicesContentToggle();
+
 	const defaultModelButton = document.querySelector(
 		`#${buttonsContainerId} button[data-device='${defaultDevice}']`
 	);
@@ -140,6 +169,8 @@ async function initPageWithServiceTypes(
 		state,
 		serviceTypeButtonsContainerId
 	);
+
+	handleServicesContentToggle();
 
 	const defaultModelButton = document.querySelector(
 		`#${modelButtonsContainerId} button[data-device='${defaultDevice}']`
