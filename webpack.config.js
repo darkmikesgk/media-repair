@@ -218,6 +218,7 @@ const config = {
 					from: 'src/svg',
 					to: 'svg',
 				},
+				{ from: 'src/components', to: 'components' },
 			],
 		}),
 	],
