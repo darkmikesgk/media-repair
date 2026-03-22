@@ -1,11 +1,10 @@
 .choose-monitors-section {
-	margin-block-start: 6.539%;
+	margin-block-start: 2.6045%;
 	margin-block-end: 4.948%;
 	inline-size: 75%;
 
 	&-container {
 		display: flex;
-		flex-wrap: wrap;
 		justify-content: flex-end;
 		gap: 2rem;
 
@@ -65,29 +64,37 @@
 				}
 			}
 
-			&_buttons-line {
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
+			&_buttons-grid {
+				display: grid;
+				grid-template-columns: repeat(4, minmax(0, 1fr));
+				grid-template-rows: repeat(3, auto);
 				gap: 8px;
 
 				&_button {
 					display: flex;
 					flex-direction: column;
-					flex: 1 1 19%;
 					justify-content: center;
 					align-items: center;
+					min-inline-size: 0;
+					inline-size: 100%;
 					border: none;
 					border-radius: 4px;
 					outline: 1px solid var(--color-dropdown);
-					font-size: clamp(0.75rem, 0.725rem + 0.125vw, 0.875rem);
+					font-size: clamp(0.875rem, 0.725rem + 0.125vw, 0.875rem);
 					background-color: var(--color-dropdown);
-					block-size: 95px;
-					min-inline-size: 145px;
-					max-inline-size: 173px;
+					block-size: clamp(
+						40px,
+						calc(40px + (100vw - 320px) * 55 / 1600),
+						95px
+					);
+					max-inline-size: none;
 
 					& img {
 						pointer-events: none;
+						object-fit: contain;
+						aspect-ratio: 3 / 1;
+						width: 100%;
+						max-width: fit-content;
 					}
 
 					&:hover {
@@ -106,13 +113,98 @@
 	}
 }
 
+@media (width <= 1024px) {
+	.choose-monitors-section {
+		&-container {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media (width > 1024px) {
+	.choose-monitors-section {
+		&-container {
+			&__buttons-container {
+				&_buttons-grid {
+					grid-template-columns: repeat(6, minmax(0, 1fr));
+					grid-template-rows: repeat(3, auto);
+
+					&_button img {
+						aspect-ratio: 1 / 1;
+					}
+
+					&_button:nth-child(1) {
+						grid-row: 1;
+						grid-column: 1;
+					}
+
+					&_button:nth-child(2) {
+						grid-row: 1;
+						grid-column: 2;
+					}
+
+					&_button:nth-child(3) {
+						grid-row: 2;
+						grid-column: 1;
+					}
+
+					&_button:nth-child(4) {
+						grid-row: 2;
+						grid-column: 2;
+					}
+
+					&_button:nth-child(5) {
+						grid-row: 2;
+						grid-column: 3;
+					}
+
+					&_button:nth-child(6) {
+						grid-row: 2;
+						grid-column: 4;
+					}
+
+					&_button:nth-child(7) {
+						grid-row: 3;
+						grid-column: 1;
+					}
+
+					&_button:nth-child(8) {
+						grid-row: 3;
+						grid-column: 2;
+					}
+
+					&_button:nth-child(9) {
+						grid-row: 3;
+						grid-column: 3;
+					}
+
+					&_button:nth-child(10) {
+						grid-row: 3;
+						grid-column: 4;
+					}
+
+					&_button:nth-child(11) {
+						grid-row: 3;
+						grid-column: 5;
+					}
+
+					&_button:nth-child(12) {
+						grid-row: 3;
+						grid-column: 6;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (1275px < width <= 1440px) {
 	.choose-monitors-section {
 		inline-size: 80.556%;
 
 		&-container {
 			&__buttons-container {
-				&_buttons-line {
+				&_buttons-grid {
 					&_button {
 						max-inline-size: none;
 					}
@@ -126,7 +218,7 @@
 	.choose-monitors-section {
 		&-container {
 			&__buttons-container {
-				&_buttons-line {
+				&_buttons-grid {
 					&_button {
 						max-inline-size: none;
 					}
@@ -144,7 +236,7 @@
 			}
 
 			&__buttons-container {
-				&_buttons-line {
+				&_buttons-grid {
 					&_button {
 						max-inline-size: none;
 					}
@@ -168,7 +260,7 @@
 			&__buttons-container {
 				flex: 1 1 72%;
 
-				&_buttons-line {
+				&_buttons-grid {
 					&_button {
 						max-inline-size: none;
 					}
@@ -176,6 +268,7 @@
 			}
 		}
 	}
+
 	.custom-width {
 		inline-size: 90%;
 	}

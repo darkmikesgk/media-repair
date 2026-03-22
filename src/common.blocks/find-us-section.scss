@@ -48,14 +48,6 @@
 			padding: 20px;
 			background-color: var(--color-dropdown);
 
-			&_street {
-				border-radius: 7px;
-				padding: 9px 64px;
-				color: var(--color-text);
-				text-align: center;
-				background-color: var(--color-contour);
-			}
-
 			&-item {
 				display: flex;
 				flex-direction: column;
@@ -72,17 +64,18 @@
 				&_description {
 					color: var(--color-text);
 					font-weight: 400;
-					font-size: 20px;
+					font-size: 1rem;
 					line-height: 27.28px;
 					inline-size: fit-content;
 
 					&_link {
 						color: var(--color-text);
 						font-weight: 400;
-						font-size: 20px;
-						line-height: 27.28px;
+						font-size: 1rem;
+						line-height: normal;
 						text-decoration: none;
-						inline-size: fit-content;
+						inline-size: 83%;
+						text-wrap: pretty;
 
 						&:hover {
 							color: var(--color-accent);
@@ -133,7 +126,7 @@
 			border-radius: 8px;
 			overflow: hidden;
 			min-inline-size: 25rem;
-			min-block-size: 31.875rem;
+			min-block-size: 26.875rem;
 		}
 	}
 }

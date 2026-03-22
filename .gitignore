@@ -6,3 +6,4 @@ dist/
 .env
 .github
 .htaccess
+scripts/

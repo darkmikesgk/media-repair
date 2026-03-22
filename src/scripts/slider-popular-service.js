@@ -15,7 +15,6 @@ export function initSliderPopularService() {
 		'.popular-services-section__slider-container'
 	);
 
-	// 🔒 Проверка: все необходимые элементы должны быть найдены
 	if (!slider || !slides.length || !prevButton || !nextButton || !container) {
 		console.warn(
 			'initSliderPopularService: один или несколько элементов не найдены.'
@@ -124,7 +123,6 @@ export function initSliderPopularService() {
 		updateSlider();
 	});
 
-	// Заменим на явный вызов — DOM уже загружен к этому моменту
 	updateSlider();
 	updateButtons();
 }

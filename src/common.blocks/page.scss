@@ -2,6 +2,10 @@
 @use './globals.scss';
 @use './mixins.scss';
 
+.page--menu-open {
+	overflow: hidden;
+}
+
 .page {
 	display: flex;
 	flex-direction: column;

@@ -2,6 +2,7 @@ import '../styles/style.scss';
 import { openModal, toggleFormListener } from './modal.js';
 import { validateForm } from './validateForm.js';
 import { initDropdown } from './dropdown.js';
+import { initHeaderMobileMenu } from './header-mobile-menu.js';
 import cookieHTML from '../components/cookieNotice.html';
 
 const dropdownToggle = document.querySelector('.dropdown-toggle');
@@ -178,6 +179,8 @@ function initImageZoom() {
 	});
 }
 initImageZoom();
+
+initHeaderMobileMenu();
 
 export function initCookieNotice() {
 	if (!localStorage.getItem('cookiesAccepted')) {

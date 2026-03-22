@@ -58,6 +58,7 @@
 				&-item {
 					text-decoration: none;
 					inline-size: 25%;
+					font-size: clamp(0.875rem, 0.8462rem + 0.1282vw, 1rem);
 
 					&:hover {
 						color: var(--color-accent);
@@ -152,6 +153,8 @@
 				&_catalog {
 					align-content: space-between;
 					block-size: 8.5rem;
+					row-gap: 0.5rem;
+					column-gap: 0.2rem;
 
 					&-item {
 						max-inline-size: 34%;

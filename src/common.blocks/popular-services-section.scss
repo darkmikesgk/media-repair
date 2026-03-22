@@ -41,7 +41,7 @@
 		&-slider {
 			display: flex;
 			gap: 32px;
-			width: max-content;
+			width: 100%;
 			transition: transform 0.3s ease-in-out;
 
 			&-slide {
@@ -51,13 +51,33 @@
 				flex-direction: column;
 				flex-wrap: nowrap;
 				flex-shrink: 0;
-				justify-content: space-between;
-				width: 100%;
+				width: calc((100% - 64px) / 3);
 				max-width: none;
 				height: 221px;
+				overflow: hidden;
 				border-radius: 0.5rem;
-				padding: 20px;
 				background-color: #2d2e2e;
+
+				&-link {
+					display: flex;
+					flex: 1;
+					flex-direction: column;
+					justify-content: space-between;
+					min-inline-size: 0;
+					min-block-size: 0;
+					padding: 20px;
+					color: inherit;
+					text-decoration: none;
+
+					&:focus-visible {
+						outline: 2px solid var(--color-text);
+						outline-offset: 3px;
+					}
+
+					p {
+						margin: 0;
+					}
+				}
 
 				&-description {
 					color: var(--color-text);
@@ -157,21 +177,6 @@
 	}
 }
 
-// @media (min-width: 1280px) {
-// 	.popular-services-section {
-// 		&__slider {
-// 			&-container {
-// 				&-slider {
-// 					&-slide {
-// 						width: calc((100% - 32px) / 2); /* 2 карточки + 1 gap */
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-/* ≥1920px: показываем 3 карточки */
 @media (min-width: 1920px) {
 	.popular-services-section {
 		&__slider {
@@ -186,7 +191,7 @@
 	}
 }
 
-@media (1275px < width <= 1440px) {
+@media (1280px <= width <= 1440px) {
 	.popular-services-section {
 		margin-block-end: 8.334%;
 		font-size: clamp(0.9375rem, 0.4512rem + 0.6098vw, 1rem);
@@ -214,7 +219,7 @@
 	}
 }
 
-@media (768px < width <= 1275px) {
+@media (768px <= width < 1280px) {
 	.popular-services-section {
 		margin-block-end: 9%;
 		inline-size: 75%;
@@ -222,6 +227,8 @@
 		&__slider-container {
 			&-slider {
 				&-slide {
+					width: calc((100% - 32px) / 2);
+
 					&-description {
 					}
 
@@ -241,7 +248,7 @@
 	}
 }
 
-@media (320px <= width <= 768px) {
+@media (320px <= width < 768px) {
 	.popular-services-section {
 		gap: 2.5rem;
 		margin-block-end: 22.223%;
@@ -251,7 +258,8 @@
 		&__slider-container {
 			&-slider {
 				&-slide {
-					max-width: clamp(18.75rem, 17.6339rem + 5.5804vw, 20.3125rem);
+					width: 100%;
+					max-width: 100%;
 					&-description {
 					}
 

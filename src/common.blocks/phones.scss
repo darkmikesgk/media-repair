@@ -1,11 +1,10 @@
 .choose-phone-section {
-	margin-block-start: 6.539%;
+	margin-block-start: 2.6045%;
 	margin-block-end: 4.948%;
 	inline-size: 75%;
 
 	&-container {
 		display: flex;
-		flex-wrap: wrap;
 		justify-content: flex-end;
 		gap: 2rem;
 
@@ -49,7 +48,7 @@
 					font-weight: 300;
 					font-size: 1rem;
 					line-height: 21.82px;
-					color: #B2B2B2;
+					color: #b2b2b2;
 				}
 			}
 
@@ -61,33 +60,40 @@
 				&.down-element {
 					text-align: end;
 					text-wrap: balance;
-					color: #B2B2B2;
+					color: #b2b2b2;
 				}
 			}
 
-			&_buttons-line {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				align-items: center;
+			&_buttons-grid {
+				display: grid;
+				grid-template-columns: repeat(4, minmax(0, 1fr));
 				gap: 8px;
 
 				&_button {
 					display: flex;
 					flex-direction: column;
-					flex: 1 1 19%;
 					justify-content: center;
 					align-items: center;
+					min-inline-size: 0;
+					inline-size: 100%;
 					border: none;
 					border-radius: 4px;
 					outline: 1px solid var(--color-dropdown);
-					font-size: clamp(0.75rem, 0.725rem + 0.125vw, 0.875rem);
+					font-size: clamp(0.875rem, 0.725rem + 0.125vw, 0.875rem);
 					background-color: var(--color-dropdown);
-					block-size: 95px;
-					min-inline-size: 145px;
+					block-size: clamp(
+						40px,
+						calc(40px + (100vw - 320px) * 55 / 1600),
+						95px
+					);
+					max-inline-size: none;
 
 					& img {
 						pointer-events: none;
+						object-fit: contain;
+						aspect-ratio: 3 / 1;
+						width: 100%;
+						max-width: fit-content;
 					}
 
 					&:hover {
@@ -106,9 +112,57 @@
 	}
 }
 
+@media (width <= 1024px) {
+	.choose-phone-section {
+		&-container {
+			flex-wrap: wrap;
+		}
+	}
+}
+
+@media (width > 1024px) {
+	.choose-phone-section {
+		&-container {
+			&__buttons-container {
+				&_buttons-grid {
+					grid-template-columns: repeat(6, minmax(0, 1fr));
+
+					&_button img {
+						aspect-ratio: 1 / 1;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (1275px < width <= 1440px) {
 	.choose-phone-section {
 		inline-size: 80.556%;
+
+		&-container {
+			&__buttons-container {
+				&_buttons-grid {
+					&_button {
+						max-inline-size: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (1120px < width <= 1275px) {
+	.choose-phone-section {
+		&-container {
+			&__buttons-container {
+				&_buttons-grid {
+					&_button {
+						max-inline-size: none;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -117,6 +171,14 @@
 		&-container {
 			&__background-image {
 				max-block-size: 370px;
+			}
+
+			&__buttons-container {
+				&_buttons-grid {
+					&_button {
+						max-inline-size: none;
+					}
+				}
 			}
 		}
 	}
@@ -135,6 +197,12 @@
 
 			&__buttons-container {
 				flex: 1 1 72%;
+
+				&_buttons-grid {
+					&_button {
+						max-inline-size: none;
+					}
+				}
 			}
 		}
 	}

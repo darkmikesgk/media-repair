@@ -6,10 +6,11 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
-    "lint:css": "stylelint 'src/**/*.{css,scss}'",
-    "lint:css:fix": "stylelint 'src/**/*.{css,scss}' --fix",
-    "format": "prettier --write 'src/**/*.{js,css,scss,html}'",
-    "format:check": "prettier --check 'src/**/*.{js,css,scss,html}'"
+    "lint:css": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "format": "prettier --write \"src/**/*.{js,css,scss,html}\"",
+    "format:check": "prettier --check \"src/**/*.{js,css,scss,html}\"",
+    "typograf": "node scripts/typograf-content.cjs"
   },
   "author": "Ivan Pidko",
   "license": "ISC",
@@ -37,7 +38,11 @@
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
+    "stylelint": "^17.5.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-scss": "^17.0.0",
     "terser-webpack-plugin": "^5.3.10",
+    "typograf": "^7.6.0",
     "webpack": "^5.81.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"

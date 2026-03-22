@@ -7,7 +7,6 @@ import { initCookieNotice } from './common';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initCookieNotice();
-	// Проверяем элементы перед вызовом
 	if (document.getElementById('phoneImg')) {
 		initSlider();
 	}
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		createCards();
 	}
 
-	// Инициализация блока вопросов-ответов (предполагается, что в HTML есть <div id="qa-container"></div>)
 	if (document.getElementById('qa-container')) {
 		initQA('qa-container', 'data/qa.json');
 	}
