@@ -27,6 +27,7 @@ const config = {
 		filename: 'js/[name].bundle.js',
 		publicPath: '/',
 		assetModuleFilename: 'images/[name][ext]', // для png, jpg и т.п.
+		clean: isProduction,
 	},
 
 	devServer: {
@@ -163,43 +164,6 @@ const config = {
 			'process.env.DEVELOPMENT': !isProduction,
 			'process.env.API_ORIGIN': JSON.stringify(process.env.API_ORIGIN ?? ''),
 		}),
-		// new CopyWebpackPlugin({
-		// 	patterns: [
-		// 		{
-		// 			from: 'src/data/pricingDataPs.json',
-		// 			to: 'data/pricingDataPs.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataAudio.json',
-		// 			to: 'data/pricingDataAudio.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataMonitors.json',
-		// 			to: 'data/pricingDataMonitors.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataTv.json',
-		// 			to: 'data/pricingDataTv.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataLaptops.json',
-		// 			to: 'data/pricingDataLaptops.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataTablets.json',
-		// 			to: 'data/pricingDataTablets.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataPhones.json',
-		// 			to: 'data/pricingDataPhones.json',
-		// 		},
-		// 		{
-		// 			from: 'src/data/pricingDataIphones.json',
-		// 			to: 'data/pricingDataIphones.json',
-		// 		},
-		// 		{ from: 'src/data/cards.json', to: 'data/cards.json' },
-		// 	],
-		// }),
 		new CopyWebpackPlugin({
 			patterns: [
 				{
@@ -228,7 +192,7 @@ const config = {
 				test: /\.html$/i,
 				loader: 'html-loader',
 				options: {
-					sources: false, // отключает обработку src в <img>, <source> и т.п.
+					sources: false,
 				},
 			},
 			{

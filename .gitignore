@@ -6,4 +6,5 @@ dist/
 .env
 .github
 .htaccess
-scripts/
+media-repair-kolhoz.rar
+dist.rar
